@@ -49,6 +49,8 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Aide-mémoire" href="rappel.html" />
@@ -171,12 +173,9 @@
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
+        
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fregu/LaboSeance2.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/AlbanVl/ReguLaboGramme/issues/new?title=Issue%20on%20page%20%2Fregu/LaboSeance2.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -197,7 +196,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/regu/LaboSeance2.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/AlbanVl/ReguLaboGramme/master?urlpath=tree/docs/regu/LaboSeance2.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -224,6 +223,35 @@
    Objectifs de la séance
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reponse-indicielle-du-2-nd-ordre-generale-parametree">
+   Réponse indicielle du 2 nd ordre générale paramétrée
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#commentaires-sur-les-courbes">
+     Commentaires sur les courbes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#depassement">
+     Dépassement
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#pseudo-pulsation">
+       Pseudo pulsation
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#temps-de-reponse-a-5">
+     Temps de réponse à 5%
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
             </nav>
@@ -240,11 +268,93 @@
 <div class="section" id="objectifs-de-la-seance">
 <h2>Objectifs de la séance<a class="headerlink" href="#objectifs-de-la-seance" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Utiliser les fonctions de base de control designer toolbox</p></li>
-<li><p>Tracer et analyser une réponse indicielle d’ordre 1 et 2</p></li>
-<li><p>Analyser le comportement d’un circuit RC/RL</p></li>
-<li><p>Analyser le comportement d’un moteur avec ou sans self</p></li>
+<li><p>Etude de système d’ordre 2</p></li>
+<li><p>Analyse de la réponse indicielle</p></li>
+<li><p>Influence de zeta sur les caractéristiques temporelles : dépassement, temps de réponse, …</p></li>
+<li><p>Lien entre ces caractéristiques et la position des pôles</p></li>
 </ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">display</span><span class="p">,</span> <span class="n">Markdown</span>
+
+<span class="kn">from</span> <span class="nn">control.matlab</span> <span class="kn">import</span> <span class="o">*</span>  <span class="c1"># Python Control Systems Toolbox (compatibility with MATLAB)</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>              <span class="c1"># Library to manipulate array and matrix</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> <span class="c1"># Library to create figures and plots</span>
+<span class="kn">import</span> <span class="nn">math</span> <span class="c1"># Library to be able to do some mathematical operations</span>
+<span class="kn">import</span> <span class="nn">ReguLabFct</span> <span class="k">as</span> <span class="nn">rlf</span> <span class="c1"># Library useful for the laboratory of regulation of HELMo Gramme</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="reponse-indicielle-du-2-nd-ordre-generale-parametree">
+<h2>Réponse indicielle du 2 nd ordre générale paramétrée<a class="headerlink" href="#reponse-indicielle-du-2-nd-ordre-generale-parametree" title="Permalink to this headline">¶</a></h2>
+<p>Soit un système du second degré :
+<span class="math notranslate nohighlight">\(
+ G(p)=\frac{K}{(\frac{p}{\omega_n})^2+\frac{2\zeta}{\omega_n}p+1}
+\)</span>
+(cfr page 3-6)</p>
+<p>Analysez pour les valeurs caractéristiques de zeta : 0.1 0.2 0.3 0.42 0.5 0.6 0.7 0.8 1 1.41 2 6 10 les réponses typiques cfr la page 3-9.
+Créez un script qui permette de tracer de manière itérative les différentes fonctions dont les différents zeta seront encodés dans un vecteur.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">K</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">wn</span><span class="o">=</span><span class="mi">1</span>
+
+<span class="c1"># Définition des coefficients d&#39;amortissement</span>
+<span class="n">zetas</span> <span class="o">=</span><span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.42</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.41</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="n">g</span><span class="o">=</span><span class="p">[]</span>
+
+<span class="c1"># Création de la fenêtre à une taille donnée</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s2">&quot;Steps&quot;</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+
+<span class="c1"># Réponse indicielle</span>
+<span class="c1"># Calcule les différentes fonctions de transfert ainsi que la réponse indicielle</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">zeta</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">zetas</span><span class="p">):</span> 
+    <span class="n">n</span><span class="o">=</span><span class="n">K</span><span class="p">;</span>
+    <span class="n">d</span><span class="o">=</span><span class="p">[(</span><span class="mi">1</span><span class="o">/</span><span class="n">wn</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">zeta</span><span class="o">/</span><span class="n">wn</span><span class="p">,</span> <span class="mi">1</span><span class="p">];</span>
+    <span class="n">g</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tf</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">d</span><span class="p">));</span>
+    <span class="n">h</span><span class="o">=</span><span class="n">g</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+    <span class="n">rlf</span><span class="o">.</span><span class="n">step_</span><span class="p">(</span><span class="n">h</span><span class="p">,</span><span class="n">NameOfFigure</span><span class="o">=</span><span class="s1">&#39;Steps&#39;</span><span class="p">,</span> <span class="n">sysName</span><span class="o">=</span><span class="n">zeta</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/LaboSeance2_4_0.png" src="../_images/LaboSeance2_4_0.png" />
+</div>
+</div>
+<div class="section" id="commentaires-sur-les-courbes">
+<h3>Commentaires sur les courbes<a class="headerlink" href="#commentaires-sur-les-courbes" title="Permalink to this headline">¶</a></h3>
+<p>……………………………………………..</p>
+<p>……………………………………………..</p>
+</div>
+<div class="section" id="depassement">
+<h3>Dépassement<a class="headerlink" href="#depassement" title="Permalink to this headline">¶</a></h3>
+<p>Visualisez la valeur du dépassement pour les différentes valeurs de zeta et regardez l’influence de zeta sur la valeur du dépassement sur l’abaque de la page 3-11 : D ……. si zeta ……</p>
+<p>Observez que les échelles de cet abaque sont logarithmiques. Par exemple, observez la valeur du dépassement lorsque zeta=0.5, sur la figure et indiquez clairement la position de ce point sur l’abaque.</p>
+<p><img alt="Abaque_Depassement" src="../_images/Abaque_Depassement.png" /></p>
+<p>Vérifiez par calcul :</p>
+<p><span class="math notranslate nohighlight">\(
+ D_p=100*e^{-\frac{k\pi\zeta}{\sqrt{1-\zeta^2}}}
+\)</span></p>
+<div class="section" id="pseudo-pulsation">
+<h4>Pseudo pulsation<a class="headerlink" href="#pseudo-pulsation" title="Permalink to this headline">¶</a></h4>
+<p>Observez l’influence de zeta sur la pulsation d’oscillation <span class="math notranslate nohighlight">\(\omega_d\)</span> : <span class="math notranslate nohighlight">\(\omega_d\)</span> … si <span class="math notranslate nohighlight">\(\zeta\)</span> …</p>
+</div>
+</div>
+<div class="section" id="temps-de-reponse-a-5">
+<h3>Temps de réponse à 5%<a class="headerlink" href="#temps-de-reponse-a-5" title="Permalink to this headline">¶</a></h3>
+<p>Visualisez la valeur du temps de réponse à 5 % pour les différentes valeurs de <span class="math notranslate nohighlight">\(\zeta\)</span> et regardez l’influence de <span class="math notranslate nohighlight">\(\zeta\)</span> sur l’abaque de la page 3-12.</p>
+<p><img alt="Abaque_tr5" src="../_images/Abaque_tr5.png" /></p>
+<p>Expliquez l’allure particulière de cette courbe :</p>
+<ul class="simple">
+<li><p>si <span class="math notranslate nohighlight">\(\zeta\)</span>&gt;1 : …</p></li>
+<li><p>en <span class="math notranslate nohighlight">\(\zeta\)</span> = 0.7 : …</p></li>
+<li><p>si <span class="math notranslate nohighlight">\(\zeta\)</span>&lt;1 : « escaliers » dans la partie gauche car …</p></li>
+</ul>
+<p>Pourquoi le <span class="math notranslate nohighlight">\(t_{r_{5\%}}\)</span> est-il identique pour un <span class="math notranslate nohighlight">\(\zeta\)</span> de 0,6 ou 0,5 ?</p>
+</div>
 </div>
 </div>
 
