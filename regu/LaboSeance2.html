@@ -53,7 +53,7 @@
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Aide-mémoire" href="rappel.html" />
+    <link rel="next" title="Séance 3" href="LaboSeance3.html" />
     <link rel="prev" title="Séance 1" href="LaboSeance1.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -113,8 +113,33 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="LaboSeance3.html">
+   Séance 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="LaboSeance4.html">
+   Séance 4
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="LaboSeance5.html">
+   Séance 5
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="LaboSeance6.html">
+   Séance 6
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="rappel.html">
    Aide-mémoire
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DocumentationFct.html">
+   Documentation de la librairie ReguLabFct
   </a>
  </li>
 </ul>
@@ -225,7 +250,11 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#reponse-indicielle-du-2-nd-ordre-generale-parametree">
-   Réponse indicielle du 2 nd ordre générale paramétrée
+   Réponse indicielle du
+   <span class="math notranslate nohighlight">
+    \(2^{nd}\)
+   </span>
+   ordre générale paramétrée
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -237,17 +266,37 @@
     <a class="reference internal nav-link" href="#depassement">
      Dépassement
     </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pseudo-pulsation">
+     Pseudo pulsation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#temps-de-reponse-a-5">
+     Temps de réponse à 5%
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#position-des-poles-to-do">
+     Position des pôles [TO DO]
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercice-1">
+     Exercice 1
+    </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#pseudo-pulsation">
-       Pseudo pulsation
+      <a class="reference internal nav-link" href="#etude-de-la-reponse-indicielle">
+       Etude de la réponse indicielle
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#temps-de-reponse-a-5">
-     Temps de réponse à 5%
+    <a class="reference internal nav-link" href="#exercice-2">
+     Exercice 2
     </a>
    </li>
   </ul>
@@ -288,7 +337,7 @@
 </div>
 </div>
 <div class="section" id="reponse-indicielle-du-2-nd-ordre-generale-parametree">
-<h2>Réponse indicielle du 2 nd ordre générale paramétrée<a class="headerlink" href="#reponse-indicielle-du-2-nd-ordre-generale-parametree" title="Permalink to this headline">¶</a></h2>
+<h2>Réponse indicielle du <span class="math notranslate nohighlight">\(2^{nd}\)</span> ordre générale paramétrée<a class="headerlink" href="#reponse-indicielle-du-2-nd-ordre-generale-parametree" title="Permalink to this headline">¶</a></h2>
 <p>Soit un système du second degré :
 <span class="math notranslate nohighlight">\(
  G(p)=\frac{K}{(\frac{p}{\omega_n})^2+\frac{2\zeta}{\omega_n}p+1}
@@ -312,11 +361,11 @@ Créez un script qui permette de tracer de manière itérative les différentes 
 <span class="c1"># Réponse indicielle</span>
 <span class="c1"># Calcule les différentes fonctions de transfert ainsi que la réponse indicielle</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">zeta</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">zetas</span><span class="p">):</span> 
-    <span class="n">n</span><span class="o">=</span><span class="n">K</span><span class="p">;</span>
-    <span class="n">d</span><span class="o">=</span><span class="p">[(</span><span class="mi">1</span><span class="o">/</span><span class="n">wn</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">zeta</span><span class="o">/</span><span class="n">wn</span><span class="p">,</span> <span class="mi">1</span><span class="p">];</span>
-    <span class="n">g</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tf</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">d</span><span class="p">));</span>
-    <span class="n">h</span><span class="o">=</span><span class="n">g</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-    <span class="n">rlf</span><span class="o">.</span><span class="n">step_</span><span class="p">(</span><span class="n">h</span><span class="p">,</span><span class="n">NameOfFigure</span><span class="o">=</span><span class="s1">&#39;Steps&#39;</span><span class="p">,</span> <span class="n">sysName</span><span class="o">=</span><span class="n">zeta</span><span class="p">);</span>
+    <span class="n">n</span><span class="o">=</span><span class="n">K</span>
+    <span class="n">d</span><span class="o">=</span><span class="p">[(</span><span class="mi">1</span><span class="o">/</span><span class="n">wn</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">zeta</span><span class="o">/</span><span class="n">wn</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="n">g</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tf</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">d</span><span class="p">))</span> <span class="c1"># Ajoute la fonction de transfert à la liste &#39;g&#39;</span>
+    <span class="n">h</span><span class="o">=</span><span class="n">g</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">rlf</span><span class="o">.</span><span class="n">step_</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">NameOfFigure</span><span class="o">=</span><span class="s1">&#39;Steps&#39;</span><span class="p">,</span> <span class="n">sysName</span><span class="o">=</span><span class="n">zeta</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -338,10 +387,10 @@ Créez un script qui permette de tracer de manière itérative les différentes 
 <p><span class="math notranslate nohighlight">\(
  D_p=100*e^{-\frac{k\pi\zeta}{\sqrt{1-\zeta^2}}}
 \)</span></p>
-<div class="section" id="pseudo-pulsation">
-<h4>Pseudo pulsation<a class="headerlink" href="#pseudo-pulsation" title="Permalink to this headline">¶</a></h4>
-<p>Observez l’influence de zeta sur la pulsation d’oscillation <span class="math notranslate nohighlight">\(\omega_d\)</span> : <span class="math notranslate nohighlight">\(\omega_d\)</span> … si <span class="math notranslate nohighlight">\(\zeta\)</span> …</p>
 </div>
+<div class="section" id="pseudo-pulsation">
+<h3>Pseudo pulsation<a class="headerlink" href="#pseudo-pulsation" title="Permalink to this headline">¶</a></h3>
+<p>Observez l’influence de zeta sur la pulsation d’oscillation <span class="math notranslate nohighlight">\(\omega_d\)</span> : <span class="math notranslate nohighlight">\(\omega_d\)</span> … si <span class="math notranslate nohighlight">\(\zeta\)</span> …</p>
 </div>
 <div class="section" id="temps-de-reponse-a-5">
 <h3>Temps de réponse à 5%<a class="headerlink" href="#temps-de-reponse-a-5" title="Permalink to this headline">¶</a></h3>
@@ -354,6 +403,132 @@ Créez un script qui permette de tracer de manière itérative les différentes 
 <li><p>si <span class="math notranslate nohighlight">\(\zeta\)</span>&lt;1 : « escaliers » dans la partie gauche car …</p></li>
 </ul>
 <p>Pourquoi le <span class="math notranslate nohighlight">\(t_{r_{5\%}}\)</span> est-il identique pour un <span class="math notranslate nohighlight">\(\zeta\)</span> de 0,6 ou 0,5 ?</p>
+</div>
+<div class="section" id="position-des-poles-to-do">
+<h3>Position des pôles [TO DO]<a class="headerlink" href="#position-des-poles-to-do" title="Permalink to this headline">¶</a></h3>
+<p>Vous pouvez faire le lien entre l’allure de la réponse indicielle et la position des pôles dans le plan complexe tracé par la fonction <code class="docutils literal notranslate"><span class="pre">pzmap(h)</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Création de la fenêtre à une taille donnée</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s2">&quot;Pole Zero Map&quot;</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+
+<span class="c1"># Pour pouvoir boucler sur les couleurs standards afin de directement jouer avec les couleurs des graphes</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">cycle</span>
+<span class="n">prop_cycle</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;axes.prop_cycle&#39;</span><span class="p">]</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="n">cycle</span><span class="p">(</span><span class="n">prop_cycle</span><span class="o">.</span><span class="n">by_key</span><span class="p">()[</span><span class="s1">&#39;color&#39;</span><span class="p">])</span>
+
+<span class="c1"># Trace les poles et zéros pour chacune des fonctions de transfert stockées dans &#39;g&#39;</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">zeta</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">zetas</span><span class="p">):</span> 
+    <span class="n">h</span><span class="o">=</span><span class="n">g</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">poles</span><span class="p">,</span> <span class="n">zeros</span> <span class="o">=</span> <span class="n">rlf</span><span class="o">.</span><span class="n">pzmap</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">NameOfFigure</span><span class="o">=</span><span class="s2">&quot;Pole Zero Map&quot;</span><span class="p">,</span> <span class="n">sysName</span><span class="o">=</span><span class="n">zeta</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="nb">next</span><span class="p">(</span><span class="n">colors</span><span class="p">));</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">poles</span><span class="o">.</span><span class="n">real</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;k:&#39;</span><span class="p">);</span> <span class="c1"># Ligne horizontale passant par 0 pour marquer l&#39;axe des imaginaires</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/LaboSeance2_10_0.png" src="../_images/LaboSeance2_10_0.png" />
+</div>
+</div>
+<p>Pour chaque valeur de <span class="math notranslate nohighlight">\(\zeta\)</span>, la fonction <code class="docutils literal notranslate"><span class="pre">pzmap</span></code> vous trace 2 croix pour indiquer les 2 pôles du système dans le plan complexe :</p>
+<ul>
+<li><p>Pour <span class="math notranslate nohighlight">\(\zeta=10\)</span>, les pôles sont en : ……… et ………</p>
+<p>C’est le pôle en ……… qui domine dans le tracé de la réponse indicielle car ………</p>
+</li>
+<li><p>Si <span class="math notranslate nohighlight">\(\zeta\)</span> <span class="math notranslate nohighlight">\(\searrow\)</span> jusque <span class="math notranslate nohighlight">\(\zeta=1\)</span>, les pôles se déplacent ………</p></li>
+<li><p>Si <span class="math notranslate nohighlight">\(\zeta&lt;1\)</span>, les pôles deviennent ………</p></li>
+<li><p>Si <span class="math notranslate nohighlight">\(\zeta\)</span> <span class="math notranslate nohighlight">\(\searrow\)</span> encore, les pôles se déplacent ………</p></li>
+</ul>
+<p>Observez l’influence des pôles réels par rapport aux pôles complexes : …</p>
+<p> </p>
+<p>et si <span class="math notranslate nohighlight">\(\zeta&lt;0\)</span> : …</p>
+<p> </p>
+</div>
+<div class="section" id="exercice-1">
+<h3>Exercice 1<a class="headerlink" href="#exercice-1" title="Permalink to this headline">¶</a></h3>
+<p>Soit un système asservi à retour unitaire décrit par la fonction de transfert :</p>
+<div class="math notranslate nohighlight">
+\[
+H(s) = \frac{8}{s^2+s+10}
+\]</div>
+<div class="section" id="etude-de-la-reponse-indicielle">
+<h4>Etude de la réponse indicielle<a class="headerlink" href="#etude-de-la-reponse-indicielle" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="n">den</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="n">H</span> <span class="o">=</span> <span class="n">tf</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">den</span><span class="p">)</span>
+<span class="n">rlf</span><span class="o">.</span><span class="n">step_</span><span class="p">(</span><span class="n">H</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/LaboSeance2_14_0.png" src="../_images/LaboSeance2_14_0.png" />
+</div>
+</div>
+<p>La fonction présente 2 pôles complexes conjugués et les constantes associées à sa réponse sont:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">w</span><span class="p">,</span> <span class="n">zetas</span><span class="p">,</span> <span class="n">poles</span> <span class="o">=</span> <span class="n">damp</span><span class="p">(</span><span class="n">H</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>_____Eigenvalue______ Damping___ Frequency_
+      -0.5    +3.122j     0.1581      3.162
+      -0.5    -3.122j     0.1581      3.162
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vous pouvez le vérifier en identifiant à la représentation canonique (p. 3-6) : …</p>
+<p> </p>
+<p> </p>
+<p>Déterminez les caractéristiques de la réponse par les abaques :</p>
+<ul class="simple">
+<li><p>le dépassement D% = ……………</p></li>
+<li><p>le temps de réponse à 5% = ……………</p></li>
+</ul>
+<p>et comparez avec les caractéristiques fournies par <code class="docutils literal notranslate"><span class="pre">stepWithInfo</span></code> :</p>
+<ul class="simple">
+<li><p>la valeur atteinte en régime établi = ……………</p></li>
+<li><p>l’erreur statique = ……………</p></li>
+<li><p>le temps de réponse à 5% = ……………</p></li>
+<li><p>le temps de montée = ……………</p></li>
+<li><p>le dépassement D% = ……………</p></li>
+<li><p>l’instant du premier pic <em>tpic</em> = ……………</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="exercice-2">
+<h3>Exercice 2<a class="headerlink" href="#exercice-2" title="Permalink to this headline">¶</a></h3>
+<p>L’application 2 d’asservissement de position est décrite par le schéma bloc :</p>
+<p><img alt="Appli2" src="../_images/2_Appli2.png" /></p>
+<p>où A représente un correcteur proportionnel.</p>
+<p>La fonction de transfert en BF de l’application d’asservissement de vitesse est :</p>
+<div class="math notranslate nohighlight">
+\[
+F_{BF}(p) = \frac{\frac{A}{A+1}}{1+\frac{10,875*10^{-3}}{A+1}p+\frac{1,36*10^{-6}}{A+1}p²}
+\]</div>
+<p>Utilisez les abaques ou équations pour :</p>
+<ul>
+<li><p>Prédire l’allure de la réponse indicielle du système si A=99 :</p>
+<p> </p>
+<p> </p>
+<ul class="simple">
+<li><p>dépassement : ……………</p></li>
+<li><p>temps de réponse : ……………</p></li>
+</ul>
+</li>
+<li><p>Déterminer le correcteur A si on veut un dépassement de 40% :</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+</li>
+</ul>
+<p>Vérifiez en traçant les réponses via python.</p>
 </div>
 </div>
 </div>
@@ -384,7 +559,7 @@ Créez un script qui permette de tracer de manière itérative les différentes 
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="LaboSeance1.html" title="previous page">Séance 1</a>
-    <a class='right-next' id="next-link" href="rappel.html" title="next page">Aide-mémoire</a>
+    <a class='right-next' id="next-link" href="LaboSeance3.html" title="next page">Séance 3</a>
 
         </div>
         
