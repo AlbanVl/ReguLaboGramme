@@ -9,4 +9,9 @@ chapters:
 #- file: notebooks
 - file: regu/LaboSeance1
 - file: regu/LaboSeance2
+- file: regu/LaboSeance3
+- file: regu/LaboSeance4
+- file: regu/LaboSeance5
+- file: regu/LaboSeance6
 - file: regu/rappel
+- file: DocumentationFct

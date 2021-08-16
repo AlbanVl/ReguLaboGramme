@@ -471,6 +471,58 @@ def nichols(sys_list, omega=None, grid=None, labels=[''], NameOfFigure = "",
     if data == True:
         return x, y
 
+#%% poles zeros map
+# pzmap function reviewed by Alban Van Laethem
+def pzmap(sys, plot=True, NameOfFigure = "", sysName = "", color= "b"):
+    """
+    Plot a pole/zero map for a linear system.
+
+    Parameters
+    ----------
+    sys: LTI (StateSpace or TransferFunction)
+        Linear system for which poles and zeros are computed.
+    plot: bool, optional
+        If ``True`` a graph is generated with Matplotlib,
+        otherwise the poles and zeros are only computed and returned.
+    NameOfFigure: String, optional
+        Name of the figure in which plot the step response.
+    sysName: String, optional
+        Name of the system to plot.
+
+    Returns
+    -------
+    poles: array
+        The systems poles
+    zeros: array
+        The system's zeros.
+    """
+
+    poles = sys.pole()
+    zeros = sys.zero()
+
+    if (plot):
+        if NameOfFigure == "" :
+            plt.figure()
+        else:
+            plt.figure(NameOfFigure)
+
+        # Plot the locations of the poles and zeros
+        if len(poles) > 0:
+            plt.scatter(poles.real, poles.imag, s=50, marker='x', 
+                        label=sysName, facecolors=color)
+        if len(zeros) > 0:
+            plt.scatter(zeros.real, zeros.imag, s=50, marker='o', 
+                        label=sysName, facecolors=color, edgecolors='k')
+            
+        plt.title("Pole Zero Map")
+        plt.ylabel("Imaginary Axis (1/seconds)")
+        plt.xlabel("Real Axis (1/seconds)")
+        if sysName != '':
+            plt.legend()
+
+    # Return locations of poles and zeros as a tuple
+    return poles, zeros
+
 #%% Function to generate a second order transfer function based on its typical characteristics.
 def generateTfFromCharac(G, wn, zeta):
     """

@@ -40,8 +40,6 @@
 # 
 # https://www.math-linux.com/latex-26/faq/latex-faq/article/latex-arrows
 
-# In[ ]:
-
-
-
-
+# ## Ajouter une ligne blanche
+# 
+# &nbsp;

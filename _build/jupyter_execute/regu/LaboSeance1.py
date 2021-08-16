@@ -162,7 +162,7 @@ print("Le temps de réponse à 5% vaut :", info.SettlingTime, "secondes.") # Aff
 # ```
 # [Y,t]=step(H); # Permet de définir toutes les coordonnées de la réponse (ordonnée Y, temps t)
 # id=np.where(Y<=0.63*info.DCGain) # Renvoit tous les indices des points dont la valeur est sous la droite à 63% de la valeur finale.
-# tau=t[id[-1][-1]] # La constante de temps est la coordonnée t du dernier indice id
+# tau=t[id[-1][-1]] #::: La constante de temps est la coordonnée t du dernier indice id
 # print("Tau =", tau, "secondes.")
 # ```
 # :::
@@ -174,7 +174,7 @@ print("Le temps de réponse à 5% vaut :", info.SettlingTime, "secondes.") # Aff
 id=np.where(Y<=0.63*info.DCGain) # Renvoit tous les indices des points dont la valeur est sous la droite à 63% de la valeur finale.
 tau=t[id[-1][-1]] # La constante de temps est la coordonnée t du dernier indice id
 
-display(Markdown(f"Sachant que valeur finale vaut {info.DCGain:.2f}, on atteint 63% de cette valeur ({0.63*info.DCGain:.2f}) après une temps "r" $\tau$"f" de {1000*tau:.2f} ms."))
+display(Markdown(f"Sachant que la valeur finale vaut {info.DCGain:.2f}, on atteint 63% de cette valeur ({0.63*info.DCGain:.2f}) après une temps "r" $\tau$"f" de {1000*tau:.2f} ms."))
 
 
 # ## Etude d'un système du second ordre : moteur avec l
@@ -237,6 +237,10 @@ print("tau_2 =", tau_2)
 # 
 # Tracez la réponse indicielle du circuit RL étudié au chapitre 2 pour $R=5,8\Omega$ et $L=750µH$ et relevez les grandeurs caractéristiques :
 # 
+# :::{image} ../images/1_exerciceChap2.png
+# :align: center
+# :::
+# 
 # K=......
 # 
 # $\tau$ =......
@@ -245,6 +249,7 @@ print("tau_2 =", tau_2)
 # 
 
 # :::{toggle}
+# Fonction de transfert: 
 # $
 # H(p)=\frac{I(p)}{V(p)}=\frac{1}{R+L*p}=\frac{K}{1+\tau*p}
 # $
