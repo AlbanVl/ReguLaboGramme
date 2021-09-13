@@ -134,3 +134,5 @@ Une fois téléchargé, il faut le placer dans le répertoire où se trouveront 
 
 ## Télécharger la documentation du package ReguLabFct
 Afin de faciliter l'usage du package `ReguLabFct`, une documentation existe et peut être téléchargée [ici](https://studenthelmobe-my.sharepoint.com/:f:/g/personal/a_vanlaethem_helmo_be/EvRgBmANcQNMmIhF2nm2kBcBcyePZxDX5ah4yrH_FcUjwg?e=RKFGXU).
+
+Une fois le dossier téléchargé, il suffit de le décompresser et de double-cliquer sur le fichier `DocumentationFct.html` pour voir s'ouvrir une page web présentant les fonctions du package `ReguLabFct`.
