@@ -133,4 +133,4 @@ Il est possible que votre navigateur internet ou votre antivirus empêche le té
 Une fois téléchargé, il faut le placer dans le répertoire où se trouveront vos scripts afin que ces derniers puissent l'utiliser.
 
 ## Télécharger la documentation du package ReguLabFct
-Afin de facilité l'usage du package `ReguLabFct`, une documentation existe et peut être téléchargeable [ici](https://studenthelmobe-my.sharepoint.com/:f:/g/personal/a_vanlaethem_helmo_be/EvRgBmANcQNMmIhF2nm2kBcBcyePZxDX5ah4yrH_FcUjwg?e=RKFGXU)
+Afin de faciliter l'usage du package `ReguLabFct`, une documentation existe et peut être téléchargée [ici](https://studenthelmobe-my.sharepoint.com/:f:/g/personal/a_vanlaethem_helmo_be/EvRgBmANcQNMmIhF2nm2kBcBcyePZxDX5ah4yrH_FcUjwg?e=RKFGXU).
