@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Welcome to your Jupyter Book &#8212; Laboratoire de régulation</title>
+    <title>Introduction &#8212; Laboratoire de régulation</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -42,7 +42,7 @@
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
@@ -51,7 +51,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Markdown Files" href="markdown.html" />
+    <link rel="next" title="Séance 1" href="regu/LaboSeance1.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -79,26 +79,16 @@
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1 current">
   <a class="reference internal" href="#">
-   Welcome to your Jupyter Book
+   Introduction
   </a>
  </li>
 </ul>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="markdown.html">
-   Markdown Files
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="mymarkdownfile.html">
-   Here’s my sample title
-  </a>
- </li>
  <li class="toctree-l1">
   <a class="reference internal" href="regu/LaboSeance1.html">
    Séance 1
@@ -127,16 +117,6 @@
  <li class="toctree-l1">
   <a class="reference internal" href="regu/LaboSeance6.html">
    Séance 6
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="regu/rappel.html">
-   Aide-mémoire
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="DocumentationFct.html">
-   Documentation de la librairie ReguLabFct
   </a>
  </li>
 </ul>
@@ -191,19 +171,6 @@
 
             <!-- Source interaction buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        
-        <a class="issues-button"
-            href="https://github.com/AlbanVl/ReguLaboGramme/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
             <!-- Full screen (wrap in <a> to have style consistency -->
 
 <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
@@ -218,6 +185,58 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#presentation-de-la-structure-de-la-doc">
+   Présentation de la structure de la doc
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#presentation-du-langage-python">
+   Présentation du langage Python
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#installation-d-anaconda">
+   Installation d’Anaconda
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creer-un-environnement-propre-au-cours-python-3-7">
+     Créer un environnement propre au cours (Python 3.7)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#installation-du-package-python-control">
+     Installation du package Python Control
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#configurer-spyder">
+   Configurer Spyder
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#avoir-les-figures-dans-des-fenetres-separees">
+     Avoir les figures dans des fenêtres séparées
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#telecharger-le-package-python-du-labo">
+   Télécharger le package Python du labo
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -226,19 +245,97 @@
         
               <div>
                 
-  <div class="section" id="welcome-to-your-jupyter-book">
-<h1>Welcome to your Jupyter Book<a class="headerlink" href="#welcome-to-your-jupyter-book" title="Permalink to this headline">¶</a></h1>
-<p>This is a small sample book to give you a feel for how book content is
-structured.</p>
+  <div class="section" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<p>Bienvenue dans la documentation du laboratoire de régulation.</p>
+<div class="section" id="presentation-de-la-structure-de-la-doc">
+<h2>Présentation de la structure de la doc<a class="headerlink" href="#presentation-de-la-structure-de-la-doc" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="presentation-du-langage-python">
+<h2>Présentation du langage Python<a class="headerlink" href="#presentation-du-langage-python" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="installation-d-anaconda">
+<h2>Installation d’Anaconda<a class="headerlink" href="#installation-d-anaconda" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Télécharger Anaconda : <a class="reference external" href="https://www.anaconda.com/products/individual-d">https://www.anaconda.com/products/individual-d</a></p></li>
+<li><p>Suivre les instructions d’installation du fichier téléchargé.</p></li>
+</ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Here is a note!</p>
+<p>Même si l’installation d’Anaconda est assez rapide, il faut lui laisser le temps d’installer toutes ses applications en arrière-plan lors de la première ouverture de celui-ci. Néanmoins, vous devriez être en mesure de suivre les prochaines étapes pendant que ces applications s’installent.</p>
 </div>
-<p>And here is a code block:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">e</span> <span class="o">=</span> <span class="n">mc</span><span class="o">^</span><span class="mi">2</span>
+<div class="section" id="creer-un-environnement-propre-au-cours-python-3-7">
+<h3>Créer un environnement propre au cours (Python 3.7)<a class="headerlink" href="#creer-un-environnement-propre-au-cours-python-3-7" title="Permalink to this headline">¶</a></h3>
+<p>La version de Python installée avec Anaconda n’est pas celle qu’il faut pour utiliser les packages utiles pour le laboratoire de régulation. Dès lors, il faut créer un environnement avec la bonne version de Python. Pour ce faire, il suffit de suivre les instructions suivantes:</p>
+<ol>
+<li><p>Ouvrez l’onglet <code class="docutils literal notranslate"><span class="pre">Environments</span></code>.</p>
+<a class="reference internal image-reference" href="_images/Intro_AnacondaInstallation1.png"><img alt="ConsoleCMD" class="align-center" src="_images/Intro_AnacondaInstallation1.png" style="width: 525px;" /></a>
+</li>
+<li><p>Poussez sur le bouton <code class="docutils literal notranslate"><span class="pre">Create</span></code>.</p>
+<a class="reference internal image-reference" href="_images/Intro_AnacondaInstallation2.png"><img alt="ConsoleCMD" class="align-center" src="_images/Intro_AnacondaInstallation2.png" style="width: 525px;" /></a>
+</li>
+<li><p>Configurez le nouvel environnement en lui donnant un nom sans espaces ni caractères spéciaux et en choisissant la version <strong>3.7</strong> de Python.</p>
+<a class="reference internal image-reference" href="_images/Intro_AnacondaInstallation3.png"><img alt="ConsoleCMD" class="align-center" src="_images/Intro_AnacondaInstallation3.png" style="width: 525px;" /></a>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Si l’option <code class="docutils literal notranslate"><span class="pre">3.7</span></code> n’apparaît pas dans la liste déroulante, cela veut dire qu’Anaconda n’est pas encore prêt. Il faut donc attendre que tout s’installe correctement en arrière-plan. Attendez un peu et recommencez l’opération jusqu’à ce que l’option <code class="docutils literal notranslate"><span class="pre">3.7</span></code> apparaisse bien dans la liste déroulante.</p>
+</div>
+</li>
+<li><p>Retournez dans le menu <code class="docutils literal notranslate"><span class="pre">Home</span></code>.</p></li>
+<li><p>Installez l’application <code class="docutils literal notranslate"><span class="pre">CMD.exe</span> <span class="pre">Prompt</span></code>.</p>
+<a class="reference internal image-reference" href="_images/Intro_AnacondaInstallation4.png"><img alt="ConsoleCMD" class="align-center" src="_images/Intro_AnacondaInstallation4.png" style="width: 525px;" /></a>
+</li>
+<li><p>Installer l’IDE <code class="docutils literal notranslate"><span class="pre">Spyder</span></code>.</p>
+<a class="reference internal image-reference" href="_images/Intro_AnacondaInstallation5.png"><img alt="ConsoleCMD" class="align-center" src="_images/Intro_AnacondaInstallation5.png" style="width: 525px;" /></a>
+</li>
+<li><p>Ouvrez les paramètres d’Anaconda en allant dans <code class="docutils literal notranslate"><span class="pre">File-&gt;Preferences</span></code> ou via le raccourci <code class="docutils literal notranslate"><span class="pre">CTRL+P</span></code>.</p></li>
+<li><p>Configurez votre environnement comme environnement par défaut en le sélectionnant dans la liste déroulante et en validant les modifications.</p>
+<a class="reference internal image-reference" href="_images/Intro_AnacondaInstallation6.png"><img alt="ConsoleCMD" class="align-center" src="_images/Intro_AnacondaInstallation6.png" style="width: 525px;" /></a>
+</li>
+</ol>
+</div>
+<div class="section" id="installation-du-package-python-control">
+<h3>Installation du package Python Control<a class="headerlink" href="#installation-du-package-python-control" title="Permalink to this headline">¶</a></h3>
+<ol>
+<li><p>Ouvrez la console de commande d’Anaconda (<em>Anaconda Prompt</em>):</p>
+<a class="reference internal image-reference" href="_images/Intro_ConsoleCMD.png"><img alt="ConsoleCMD" class="align-center" src="_images/Intro_ConsoleCMD.png" style="width: 175px;" /></a>
+</li>
+<li><p>Entrez la commande suivante:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">control</span>
 </pre></div>
 </div>
-<p>Check out the content pages bundled with this sample book to see more.</p>
+</li>
+<li><p>À la question <code class="docutils literal notranslate"><span class="pre">Proceed?</span></code>, entrez <code class="docutils literal notranslate"><span class="pre">y</span></code> et valider avec la touche <code class="docutils literal notranslate"><span class="pre">enter</span></code>.</p></li>
+<li><p>Une fois l’installation terminée, vous pouvez fermer la console.</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="configurer-spyder">
+<h2>Configurer Spyder<a class="headerlink" href="#configurer-spyder" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="avoir-les-figures-dans-des-fenetres-separees">
+<h3>Avoir les figures dans des fenêtres séparées<a class="headerlink" href="#avoir-les-figures-dans-des-fenetres-separees" title="Permalink to this headline">¶</a></h3>
+<ol>
+<li><p>Ouvrez la fenêtre des préférences.</p>
+<a class="reference internal image-reference" href="_images/Intro_Spyder1.png"><img alt="ConsoleCMD" class="align-center" src="_images/Intro_Spyder1.png" style="width: 525px;" /></a>
+</li>
+<li><p>Ouvrez la section <code class="docutils literal notranslate"><span class="pre">IPyhton</span> <span class="pre">console</span></code>.</p>
+<a class="reference internal image-reference" href="_images/Intro_Spyder2.png"><img alt="ConsoleCMD" class="align-center" src="_images/Intro_Spyder2.png" style="width: 525px;" /></a>
+</li>
+<li><p>Sélectionnez l’onglet <code class="docutils literal notranslate"><span class="pre">Graphics</span></code>, sélectionnez l’option <code class="docutils literal notranslate"><span class="pre">Automatic</span></code> dans la liste déroulante de la sous-section <code class="docutils literal notranslate"><span class="pre">Graphics</span> <span class="pre">backend</span></code> et cliquez sur le bouton <code class="docutils literal notranslate"><span class="pre">Apply</span></code>.</p>
+<a class="reference internal image-reference" href="_images/Intro_Spyder3.png"><img alt="ConsoleCMD" class="align-center" src="_images/Intro_Spyder3.png" style="width: 525px;" /></a>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="telecharger-le-package-python-du-labo">
+<h2>Télécharger le package Python du labo<a class="headerlink" href="#telecharger-le-package-python-du-labo" title="Permalink to this headline">¶</a></h2>
+<p>Afin de pouvoir utiliser les fonctions utiles pour le laboratoire de régulation, il est nécessaire de télécharger la dernière version du package python <code class="docutils literal notranslate"><span class="pre">ReguLabFct</span></code> <a class="reference external" href="https://studenthelmobe-my.sharepoint.com/:u:/g/personal/a_vanlaethem_helmo_be/ERCKwgbolmtMmXe6-FW0OOkBLWEK8-u5zAFORvJ_39Es4g?e=K58QB8">ici</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Il est possible que votre navigateur internet ou votre antivirus empêche le téléchargement en le considérant comme une menace. Vous pouvez forcer le téléchargement car, promis, ce n’est pas un virus 😉</p>
+</div>
+<p>Une fois téléchargé, il faut le placer dans le répertoire où se trouveront vos scripts afin que ces derniers puissent l’utiliser.</p>
+</div>
 <div class="toctree-wrapper compound">
 </div>
 </div>
@@ -266,11 +363,23 @@ structured.</p>
               </div>
               
         
-        <div class='prev-next-bottom'>
             
-    <a class='right-next' id="next-link" href="markdown.html" title="next page">Markdown Files</a>
 
-        </div>
+
+
+<div class='prev-next-bottom'>
+    
+     <div id="next">
+        <a class="right-next" href="regu/LaboSeance1.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Séance 1</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
         
         </div>
     </div>

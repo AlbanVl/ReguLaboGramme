@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -42,7 +42,9 @@
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
@@ -80,26 +82,16 @@
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../intro.html">
-   Welcome to your Jupyter Book
+   Introduction
   </a>
  </li>
 </ul>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../markdown.html">
-   Markdown Files
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../mymarkdownfile.html">
-   Here’s my sample title
-  </a>
- </li>
  <li class="toctree-l1">
   <a class="reference internal" href="LaboSeance1.html">
    Séance 1
@@ -128,16 +120,6 @@
  <li class="toctree-l1">
   <a class="reference internal" href="LaboSeance6.html">
    Séance 6
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="rappel.html">
-   Aide-mémoire
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../DocumentationFct.html">
-   Documentation de la librairie ReguLabFct
   </a>
  </li>
 </ul>
@@ -192,19 +174,6 @@
 
             <!-- Source interaction buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        
-        <a class="issues-button"
-            href="https://github.com/AlbanVl/ReguLaboGramme/issues/new?title=Issue%20on%20page%20%2Fregu/LaboSeance3.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
             <!-- Full screen (wrap in <a> to have style consistency -->
 
 <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
@@ -239,12 +208,76 @@
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#objectifs-de-la-seance">
    Objectifs de la séance
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#etude-d-un-systeme-en-boucle-fermee">
+   Etude d’un système en boucle fermée
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemple-1-p-3-13">
+     Exemple 1 p 3-13
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       1.
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id2">
+       2.
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id3">
+       3.
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id4">
+       4.
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id5">
+       5.
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#effet-dun-correcteur-proportionnel-de-gain-a">
+   Effet d’un correcteur proportionnel de gain A
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-sur-un-systeme-du-1-er-ordre">
+     a) Sur un système du
+     <span class="math notranslate nohighlight">
+      \(1^{er}\)
+     </span>
+     ordre
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#b-sur-un-systeme-du-2-nd-ordre">
+     b) Sur un système du
+     <span class="math notranslate nohighlight">
+      \(2^{nd}\)
+     </span>
+     ordre
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -266,17 +299,693 @@
 <li><p>Analyse de la réponse indicielle et valeurs « idéales » de la réponse à un échelon</p></li>
 <li><p>Influence du correcteur proportionnel sur les caractéristiques temporelles : dépassement, temps de réponse, … et sur les pôles du système en BF.</p></li>
 </ul>
+</div>
+<div class="section" id="etude-d-un-systeme-en-boucle-fermee">
+<h2>Etude d’un système en boucle fermée<a class="headerlink" href="#etude-d-un-systeme-en-boucle-fermee" title="Permalink to this headline">¶</a></h2>
+<a class="reference internal image-reference" href="../_images/3_EtudeBF.png"><img alt="systBF" class="align-right" src="../_images/3_EtudeBF.png" style="width: 250px;" /></a>
+<p>Soit un système en boucle fermée dont la fonction de transfert est :</p>
+<div class="math notranslate nohighlight">
+\[
+ H_{BO}(s)=\frac{20}{s^2+2s+10}
+\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">display</span><span class="p">,</span> <span class="n">Markdown</span>
-
-<span class="kn">from</span> <span class="nn">control.matlab</span> <span class="kn">import</span> <span class="o">*</span>  <span class="c1"># Python Control Systems Toolbox (compatibility with MATLAB)</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>              <span class="c1"># Library to manipulate array and matrix</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> <span class="c1"># Library to create figures and plots</span>
-<span class="kn">import</span> <span class="nn">math</span> <span class="c1"># Library to be able to do some mathematical operations</span>
-<span class="kn">import</span> <span class="nn">ReguLabFct</span> <span class="k">as</span> <span class="nn">rlf</span> <span class="c1"># Library useful for the laboratory of regulation of HELMo Gramme</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">den</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="n">H_BO</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">tf</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">den</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
+<p>Pour en déduire la fonction de transfert en boucle fermée, il suffit d’utiliser la fonction <code class="docutils literal notranslate"><span class="pre">feedback</span></code> qui possède 2 paramètres : la fct de transfert en chaîne directe et celle en chaîne de retour (ici retour unitaire).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">H_BF</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">feedback</span><span class="p">(</span><span class="n">H_BO</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;H_BF =&quot;</span><span class="p">,</span> <span class="n">H_BF</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>H_BF = 
+      20
+--------------
+s^2 + 2 s + 30
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Vous pouvez le vérifier en calculant la fonction en BF par la formule de Black.</p>
+</div>
+<p>Identifiez <span class="math notranslate nohighlight">\(\omega_n\)</span> et <span class="math notranslate nohighlight">\(\zeta\)</span>:</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wn</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">poles</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">damp</span><span class="p">(</span><span class="n">H_BF</span><span class="p">,</span> <span class="n">doprint</span><span class="o">=</span><span class="kc">False</span><span class="p">);</span> <span class="c1"># doprint = False afin de ne pas afficher les résultat mais seulement de les stocker. </span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;wn = </span><span class="si">{:.3f}</span><span class="s2"> rad/s et zeta = </span><span class="si">{:.3f}</span><span class="s2">.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">wn</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">z</span><span class="p">[</span><span class="mi">0</span><span class="p">]),)</span> <span class="c1"># la fonction &#39;format()&#39; permet de gérer le nombre de décimales qu&#39;on souhaite afficher dans la chaîne de caractères. </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>wn = 5.477 rad/s et zeta = 0.183.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Visualisez les grandeurs caractéristiques de la réponse indicielle en BF :</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s2">&quot;Step&quot;</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span> <span class="c1"># Création de la fenêtre à une taille donnée.</span>
+<span class="n">info</span> <span class="o">=</span> <span class="n">rlf</span><span class="o">.</span><span class="n">stepWithInfo</span><span class="p">(</span><span class="n">H_BF</span><span class="p">,</span> <span class="n">NameOfFigure</span><span class="o">=</span><span class="s2">&quot;Step&quot;</span><span class="p">)</span> <span class="c1"># Traçage de la réponse indicielle et sauvegarde des informations dans l&#39;objet info.</span>
+<span class="n">rlf</span><span class="o">.</span><span class="n">printInfo</span><span class="p">(</span><span class="n">info</span><span class="p">)</span> <span class="c1"># Affiche les informations stockées dans l&#39;objet info.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DCGain : 0.6661408393656921
+Overshoot : 55.92386513929972
+Peak : 1.038672544010361
+PeakTime : 0.5830728528313754
+RiseTime : 0.21623436366850776
+SettlingTime : 2.997574773027652
+</pre></div>
+</div>
+<img alt="../_images/LaboSeance3_11_1.png" src="../_images/LaboSeance3_11_1.png" />
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Vous pouvez vérifier le gain en régime établi (DCGain):</p>
+<ul class="simple">
+<li><p>en mettant la fonction en BF sous forme canonique et en identifiant le numérateur : …</p></li>
+<li><p>OU en faisant s<span class="math notranslate nohighlight">\(\rightarrow\)</span>0 : …</p></li>
+</ul>
+</div>
+<p>Comme le système asservi est à retour unitaire, la valeur finale de la réponse (régime permanent) devrait être égale à 1.</p>
+<p>L’écart entre la valeur idéale (……) et la valeur réelle (……) permet de qualifier la précision du système. L’écart exprimé en % est appelé erreur de position : <span class="math notranslate nohighlight">\(\varepsilon_0\)</span> ou <span class="math notranslate nohighlight">\(\varepsilon_p\)</span> (cf. Chapitre 6).</p>
+<p>Ici <span class="math notranslate nohighlight">\(\varepsilon_0\)</span> = …… %</p>
+<div class="tip admonition">
+<p class="admonition-title">Astuce</p>
+<p>Les informations stockées dans l’objet <code class="docutils literal notranslate"><span class="pre">info</span></code> sous forme d’atributs sont accessible en écrivant <code class="docutils literal notranslate"><span class="pre">info.attibut</span></code>.</p>
+<p><em>Exemple:</em></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>info.Overshoot 
+</pre></div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">e_pos</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">info</span><span class="o">.</span><span class="n">DCGain</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;L&#39;erreur de position vaut ici:&quot;</span><span class="p">,</span> <span class="n">e_pos</span><span class="p">,</span> <span class="s2">&quot;%.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>L&#39;erreur de position vaut ici: 33.385916063430784 %.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Observez la valeur du dépassement en absolu et en relatif :</p>
+<ul class="simple">
+<li><p>Absolu = peak = …</p></li>
+<li><p>Relatif = overshoot = …</p></li>
+</ul>
+<p>Vérifiez que <code class="docutils literal notranslate"><span class="pre">info.Peak</span></code> correspond à <code class="docutils literal notranslate"><span class="pre">dcgain(H_BF)*(1+info.Overshoot/100)</span></code></p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;- Le dépassement absolu vaut:&quot;</span><span class="p">,</span> <span class="n">info</span><span class="o">.</span><span class="n">Peak</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;- Le dépassement relatif vaut:&quot;</span><span class="p">,</span> <span class="n">info</span><span class="o">.</span><span class="n">Overshoot</span><span class="p">,</span> <span class="s2">&quot;%.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>- Le dépassement absolu vaut: 1.038672544010361
+- Le dépassement relatif vaut: 55.92386513929972 %.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="exemple-1-p-3-13">
+<h3>Exemple 1 p 3-13<a class="headerlink" href="#exemple-1-p-3-13" title="Permalink to this headline">¶</a></h3>
+<p>Un asservissement de vitesse <strong>à retour unitaire</strong> possède une fonction de transfert en BO :</p>
+<div class="math notranslate nohighlight">
+\[
+ G(s)=\frac{K}{(1+s)(1+2s)}
+\]</div>
+<div class="section" id="id1">
+<h4>1.<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<p>Tracez, pour différentes valeurs de K : 1 2 3 4 5 6 et 10, la réponse indicielle du système <strong>en boucle fermée à retour unitaire</strong>.</p>
+<p>Pourquoi insiste-t-on sur le fait qu’il doit être à retour unitaire ?</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">K_values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+
+<span class="c1"># Création de la fenêtre à une taille donnée</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s2">&quot;Steps&quot;</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+
+<span class="c1"># Réponse indicielle</span>
+<span class="c1"># Calcule les différentes fonctions de transfert ainsi que la réponse indicielle</span>
+<span class="n">info</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">K</span> <span class="ow">in</span> <span class="n">K_values</span><span class="p">:</span> 
+    <span class="n">G1</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">tf</span><span class="p">([</span><span class="n">K</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span> <span class="c1"># Calcul la fonction de transfert en foncion de K</span>
+    <span class="n">G2</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">tf</span><span class="p">([</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+    <span class="n">G_BO</span> <span class="o">=</span> <span class="n">G1</span><span class="o">*</span><span class="n">G2</span>
+    <span class="n">G_BF</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">feedback</span><span class="p">(</span><span class="n">G_BO</span><span class="p">)</span>
+    <span class="n">info</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rlf</span><span class="o">.</span><span class="n">stepWithInfo</span><span class="p">(</span><span class="n">G_BF</span><span class="p">,</span> <span class="n">NameOfFigure</span><span class="o">=</span><span class="s1">&#39;Steps&#39;</span><span class="p">,</span> <span class="n">sysName</span><span class="o">=</span><span class="n">K</span><span class="p">))</span>
+
+<span class="c1"># Impression des résultats pour K = 1 et K = 10</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Les résultats pour K = 1 sont:&quot;</span><span class="p">)</span>
+<span class="n">rlf</span><span class="o">.</span><span class="n">printInfo</span><span class="p">(</span><span class="n">info</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Les résultats pour K = 10 sont:&quot;</span><span class="p">)</span>
+<span class="n">rlf</span><span class="o">.</span><span class="n">printInfo</span><span class="p">(</span><span class="n">info</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># -1 pour sélectionner le dernier élément de la liste info.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Les résultats pour K = 1 sont:
+DCGain : 0.499616798918951
+Overshoot : 2.916419399904391
+Peak : 0.5141877201678046
+PeakTime : 4.749326428433763
+RiseTime : 2.283471725385434
+SettlingTime : 3.118933143265462
+
+Les résultats pour K = 10 sont:
+DCGain : 0.9088257077904426
+Overshoot : 34.672037627934586
+Peak : 1.2239340991678875
+PeakTime : 1.4139286399623403
+RiseTime : 0.5738615913332494
+SettlingTime : 3.3879019790107407
+</pre></div>
+</div>
+<img alt="../_images/LaboSeance3_20_1.png" src="../_images/LaboSeance3_20_1.png" />
+</div>
+</div>
+<div class="toggle docutils container">
+<p>On insiste sur le fait que le système doit être à retour unitaire afin de directement pourvoir comparer l’entrée ( = consigne) et le sortie de celui-ci.</p>
+</div>
+<p>Observez l’effet sur les grandeurs caractéristiques de la réponse et concluez :</p>
+<p><span class="math notranslate nohighlight">\(\nearrow\)</span> K a pour effet de:</p>
+<ul class="simple">
+<li><p>…… l’erreur (<span class="math notranslate nohighlight">\(\varepsilon_0\)</span>)</p></li>
+<li><p>…… la précision (steady state)</p></li>
+<li><p>…… le temps de montée</p></li>
+<li><p>…… le dépassement</p></li>
+<li><p>…… le temps de réponse à 5%</p></li>
+</ul>
+<div class="toggle docutils container">
+<p><span class="math notranslate nohighlight">\(\nearrow\)</span> K a pour effet de:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\searrow\)</span> l’erreur (<span class="math notranslate nohighlight">\(\varepsilon_0\)</span>)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\nearrow\)</span> la précision (steady state)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\searrow\)</span> le temps de montée</p></li>
+<li><p><span class="math notranslate nohighlight">\(\nearrow\)</span> le dépassement</p></li>
+<li><p><span class="math notranslate nohighlight">\(\nearrow\)</span> ou <span class="math notranslate nohighlight">\(\searrow\)</span> le temps de réponse à 5% en suivant l’abaque de la page 3-12</p></li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>K modélise en fait un correcteur P dont vous venez de montrer les principales caractéristiques 🙂</p>
+</div>
+</div>
+<div class="section" id="id2">
+<h4>2.<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<p>Déterminez par essai et erreur la valeur de K pour obtenir une réponse indicielle en BF présentant un dépassement de 20%.</p>
+<p>K = ……</p>
+<div class="toggle docutils container">
+<p><span class="math notranslate nohighlight">\(K \simeq 4.5\)</span></p>
+</div>
+</div>
+<div class="section" id="id3">
+<h4>3.<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<p>Estimez cette valeur en exploitant les relations et/ou abaques :</p>
+<div class="toggle docutils container">
+<p>On a:</p>
+<div class="math notranslate nohighlight">
+\[
+G_{BO}(s)=\frac{K}{(1+s)(1+2s)}=\frac{K}{2s^2+3s+1} \Rightarrow G_{BF}(s)=\frac{K}{2s^2+3s+1+K}=\frac{\frac{K}{K+1}}{\frac{2}{K+1}s^2+\frac{3}{K+1}s+1}
+\]</div>
+<p>On obtient donc par identification:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left\{
+    \begin{array}{ll}
+        \frac{2\zeta}{\omega_n}=\frac{3}{K+1}\\
+        \frac{1}{\omega_n^2}=\frac{2}{K+1}
+    \end{array}
+\right.
+\end{split}\]</div>
+<p>Or via l’équation du dépassement (cf. p.3-11), on peut déduire <span class="math notranslate nohighlight">\(\zeta\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+D_P=100*e^{-\frac{k\pi\zeta}{\sqrt{1-\zeta^2}}} \Rightarrow 20=100*e^{-\frac{\pi\zeta}{\sqrt{1-\zeta^2}}} \Rightarrow \zeta=0.456
+\]</div>
+<p>Dès lors, on obtient:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{alignat*}{2}
+\left\{ \begin{aligned}
+    \begin{array}{ll}
+        \frac{3}{K+1}=\frac{0.9}{\omega_n} \\
+        \frac{1}{\omega_n^2}=\frac{2}{K+1}
+    \end{array}
+\end{aligned}\right.
+\Rightarrow
+\left\{ \begin{aligned}
+    \begin{array}{ll}
+        \mathbf{K=4.4} \\
+        \omega_n=1.66
+    \end{array}
+\end{aligned}\right.
+\end{alignat*}\
+\end{split}\]</div>
+</div>
+</div>
+<div class="section" id="id4">
+<h4>4.<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<p>Vérifiez les paramètres caractéristiques de la réponse obtenue pour cette valeur de K :</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">K</span> <span class="o">=</span> <span class="mf">4.4</span>
+
+<span class="n">G1</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">tf</span><span class="p">([</span><span class="n">K</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span> <span class="c1"># Calcul la fonction de transfert en foncion de K</span>
+<span class="n">G2</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">tf</span><span class="p">([</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">G_BO</span> <span class="o">=</span> <span class="n">G1</span><span class="o">*</span><span class="n">G2</span>
+<span class="n">G_BF</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">feedback</span><span class="p">(</span><span class="n">G_BO</span><span class="p">)</span>
+
+<span class="n">info</span> <span class="o">=</span> <span class="n">rlf</span><span class="o">.</span><span class="n">stepWithInfo</span><span class="p">(</span><span class="n">G_BF</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span> <span class="c1"># Si on souhaite ne pas afficher le graphe renvoyé par stepWithInfo</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dépassement =&quot;</span><span class="p">,</span> <span class="n">info</span><span class="o">.</span><span class="n">Overshoot</span><span class="p">,</span> <span class="s2">&quot;%&quot;</span><span class="p">)</span> <span class="c1"># \n pour ajouter une ligne vide après </span>
+
+<span class="n">wn</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">__</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">damp</span><span class="p">(</span><span class="n">G_BF</span><span class="p">,</span> <span class="n">doprint</span><span class="o">=</span><span class="kc">False</span><span class="p">);</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;zeta =&quot;</span><span class="p">,</span> <span class="n">z</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;wn =&quot;</span><span class="p">,</span> <span class="n">wn</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;rad/s&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dépassement = 20.07967668512085 %
+zeta = 0.4564354645876384
+wn = 1.6431676725154984 rad/s
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id5">
+<h4>5.<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<p>Tracez un diagramme reprenant les différentes réponses indicielles en fonction de K et un diagramme reprenant la position des pôles du système en boucle fermée pour visualiser l’impact de K (un correcteur proportionnel) sur la BF :</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">K_values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+
+<span class="c1"># %% Réponses indicielles</span>
+
+<span class="c1"># Création de la fenêtre à une taille donnée</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s2">&quot;Steps&quot;</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+
+<span class="c1"># Réponse indicielle</span>
+<span class="c1"># Calcule les différentes fonctions de transfert ainsi que la réponse indicielle</span>
+<span class="n">info</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">K</span> <span class="ow">in</span> <span class="n">K_values</span><span class="p">:</span> 
+    <span class="n">G1</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">tf</span><span class="p">([</span><span class="n">K</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span> <span class="c1"># Calcul la fonction de transfert en foncion de K</span>
+    <span class="n">G2</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">tf</span><span class="p">([</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+    <span class="n">G_BO</span> <span class="o">=</span> <span class="n">G1</span><span class="o">*</span><span class="n">G2</span>
+    <span class="n">G_BF</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">feedback</span><span class="p">(</span><span class="n">G_BO</span><span class="p">)</span>
+    <span class="n">info</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rlf</span><span class="o">.</span><span class="n">step_</span><span class="p">(</span><span class="n">G_BF</span><span class="p">,</span> <span class="n">NameOfFigure</span><span class="o">=</span><span class="s1">&#39;Steps&#39;</span><span class="p">,</span> <span class="n">sysName</span><span class="o">=</span><span class="n">K</span><span class="p">))</span>
+
+<span class="c1"># %% Pôles </span>
+    
+<span class="c1"># Création de la fenêtre à une taille donnée</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s2">&quot;Pole Zero Map&quot;</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+
+<span class="c1"># Pour pouvoir boucler sur les couleurs standards afin de directement jouer avec les couleurs des graphes</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">cycle</span>
+<span class="n">prop_cycle</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;axes.prop_cycle&#39;</span><span class="p">]</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="n">cycle</span><span class="p">(</span><span class="n">prop_cycle</span><span class="o">.</span><span class="n">by_key</span><span class="p">()[</span><span class="s1">&#39;color&#39;</span><span class="p">])</span>
+
+<span class="c1"># Trace les poles et zéros pour chacune des fonctions de transfert stockées dans &#39;g&#39;</span>
+<span class="k">for</span> <span class="n">K</span> <span class="ow">in</span> <span class="n">K_values</span><span class="p">:</span> 
+    <span class="n">G1</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">tf</span><span class="p">([</span><span class="n">K</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span> <span class="c1"># Calcul la fonction de transfert en foncion de K</span>
+    <span class="n">G2</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">tf</span><span class="p">([</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+    <span class="n">G_BO</span> <span class="o">=</span> <span class="n">G1</span><span class="o">*</span><span class="n">G2</span>
+    <span class="n">G_BF</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">feedback</span><span class="p">(</span><span class="n">G_BO</span><span class="p">)</span>
+    <span class="n">poles</span><span class="p">,</span> <span class="n">zeros</span> <span class="o">=</span> <span class="n">rlf</span><span class="o">.</span><span class="n">pzmap</span><span class="p">(</span><span class="n">G_BF</span><span class="p">,</span> <span class="n">NameOfFigure</span><span class="o">=</span><span class="s2">&quot;Pole Zero Map&quot;</span><span class="p">,</span> <span class="n">sysName</span><span class="o">=</span><span class="n">K</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="nb">next</span><span class="p">(</span><span class="n">colors</span><span class="p">));</span>
+<span class="n">left</span><span class="p">,</span> <span class="n">right</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">()</span> <span class="c1"># Stocke les limites gauche et droite du graphe</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;k:&#39;</span><span class="p">);</span> <span class="c1"># Ligne horizontale passant par 0 pour marquer l&#39;axe des imaginaires</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/LaboSeance3_28_0.png" src="../_images/LaboSeance3_28_0.png" />
+<img alt="../_images/LaboSeance3_28_1.png" src="../_images/LaboSeance3_28_1.png" />
+</div>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Justification</p>
+<p><span class="math notranslate nohighlight">\(p = \sigma \pm j\omega_d\)</span> avec
+<span class="math notranslate nohighlight">\(
+\begin{alignat*}{2}
+\left\{ \begin{aligned}
+    \begin{array}{ll}
+        \sigma=-\zeta\omega_n \\
+        \omega_d=\omega_n \sqrt{1-\zeta^2}
+    \end{array}
+\end{aligned}\right.
+\Leftrightarrow
+\left\{ \begin{aligned}
+    \begin{array}{ll}
+        \sigma=cte \\
+        \omega_d=f(K)
+    \end{array}
+\end{aligned}\right.
+\end{alignat*}\
+\)</span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="effet-dun-correcteur-proportionnel-de-gain-a">
+<h2>Effet d’un correcteur proportionnel de gain A<a class="headerlink" href="#effet-dun-correcteur-proportionnel-de-gain-a" title="Permalink to this headline">¶</a></h2>
+<p>Reprenez l’application 1 d’asservissement de vitesse, le schéma-bloc du système est :</p>
+<img alt="Appli1" class="align-center" src="../_images/3_Appli1.png" />
+<div class="section" id="a-sur-un-systeme-du-1-er-ordre">
+<h3>a) Sur un système du <span class="math notranslate nohighlight">\(1^{er}\)</span> ordre<a class="headerlink" href="#a-sur-un-systeme-du-1-er-ordre" title="Permalink to this headline">¶</a></h3>
+<p>On a <span class="math notranslate nohighlight">\(H_m(p)=\frac{31.25}{10.875*10^{-3}*p+1}\)</span> <strong>si on néglige l</strong>, soit:</p>
+<div class="math notranslate nohighlight">
+\[
+H_{BO}(p)=\frac{A}{10.875*10^{-3}*p+1}
+\]</div>
+<p>Calculez la fonction de transfert de boucle fermée pour A (1,2,5,9,20,40,60,100, …) :</p>
+<ul class="simple">
+<li><p>Par calcul:</p></li>
+</ul>
+<div class="toggle docutils container">
+<div class="math notranslate nohighlight">
+\[
+H_{BF}(p)=\frac{A}{10.875*10^{-3}*p+1+A}= \frac{\frac{A}{A+1}}{\frac{10.875*10^{-3}*p}{A+1}+1}
+\]</div>
+</div>
+<ul class="simple">
+<li><p>Via Python:</p></li>
+</ul>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A_values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">100</span><span class="p">]</span>
+<span class="n">H_BOs</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">H_BFs</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">A</span> <span class="ow">in</span> <span class="n">A_values</span><span class="p">:</span>
+    <span class="n">H_BO</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">tf</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="p">[</span><span class="mf">10.875e-3</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+    <span class="n">H_BOs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">H_BO</span><span class="p">)</span>
+    <span class="n">H_BF</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">feedback</span><span class="p">(</span><span class="n">H_BO</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">H_BFs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">H_BF</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">H_BF</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      1
+-------------
+0.01087 s + 2
+
+
+      2
+-------------
+0.01087 s + 3
+
+
+      5
+-------------
+0.01087 s + 6
+
+
+      9
+--------------
+0.01087 s + 10
+
+
+      20
+--------------
+0.01087 s + 21
+
+
+      40
+--------------
+0.01087 s + 41
+
+
+      60
+--------------
+0.01087 s + 61
+
+
+      100
+---------------
+0.01087 s + 101
+</pre></div>
+</div>
+</div>
+</div>
+<p>Quel est l’effet d’une augmentation de A sur:</p>
+<ul class="simple">
+<li><p>Le gain statique?</p></li>
+<li><p>L’erreur de position?</p></li>
+<li><p>La constante de temps?</p></li>
+</ul>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Création de la fenêtre à une taille donnée</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s2">&quot;Steps with infos&quot;</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+
+<span class="n">infos</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">H_BF</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">H_BFs</span><span class="p">):</span>
+    <span class="n">infos</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rlf</span><span class="o">.</span><span class="n">stepWithInfo</span><span class="p">(</span><span class="n">H_BF</span><span class="p">,</span> <span class="n">NameOfFigure</span><span class="o">=</span><span class="s1">&#39;Steps with infos&#39;</span><span class="p">,</span> <span class="n">sysName</span><span class="o">=</span><span class="n">A_values</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Le gain statique pour A = 1 vaut&quot;</span><span class="p">,</span> <span class="n">infos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">DCGain</span><span class="p">,</span> <span class="s2">&quot; et pour A =&quot;</span><span class="p">,</span> <span class="n">A_values</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">infos</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">DCGain</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&gt; le gain statique se rapproche de 1.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;L&#39;erreur de position pour A = 1 vaut&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="o">-</span><span class="n">infos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">DCGain</span><span class="p">,</span> <span class="s2">&quot; et pour A =&quot;</span><span class="p">,</span> <span class="n">A_values</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="o">-</span><span class="n">infos</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">DCGain</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&gt; L&#39;erreur de position diminue.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La constante de temps pour A = 1 vaut&quot;</span><span class="p">,</span> <span class="n">infos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">SettlingTime</span><span class="o">/</span><span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;s et pour A =&quot;</span><span class="p">,</span> <span class="n">A_values</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">infos</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">SettlingTime</span><span class="o">/</span><span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;s.&quot;</span><span class="p">)</span> <span class="c1"># Valeur à 95% de la valuer finale -&gt; 5*tau</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&gt; La constante de temps diminue.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="c1"># Pour laisser un espace supplémentaire entre les réponses écrites et les graphes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Le gain statique pour A = 1 vaut 0.4995000000001194  et pour A = 100 : 0.9891089108911346
+=&gt; le gain statique se rapproche de 1.
+
+L&#39;erreur de position pour A = 1 vaut 0.5004999999998806  et pour A = 100 : 0.010891089108865382
+=&gt; L&#39;erreur de position diminue.
+
+La constante de temps pour A = 1 vaut 0.0032373237601893436 s et pour A = 100 : 6.41054209938484e-05 s.
+=&gt; La constante de temps diminue.
+</pre></div>
+</div>
+<img alt="../_images/LaboSeance3_35_1.png" src="../_images/LaboSeance3_35_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="b-sur-un-systeme-du-2-nd-ordre">
+<h3>b) Sur un système du <span class="math notranslate nohighlight">\(2^{nd}\)</span> ordre<a class="headerlink" href="#b-sur-un-systeme-du-2-nd-ordre" title="Permalink to this headline">¶</a></h3>
+<p>On a <span class="math notranslate nohighlight">\(H_m(p)=\frac{31.25}{1.36*10^{-6}*p^2+10.875*10^{-3}*p+1}\)</span> <strong>si on tient compte de l</strong>, soit:</p>
+<div class="math notranslate nohighlight">
+\[
+H_{BO}(p)=\frac{A}{1.36*10^{-6}*p^2+10.875*10^{-3}*p+1}
+\]</div>
+<p>Calculez la fonction de transfert de boucle fermée pour ces différentes valeurs de A:</p>
+<ul class="simple">
+<li><p>Par calcul:</p></li>
+</ul>
+<div class="toggle docutils container">
+<div class="math notranslate nohighlight">
+\[
+H_{BF}(p)=\frac{A}{1.36*10^{-6}*p^2+10.875*10^{-3}*p+1+A}= \frac{\frac{A}{A+1}}{\frac{1.36*10^{-6}*p^2+10.875*10^{-3}*p}{A+1}+1}
+\]</div>
+</div>
+<ul class="simple">
+<li><p>Via Python:</p></li>
+</ul>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A_values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">100</span><span class="p">]</span>
+<span class="n">H_BOs</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">H_BFs</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">A</span> <span class="ow">in</span> <span class="n">A_values</span><span class="p">:</span>
+    <span class="n">H_BO</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">tf</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="p">[</span><span class="mf">1.36e-6</span><span class="p">,</span> <span class="mf">10.875e-3</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+    <span class="n">H_BOs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">H_BO</span><span class="p">)</span>
+    <span class="n">H_BF</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">feedback</span><span class="p">(</span><span class="n">H_BO</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">H_BFs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">H_BF</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">H_BF</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             1
+----------------------------
+1.36e-06 s^2 + 0.01087 s + 2
+
+
+             2
+----------------------------
+1.36e-06 s^2 + 0.01087 s + 3
+
+
+             5
+----------------------------
+1.36e-06 s^2 + 0.01087 s + 6
+
+
+              9
+-----------------------------
+1.36e-06 s^2 + 0.01087 s + 10
+
+
+             20
+-----------------------------
+1.36e-06 s^2 + 0.01087 s + 21
+
+
+             40
+-----------------------------
+1.36e-06 s^2 + 0.01087 s + 41
+
+
+             60
+-----------------------------
+1.36e-06 s^2 + 0.01087 s + 61
+
+
+             100
+------------------------------
+1.36e-06 s^2 + 0.01087 s + 101
+</pre></div>
+</div>
+</div>
+</div>
+<p>Quel est l’effet d’une augmentation de A sur:</p>
+<ul class="simple">
+<li><p>Le gain statique?</p></li>
+<li><p>L’erreur de position?</p></li>
+</ul>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Création de la fenêtre à une taille donnée</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s2">&quot;Steps with infos&quot;</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+
+<span class="n">infos</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">H_BF</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">H_BFs</span><span class="p">):</span>
+    <span class="n">infos</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rlf</span><span class="o">.</span><span class="n">stepWithInfo</span><span class="p">(</span><span class="n">H_BF</span><span class="p">,</span> <span class="n">NameOfFigure</span><span class="o">=</span><span class="s1">&#39;Steps with infos&#39;</span><span class="p">,</span> <span class="n">sysName</span><span class="o">=</span><span class="n">A_values</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Le gain statique pour A = 1 vaut&quot;</span><span class="p">,</span> <span class="n">infos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">DCGain</span><span class="p">,</span> <span class="s2">&quot; et pour A =&quot;</span><span class="p">,</span> <span class="n">A_values</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">infos</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">DCGain</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&gt; le gain statique se rapproche de 1.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;L&#39;erreur de position pour A = 1 vaut&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="o">-</span><span class="n">infos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">DCGain</span><span class="p">,</span> <span class="s2">&quot; et pour A =&quot;</span><span class="p">,</span> <span class="n">A_values</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="o">-</span><span class="n">infos</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">DCGain</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&gt; L&#39;erreur de position diminue.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="c1"># Pour laisser un espace supplémentaire entre les réponses écrites et les graphes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Le gain statique pour A = 1 vaut 0.49948764085922653  et pour A = 100 : 0.9889924129751736
+=&gt; le gain statique se rapproche de 1.
+
+L&#39;erreur de position pour A = 1 vaut 0.5005123591407734  et pour A = 100 : 0.011007587024826404
+=&gt; L&#39;erreur de position diminue.
+</pre></div>
+</div>
+<img alt="../_images/LaboSeance3_40_1.png" src="../_images/LaboSeance3_40_1.png" />
+</div>
+</div>
+<p><strong>En déduire l’effet d’un correcteur proportionnel sur le régime établi:</strong> …</p>
+<div class="toggle docutils container">
+<p>Un correcteur proportionnel a pour effet d’améliorer la précision du système en régime établi.</p>
+</div>
+<p>Quel est l’effet d’une augmentation de A sur:</p>
+<ul class="simple">
+<li><p>La pulsation naturelle (<span class="math notranslate nohighlight">\(\omega_n\)</span>)?</p></li>
+<li><p>Le coefficient d’amortissement (<span class="math notranslate nohighlight">\(\zeta\)</span>)?</p></li>
+<li><p>La pseudo pulsation (<span class="math notranslate nohighlight">\(\omega_d\)</span>)?</p></li>
+<li><p>L’amortissement (<span class="math notranslate nohighlight">\(\sigma\)</span>)?</p></li>
+</ul>
+<div class="note admonition">
+<p class="admonition-title">Rappel</p>
+<p><span class="math notranslate nohighlight">\(
+\left. \begin{array}{r} 
+        p_1 \\
+        p_2
+\end{array} \right\}
+= \omega_n*(-\zeta \pm j\sqrt{1-\zeta^2})
+= \sigma \pm j\omega_d
+\)</span>
+(<em>cf. page 3-7</em>)</p>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Caractéristiques typiques</span>
+<span class="c1"># -------------------------</span>
+<span class="n">wn_0</span><span class="p">,</span> <span class="n">z_0</span><span class="p">,</span> <span class="n">__</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">damp</span><span class="p">(</span><span class="n">H_BFs</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">doprint</span><span class="o">=</span><span class="kc">False</span><span class="p">);</span>
+<span class="n">wn_fin</span><span class="p">,</span> <span class="n">z_fin</span><span class="p">,</span> <span class="n">__</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">damp</span><span class="p">(</span><span class="n">H_BFs</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">doprint</span><span class="o">=</span><span class="kc">False</span><span class="p">);</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La pulsation naturelle pour A = 1 vaut&quot;</span><span class="p">,</span> <span class="n">wn_0</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;rad/s et pour A =&quot;</span><span class="p">,</span> <span class="n">A_values</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">wn_fin</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;rad/s&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&gt; wn augmente.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Le coefficient d&#39;amortissement pour A = 1 vaut&quot;</span><span class="p">,</span> <span class="n">z_0</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;et pour A =&quot;</span><span class="p">,</span> <span class="n">A_values</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">z_fin</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&gt; z diminue.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="c1"># Pôles</span>
+<span class="c1"># -----</span>
+
+<span class="c1"># Création de la fenêtre à une taille donnée</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s2">&quot;Pole Zero Map&quot;</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+
+<span class="c1"># Pour pouvoir boucler sur les couleurs standards afin de directement jouer avec les couleurs des graphes</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">cycle</span>
+<span class="n">prop_cycle</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;axes.prop_cycle&#39;</span><span class="p">]</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="n">cycle</span><span class="p">(</span><span class="n">prop_cycle</span><span class="o">.</span><span class="n">by_key</span><span class="p">()[</span><span class="s1">&#39;color&#39;</span><span class="p">])</span>
+
+<span class="c1"># Trace les poles et zéros pour chacune des fonctions de transfert stockées dans &#39;g&#39;</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">H_BF</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">H_BFs</span><span class="p">):</span>
+    <span class="n">poles</span><span class="p">,</span> <span class="n">zeros</span> <span class="o">=</span> <span class="n">rlf</span><span class="o">.</span><span class="n">pzmap</span><span class="p">(</span><span class="n">H_BF</span><span class="p">,</span> <span class="n">NameOfFigure</span><span class="o">=</span><span class="s2">&quot;Pole Zero Map&quot;</span><span class="p">,</span> <span class="n">sysName</span><span class="o">=</span><span class="n">A_values</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="nb">next</span><span class="p">(</span><span class="n">colors</span><span class="p">));</span>
+<span class="n">left</span><span class="p">,</span> <span class="n">right</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">()</span> <span class="c1"># Stocke les limites gauche et droite du graphe</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;k:&#39;</span><span class="p">);</span> <span class="c1"># Ligne horizontale passant par 0 pour marquer l&#39;axe des imaginaires</span>
+
+<span class="n">poles_0</span><span class="p">,</span> <span class="n">__</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">pzmap</span><span class="p">(</span><span class="n">H_BFs</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">plot</span><span class="o">=</span><span class="kc">False</span><span class="p">);</span>
+<span class="n">poles_fin</span><span class="p">,</span> <span class="n">__</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">pzmap</span><span class="p">(</span><span class="n">H_BFs</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">plot</span><span class="o">=</span><span class="kc">False</span><span class="p">);</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La pseudo pulsation pour A = 1 vaut&quot;</span><span class="p">,</span> <span class="n">poles_0</span><span class="o">.</span><span class="n">imag</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;rad/s et&quot;</span><span class="p">,</span> <span class="n">poles_0</span><span class="o">.</span><span class="n">imag</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;rad/s et pour A =&quot;</span><span class="p">,</span> <span class="n">A_values</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">poles_fin</span><span class="o">.</span><span class="n">imag</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;rad/s et&quot;</span><span class="p">,</span> <span class="n">poles_fin</span><span class="o">.</span><span class="n">imag</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;rad/s&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&gt; wd diverge de 0 =&gt; Le système oscille plus.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;L&#39;amortissement pour A = 1 vaut&quot;</span><span class="p">,</span>  <span class="n">poles_0</span><span class="o">.</span><span class="n">real</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;et&quot;</span><span class="p">,</span> <span class="n">poles_0</span><span class="o">.</span><span class="n">real</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;et pour A =&quot;</span><span class="p">,</span> <span class="n">A_values</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">poles_fin</span><span class="o">.</span><span class="n">real</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;et&quot;</span><span class="p">,</span> <span class="n">poles_fin</span><span class="o">.</span><span class="n">real</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&gt; sigma converge vers une seule valeur =&gt; Le système est plus rapide.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>La pulsation naturelle pour A = 1 vaut 7807.97924871505 rad/s et pour A = 100 : 8617.697249402125 rad/s
+=&gt; wn augmente.
+
+Le coefficient d&#39;amortissement pour A = 1 vaut 1.0 et pour A = 100 : 0.46394780983786194
+=&gt; z diminue.
+
+La pseudo pulsation pour A = 1 vaut 0.0 rad/s et 0.0 rad/s et pour A = 100 : 7634.0951255271175 rad/s et -7634.0951255271175 rad/s
+=&gt; wd diverge de 0 =&gt; Le système oscille plus.
+
+L&#39;amortissement pour A = 1 vaut -7807.97924871505 et -188.3442806967156 et pour A = 100 : -3998.161764705883 et -3998.161764705883
+=&gt; sigma converge vers une seule valeur =&gt; Le système est plus rapide.
+</pre></div>
+</div>
+<img alt="../_images/LaboSeance3_43_1.png" src="../_images/LaboSeance3_43_1.png" />
+</div>
+</div>
+<p><strong>En déduire l’effet d’un correcteur proportionnel sur le régime transitoire:</strong> …</p>
+<div class="toggle docutils container">
+<p>Un correcteur proportionnel a pour effet de rendre le système plus rapide (= diminuer le temps de montée) au détriment de la stabilité du système en régime transitoire.</p>
 </div>
 </div>
 </div>
@@ -305,12 +1014,32 @@
               </div>
               
         
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="LaboSeance2.html" title="previous page">Séance 2</a>
-    <a class='right-next' id="next-link" href="LaboSeance4.html" title="next page">Séance 4</a>
 
-        </div>
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="LaboSeance2.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Séance 2</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="LaboSeance4.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Séance 4</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
         
         </div>
     </div>
