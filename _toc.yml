@@ -4,8 +4,6 @@
 format: jb-book
 root: intro
 chapters:
-- file: markdown
-- file: mymarkdownfile
 #- file: notebooks
 - file: regu/LaboSeance1
 - file: regu/LaboSeance2
@@ -13,5 +11,5 @@ chapters:
 - file: regu/LaboSeance4
 - file: regu/LaboSeance5
 - file: regu/LaboSeance6
-- file: regu/rappel
-- file: DocumentationFct
+#- file: regu/rappel
+#- file: regu/DocumentationFct

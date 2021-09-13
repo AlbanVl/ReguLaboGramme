@@ -11,14 +11,23 @@
 # 
 
 # ## Avant de commencer
+# :::{admonition} Attention
+# :class: warning
 # Afin de pouvoir pour la suite utiliser les fonctions utiles, il est nécessaire d'importer dans chaque nouveau script les packages suivant:
+# 
+#     from control import matlab as ml  # Python Control Systems Toolbox (compatibility with MATLAB)
+#     import numpy as np              # Library to manipulate array and matrix
+#     import matplotlib.pyplot as plt # Library to create figures and plots
+#     import math # Library to be able to do some mathematical operations
+#     import ReguLabFct as rlf # Library useful for the laboratory of regulation of HELMo Gramme
+# :::
 
 # In[1]:
 
 
 from IPython.display import Image, display, Markdown
 
-from control.matlab import *  # Python Control Systems Toolbox (compatibility with MATLAB)
+from control import matlab as ml  # Python Control Systems Toolbox (compatibility with MATLAB)
 import numpy as np              # Library to manipulate array and matrix
 import matplotlib.pyplot as plt # Library to create figures and plots
 import math # Library to be able to do some mathematical operations
@@ -40,7 +49,7 @@ import ReguLabFct as rlf # Library useful for the laboratory of regulation of HE
 
 num = 1
 den = [6.8e-9, 1]
-H = tf(num, den)
+H = ml.tf(num, den)
 print("H = ", H)
 
 
@@ -87,7 +96,7 @@ rlf.step_(H, T);
 
 num = 31.25
 den = [10.875e-3, 1]
-H = tf(num, den)
+H = ml.tf(num, den)
 print("H = ", H)
 
 
@@ -111,8 +120,7 @@ rlf.step_(H); # Tracé de la réponse indicielle
 # In[7]:
 
 
-info = rlf.info() # Objet pour stocker les informations données par la réponse impulsionnelle.
-rlf.stepWithInfo(H, info, NameOfFigure="Step Response with informations") # Même fonction que step_ avec le relevé et l'enregistrement des informations intéressantes en plus.
+info = rlf.stepWithInfo(H, NameOfFigure="Step Response with informations") # Même fonction que step_ avec le relevé et l'enregistrement des informations intéressantes en plus ans l'objet 'info'.
 # plt.close() # Si on ne souhaite pas afficher le graphe
 print("Le gain statique vaut :", info.DCGain) # Affichage de la valeur du gain statique.
 
@@ -170,7 +178,7 @@ print("Le temps de réponse à 5% vaut :", info.SettlingTime, "secondes.") # Aff
 # In[9]:
 
 
-[Y,t]=step(H); # Permet de définir toutes les coordonnées de la réponse (ordonnée Y, temps t)
+[Y,t]=ml.step(H); # Permet de définir toutes les coordonnées de la réponse (ordonnée Y, temps t)
 id=np.where(Y<=0.63*info.DCGain) # Renvoit tous les indices des points dont la valeur est sous la droite à 63% de la valeur finale.
 tau=t[id[-1][-1]] # La constante de temps est la coordonnée t du dernier indice id
 
@@ -195,7 +203,7 @@ display(Markdown(f"Sachant que la valeur finale vaut {info.DCGain:.2f}, on attei
 
 
 den_l = [1.36e-6, 10.875e-3, 1]
-H_avec_l = tf(num, den_l)
+H_avec_l = ml.tf(num, den_l)
 print("H_avec_l = ", H_avec_l)
 rlf.step_(H, NameOfFigure = "Step Response", sysName = 'H', linestyle='-')
 rlf.step_(H_avec_l, NameOfFigure = "Step Response",  sysName = 'H_avec_l', linestyle='-.');
@@ -210,7 +218,7 @@ rlf.step_(H_avec_l, NameOfFigure = "Step Response",  sysName = 'H_avec_l', lines
 # In[11]:
 
 
-poles = pole(H_avec_l) # Fonction pour calculer les pôles d'une fonction de transfert.
+poles = ml.pole(H_avec_l) # Fonction pour calculer les pôles d'une fonction de transfert.
 print("p1 =", poles[0])
 print("p2 =", poles[1])
 

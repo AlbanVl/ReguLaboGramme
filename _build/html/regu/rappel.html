@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -42,7 +42,9 @@
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
@@ -51,7 +53,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Documentation de la librairie ReguLabFct" href="../DocumentationFct.html" />
+    <link rel="next" title="Documentation de la librairie ReguLabFct" href="DocumentationFct.html" />
     <link rel="prev" title="Séance 6" href="LaboSeance6.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -80,12 +82,12 @@
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../intro.html">
-   Welcome to your Jupyter Book
+   Introduction
   </a>
  </li>
 </ul>
@@ -136,7 +138,7 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../DocumentationFct.html">
+  <a class="reference internal" href="DocumentationFct.html">
    Documentation de la librairie ReguLabFct
   </a>
  </li>
@@ -192,19 +194,6 @@
 
             <!-- Source interaction buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        
-        <a class="issues-button"
-            href="https://github.com/AlbanVl/ReguLaboGramme/issues/new?title=Issue%20on%20page%20%2Fregu/rappel.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
             <!-- Full screen (wrap in <a> to have style consistency -->
 
 <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
@@ -239,11 +228,16 @@
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#admonition">
-   Admonition
+  <a class="reference internal nav-link" href="#avertissements">
+   Avertissements
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#symboles-latex">
+   Symboles Latex
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -252,14 +246,46 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ajouter-des-fleches">
-   Ajouter des flèches
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ajouter-une-ligne-blanche">
    Ajouter une ligne blanche
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#equations-en-accolades">
+   Equations en accolades
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#commandes-consoles">
+   Commandes consoles
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lancement-environnement">
+     Lancement environnement
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fermeture-environnement">
+     Fermeture environnement
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#acces-dossier">
+     Accès dossier
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#build">
+     Build
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#supprimer-un-fichier-avec-son-contenu">
+     Supprimer un fichier avec son contenu
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -275,8 +301,8 @@
   <div class="section" id="aide-memoire">
 <h1>Aide-mémoire<a class="headerlink" href="#aide-memoire" title="Permalink to this headline">¶</a></h1>
 <p>Site Jupyter Book: <a class="reference external" href="https://jupyterbook.org/intro.html">https://jupyterbook.org/intro.html</a></p>
-<div class="section" id="admonition">
-<h2>Admonition<a class="headerlink" href="#admonition" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="avertissements">
+<h2>Avertissements<a class="headerlink" href="#avertissements" title="Permalink to this headline">¶</a></h2>
 <div class="admonition danger">
 <p class="admonition-title">Danger</p>
 <p>Danger repéré.</p>
@@ -298,17 +324,95 @@
 <p>Chose à voir.</p>
 </div>
 </div>
+<div class="section" id="symboles-latex">
+<h2>Symboles Latex<a class="headerlink" href="#symboles-latex" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Liste des symboles Latex : <a class="reference external" href="https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols">https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols</a></p></li>
+<li><p>Ajouter des flèches: <a class="reference external" href="https://www.math-linux.com/latex-26/faq/latex-faq/article/latex-arrows">https://www.math-linux.com/latex-26/faq/latex-faq/article/latex-arrows</a></p></li>
+</ul>
+</div>
 <div class="section" id="cacher-supprimer">
 <h2>Cacher - supprimer<a class="headerlink" href="#cacher-supprimer" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://jupyterbook.org/interactive/hiding.html?highlight=hide">https://jupyterbook.org/interactive/hiding.html?highlight=hide</a></p>
 </div>
-<div class="section" id="ajouter-des-fleches">
-<h2>Ajouter des flèches<a class="headerlink" href="#ajouter-des-fleches" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="https://www.math-linux.com/latex-26/faq/latex-faq/article/latex-arrows">https://www.math-linux.com/latex-26/faq/latex-faq/article/latex-arrows</a></p>
-</div>
 <div class="section" id="ajouter-une-ligne-blanche">
 <h2>Ajouter une ligne blanche<a class="headerlink" href="#ajouter-une-ligne-blanche" title="Permalink to this headline">¶</a></h2>
 <p> </p>
+</div>
+<div class="section" id="equations-en-accolades">
+<h2>Equations en accolades<a class="headerlink" href="#equations-en-accolades" title="Permalink to this headline">¶</a></h2>
+<p><strong>Seule</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left\{
+    \begin{array}{ll}
+        \frac{2\zeta}{\omega_n}=\frac{3}{K+1}\\
+        \frac{1}{\omega_n^2}=\frac{2}{K+1}
+    \end{array}
+\right.
+\end{split}\]</div>
+<p><strong>Sur la même ligne:</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{alignat*}{2}
+\left\{ \begin{aligned}
+    \begin{array}{ll}
+        \frac{3}{K+1}=\frac{0.9}{\omega_n} \\
+        \frac{1}{\omega_n^2}=\frac{2}{K+1}
+    \end{array}
+\end{aligned}\right.
+\Rightarrow
+\left\{ \begin{aligned}
+    \begin{array}{ll}
+        \mathbf{K=4.4} \\
+        \omega_n=1.66
+    \end{array}
+\end{aligned}\right.
+\end{alignat*}\
+\end{split}\]</div>
+<p><strong>Accolade à droite:</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left. \begin{array}{r} 
+        p_1 \\
+        p_2
+\end{array} \right\}
+= \omega_n*(-\zeta \pm j\sqrt{1-\zeta^2})
+= \sigma \pm j\omega_d
+\end{split}\]</div>
+</div>
+<div class="section" id="commandes-consoles">
+<h2>Commandes consoles<a class="headerlink" href="#commandes-consoles" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="lancement-environnement">
+<h3>Lancement environnement<a class="headerlink" href="#lancement-environnement" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>source regu/bin/activate
+</pre></div>
+</div>
+</div>
+<div class="section" id="fermeture-environnement">
+<h3>Fermeture environnement<a class="headerlink" href="#fermeture-environnement" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>deactivate
+</pre></div>
+</div>
+</div>
+<div class="section" id="acces-dossier">
+<h3>Accès dossier<a class="headerlink" href="#acces-dossier" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cd OneDrive\ -\ student.helmo.be/Cours/MA1/MA1\ -\ Régulation/
+</pre></div>
+</div>
+</div>
+<div class="section" id="build">
+<h3>Build<a class="headerlink" href="#build" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>jb build ReguLaboGramme/
+</pre></div>
+</div>
+</div>
+<div class="section" id="supprimer-un-fichier-avec-son-contenu">
+<h3>Supprimer un fichier avec son contenu<a class="headerlink" href="#supprimer-un-fichier-avec-son-contenu" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>rm -rf dir-name
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 
@@ -335,12 +439,32 @@
               </div>
               
         
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="LaboSeance6.html" title="previous page">Séance 6</a>
-    <a class='right-next' id="next-link" href="../DocumentationFct.html" title="next page">Documentation de la librairie ReguLabFct</a>
 
-        </div>
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="LaboSeance6.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Séance 6</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="DocumentationFct.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Documentation de la librairie ReguLabFct</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
         
         </div>
     </div>

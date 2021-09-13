@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -42,19 +42,19 @@
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Séance 2" href="LaboSeance2.html" />
-    <link rel="prev" title="Here’s my sample title" href="../mymarkdownfile.html" />
+    <link rel="prev" title="Introduction" href="../intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -82,26 +82,16 @@
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../intro.html">
-   Welcome to your Jupyter Book
+   Introduction
   </a>
  </li>
 </ul>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../markdown.html">
-   Markdown Files
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../mymarkdownfile.html">
-   Here’s my sample title
-  </a>
- </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Séance 1
@@ -130,16 +120,6 @@
  <li class="toctree-l1">
   <a class="reference internal" href="LaboSeance6.html">
    Séance 6
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="rappel.html">
-   Aide-mémoire
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../DocumentationFct.html">
-   Documentation de la librairie ReguLabFct
   </a>
  </li>
 </ul>
@@ -194,19 +174,6 @@
 
             <!-- Source interaction buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        
-        <a class="issues-button"
-            href="https://github.com/AlbanVl/ReguLaboGramme/issues/new?title=Issue%20on%20page%20%2Fregu/LaboSeance1.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
             <!-- Full screen (wrap in <a> to have style consistency -->
 
 <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
@@ -241,7 +208,7 @@
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#objectifs-de-la-seance">
@@ -368,18 +335,15 @@
 </div>
 <div class="section" id="avant-de-commencer">
 <h2>Avant de commencer<a class="headerlink" href="#avant-de-commencer" title="Permalink to this headline">¶</a></h2>
+<div class="warning admonition">
+<p class="admonition-title">Attention</p>
 <p>Afin de pouvoir pour la suite utiliser les fonctions utiles, il est nécessaire d’importer dans chaque nouveau script les packages suivant:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">display</span><span class="p">,</span> <span class="n">Markdown</span>
-
-<span class="kn">from</span> <span class="nn">control.matlab</span> <span class="kn">import</span> <span class="o">*</span>  <span class="c1"># Python Control Systems Toolbox (compatibility with MATLAB)</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>              <span class="c1"># Library to manipulate array and matrix</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> <span class="c1"># Library to create figures and plots</span>
-<span class="kn">import</span> <span class="nn">math</span> <span class="c1"># Library to be able to do some mathematical operations</span>
-<span class="kn">import</span> <span class="nn">ReguLabFct</span> <span class="k">as</span> <span class="nn">rlf</span> <span class="c1"># Library useful for the laboratory of regulation of HELMo Gramme</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>from control import matlab as ml  # Python Control Systems Toolbox (compatibility with MATLAB)
+import numpy as np              # Library to manipulate array and matrix
+import matplotlib.pyplot as plt # Library to create figures and plots
+import math # Library to be able to do some mathematical operations
+import ReguLabFct as rlf # Library useful for the laboratory of regulation of HELMo Gramme
 </pre></div>
-</div>
 </div>
 </div>
 </div>
@@ -396,7 +360,7 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">den</span> <span class="o">=</span> <span class="p">[</span><span class="mf">6.8e-9</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
-<span class="n">H</span> <span class="o">=</span> <span class="n">tf</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">den</span><span class="p">)</span>
+<span class="n">H</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">tf</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">den</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;H = &quot;</span><span class="p">,</span> <span class="n">H</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -465,7 +429,7 @@ H_{mot}(s)={\frac {31,25}{10,875*10^{-3}*s+1}}
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num</span> <span class="o">=</span> <span class="mf">31.25</span>
 <span class="n">den</span> <span class="o">=</span> <span class="p">[</span><span class="mf">10.875e-3</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
-<span class="n">H</span> <span class="o">=</span> <span class="n">tf</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">den</span><span class="p">)</span>
+<span class="n">H</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">tf</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">den</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;H = &quot;</span><span class="p">,</span> <span class="n">H</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -501,8 +465,7 @@ H_{mot}(s)={\frac {31,25}{10,875*10^{-3}*s+1}}
 <p>Le gain statique est la valeur finale, la valeur atteinte en régime établi :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">info</span> <span class="o">=</span> <span class="n">rlf</span><span class="o">.</span><span class="n">info</span><span class="p">()</span> <span class="c1"># Objet pour stocker les informations données par la réponse impulsionnelle.</span>
-<span class="n">rlf</span><span class="o">.</span><span class="n">stepWithInfo</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">info</span><span class="p">,</span> <span class="n">NameOfFigure</span><span class="o">=</span><span class="s2">&quot;Step Response with informations&quot;</span><span class="p">)</span> <span class="c1"># Même fonction que step_ avec le relevé et l&#39;enregistrement des informations intéressantes en plus.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">info</span> <span class="o">=</span> <span class="n">rlf</span><span class="o">.</span><span class="n">stepWithInfo</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">NameOfFigure</span><span class="o">=</span><span class="s2">&quot;Step Response with informations&quot;</span><span class="p">)</span> <span class="c1"># Même fonction que step_ avec le relevé et l&#39;enregistrement des informations intéressantes en plus ans l&#39;objet &#39;info&#39;.</span>
 <span class="c1"># plt.close() # Si on ne souhaite pas afficher le graphe</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Le gain statique vaut :&quot;</span><span class="p">,</span> <span class="n">info</span><span class="o">.</span><span class="n">DCGain</span><span class="p">)</span> <span class="c1"># Affichage de la valeur du gain statique.</span>
 </pre></div>
@@ -596,7 +559,7 @@ H_{mot_l}(s)={\frac {31,25}{1,36*10^{-6}*s^2+10,875*10^{-3}*s+1}}
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">den_l</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.36e-6</span><span class="p">,</span> <span class="mf">10.875e-3</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
-<span class="n">H_avec_l</span> <span class="o">=</span> <span class="n">tf</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">den_l</span><span class="p">)</span>
+<span class="n">H_avec_l</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">tf</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">den_l</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;H_avec_l = &quot;</span><span class="p">,</span> <span class="n">H_avec_l</span><span class="p">)</span>
 <span class="n">rlf</span><span class="o">.</span><span class="n">step_</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">NameOfFigure</span> <span class="o">=</span> <span class="s2">&quot;Step Response&quot;</span><span class="p">,</span> <span class="n">sysName</span> <span class="o">=</span> <span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
 <span class="n">rlf</span><span class="o">.</span><span class="n">step_</span><span class="p">(</span><span class="n">H_avec_l</span><span class="p">,</span> <span class="n">NameOfFigure</span> <span class="o">=</span> <span class="s2">&quot;Step Response&quot;</span><span class="p">,</span>  <span class="n">sysName</span> <span class="o">=</span> <span class="s1">&#39;H_avec_l&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-.&#39;</span><span class="p">);</span>
@@ -618,7 +581,7 @@ H_{mot_l}(s)={\frac {31,25}{1,36*10^{-6}*s^2+10,875*10^{-3}*s+1}}
 <p>La fonction h_avec_l présente 2 pôles réels. Voici comment les calculer :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">poles</span> <span class="o">=</span> <span class="n">pole</span><span class="p">(</span><span class="n">H_avec_l</span><span class="p">)</span> <span class="c1"># Fonction pour calculer les pôles d&#39;une fonction de transfert.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">poles</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">pole</span><span class="p">(</span><span class="n">H_avec_l</span><span class="p">)</span> <span class="c1"># Fonction pour calculer les pôles d&#39;une fonction de transfert.</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;p1 =&quot;</span><span class="p">,</span> <span class="n">poles</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;p2 =&quot;</span><span class="p">,</span> <span class="n">poles</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
@@ -698,12 +661,32 @@ H(p)=\frac{I(p)}{V(p)}=\frac{1}{R+L*p}=\frac{K}{1+\tau*p}
               </div>
               
         
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="../mymarkdownfile.html" title="previous page">Here’s my sample title</a>
-    <a class='right-next' id="next-link" href="LaboSeance2.html" title="next page">Séance 2</a>
 
-        </div>
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="../intro.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Introduction</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="LaboSeance2.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Séance 2</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
         
         </div>
     </div>

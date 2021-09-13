@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -42,15 +42,15 @@
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Séance 3" href="LaboSeance3.html" />
@@ -82,26 +82,16 @@
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../intro.html">
-   Welcome to your Jupyter Book
+   Introduction
   </a>
  </li>
 </ul>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../markdown.html">
-   Markdown Files
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../mymarkdownfile.html">
-   Here’s my sample title
-  </a>
- </li>
  <li class="toctree-l1">
   <a class="reference internal" href="LaboSeance1.html">
    Séance 1
@@ -130,16 +120,6 @@
  <li class="toctree-l1">
   <a class="reference internal" href="LaboSeance6.html">
    Séance 6
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="rappel.html">
-   Aide-mémoire
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../DocumentationFct.html">
-   Documentation de la librairie ReguLabFct
   </a>
  </li>
 </ul>
@@ -194,19 +174,6 @@
 
             <!-- Source interaction buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        
-        <a class="issues-button"
-            href="https://github.com/AlbanVl/ReguLaboGramme/issues/new?title=Issue%20on%20page%20%2Fregu/LaboSeance2.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
             <!-- Full screen (wrap in <a> to have style consistency -->
 
 <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
@@ -241,7 +208,7 @@
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#objectifs-de-la-seance">
@@ -278,8 +245,8 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#position-des-poles-to-do">
-     Position des pôles [TO DO]
+    <a class="reference internal nav-link" href="#position-des-poles">
+     Position des pôles
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -322,19 +289,6 @@
 <li><p>Influence de zeta sur les caractéristiques temporelles : dépassement, temps de réponse, …</p></li>
 <li><p>Lien entre ces caractéristiques et la position des pôles</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">display</span><span class="p">,</span> <span class="n">Markdown</span>
-
-<span class="kn">from</span> <span class="nn">control.matlab</span> <span class="kn">import</span> <span class="o">*</span>  <span class="c1"># Python Control Systems Toolbox (compatibility with MATLAB)</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>              <span class="c1"># Library to manipulate array and matrix</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> <span class="c1"># Library to create figures and plots</span>
-<span class="kn">import</span> <span class="nn">math</span> <span class="c1"># Library to be able to do some mathematical operations</span>
-<span class="kn">import</span> <span class="nn">ReguLabFct</span> <span class="k">as</span> <span class="nn">rlf</span> <span class="c1"># Library useful for the laboratory of regulation of HELMo Gramme</span>
-</pre></div>
-</div>
-</div>
-</div>
 </div>
 <div class="section" id="reponse-indicielle-du-2-nd-ordre-generale-parametree">
 <h2>Réponse indicielle du <span class="math notranslate nohighlight">\(2^{nd}\)</span> ordre générale paramétrée<a class="headerlink" href="#reponse-indicielle-du-2-nd-ordre-generale-parametree" title="Permalink to this headline">¶</a></h2>
@@ -344,15 +298,14 @@
 \)</span>
 (cfr page 3-6)</p>
 <p>Analysez pour les valeurs caractéristiques de zeta : 0.1 0.2 0.3 0.42 0.5 0.6 0.7 0.8 1 1.41 2 6 10 les réponses typiques cfr la page 3-9.
-Créez un script qui permette de tracer de manière itérative les différentes fonctions dont les différents zeta seront encodés dans un vecteur.</p>
-<div class="cell docutils container">
+Créez un script qui permette de tracer de manière itérative les différentes fonctions dont les différents zeta seront encodés dans une liste.</p>
+<div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">K</span><span class="o">=</span><span class="mi">1</span>
 <span class="n">wn</span><span class="o">=</span><span class="mi">1</span>
 
 <span class="c1"># Définition des coefficients d&#39;amortissement</span>
-<span class="n">zetas</span> <span class="o">=</span><span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.42</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.41</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
-<span class="n">g</span><span class="o">=</span><span class="p">[]</span>
+<span class="n">zeta_values</span> <span class="o">=</span><span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.42</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.41</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
 
 <span class="c1"># Création de la fenêtre à une taille donnée</span>
 <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s2">&quot;Steps&quot;</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
@@ -360,12 +313,9 @@ Créez un script qui permette de tracer de manière itérative les différentes 
 
 <span class="c1"># Réponse indicielle</span>
 <span class="c1"># Calcule les différentes fonctions de transfert ainsi que la réponse indicielle</span>
-<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">zeta</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">zetas</span><span class="p">):</span> 
-    <span class="n">n</span><span class="o">=</span><span class="n">K</span>
-    <span class="n">d</span><span class="o">=</span><span class="p">[(</span><span class="mi">1</span><span class="o">/</span><span class="n">wn</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">zeta</span><span class="o">/</span><span class="n">wn</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
-    <span class="n">g</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tf</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">d</span><span class="p">))</span> <span class="c1"># Ajoute la fonction de transfert à la liste &#39;g&#39;</span>
-    <span class="n">h</span><span class="o">=</span><span class="n">g</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-    <span class="n">rlf</span><span class="o">.</span><span class="n">step_</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">NameOfFigure</span><span class="o">=</span><span class="s1">&#39;Steps&#39;</span><span class="p">,</span> <span class="n">sysName</span><span class="o">=</span><span class="n">zeta</span><span class="p">);</span>
+<span class="k">for</span> <span class="n">zeta</span> <span class="ow">in</span> <span class="n">zeta_values</span><span class="p">:</span> 
+    <span class="n">G</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">tf</span><span class="p">(</span><span class="n">K</span><span class="p">,</span> <span class="p">[(</span><span class="mi">1</span><span class="o">/</span><span class="n">wn</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">zeta</span><span class="o">/</span><span class="n">wn</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span> <span class="c1"># Calcul de la fonction de transfert</span>
+    <span class="n">rlf</span><span class="o">.</span><span class="n">step_</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">NameOfFigure</span><span class="o">=</span><span class="s1">&#39;Steps&#39;</span><span class="p">,</span> <span class="n">sysName</span><span class="o">=</span><span class="n">zeta</span><span class="p">);</span> <span class="c1"># Traçage de la réponse indicielle</span>
 </pre></div>
 </div>
 </div>
@@ -377,20 +327,43 @@ Créez un script qui permette de tracer de manière itérative les différentes 
 <h3>Commentaires sur les courbes<a class="headerlink" href="#commentaires-sur-les-courbes" title="Permalink to this headline">¶</a></h3>
 <p>……………………………………………..</p>
 <p>……………………………………………..</p>
+<div class="toggle docutils container">
+<ul class="simple">
+<li><p><strong>Si <span class="math notranslate nohighlight">\(\zeta &lt; 1\)</span> :</strong> Il y a un dépassement et celui-ci est d’autant plus grand que <span class="math notranslate nohighlight">\(\zeta\)</span> est faible.</p></li>
+<li><p><strong>Si <span class="math notranslate nohighlight">\(\zeta \geqslant 1\)</span> :</strong> Il n’y a pas de dépassement (système suramorti).</p></li>
+</ul>
+<p><em>(cf. page 3-9)</em></p>
+</div>
 </div>
 <div class="section" id="depassement">
 <h3>Dépassement<a class="headerlink" href="#depassement" title="Permalink to this headline">¶</a></h3>
 <p>Visualisez la valeur du dépassement pour les différentes valeurs de zeta et regardez l’influence de zeta sur la valeur du dépassement sur l’abaque de la page 3-11 : D ……. si zeta ……</p>
+<div class="toggle docutils container">
+<p>D <span class="math notranslate nohighlight">\(\searrow\)</span> si <span class="math notranslate nohighlight">\(\zeta \nearrow\)</span></p>
+</div>
 <p>Observez que les échelles de cet abaque sont logarithmiques. Par exemple, observez la valeur du dépassement lorsque zeta=0.5, sur la figure et indiquez clairement la position de ce point sur l’abaque.</p>
 <p><img alt="Abaque_Depassement" src="../_images/Abaque_Depassement.png" /></p>
 <p>Vérifiez par calcul :</p>
 <p><span class="math notranslate nohighlight">\(
  D_p=100*e^{-\frac{k\pi\zeta}{\sqrt{1-\zeta^2}}}
 \)</span></p>
+<div class="toggle docutils container">
+<img alt="Depassement_exemple" class="align-center" src="../_images/2_Depassement_exemple.png" />
+<p> </p>
+<p>Par calcul: <span class="math notranslate nohighlight">\(D_p=16.3\%\)</span></p>
+</div>
 </div>
 <div class="section" id="pseudo-pulsation">
 <h3>Pseudo pulsation<a class="headerlink" href="#pseudo-pulsation" title="Permalink to this headline">¶</a></h3>
-<p>Observez l’influence de zeta sur la pulsation d’oscillation <span class="math notranslate nohighlight">\(\omega_d\)</span> : <span class="math notranslate nohighlight">\(\omega_d\)</span> … si <span class="math notranslate nohighlight">\(\zeta\)</span> …</p>
+<p>Observez l’influence du coefficient d’amortissement sur la pulsation d’oscillation <span class="math notranslate nohighlight">\(\omega_d\)</span> : <span class="math notranslate nohighlight">\(\omega_d\)</span> … si <span class="math notranslate nohighlight">\(\zeta\)</span> …</p>
+<div class="toggle docutils container">
+<p><span class="math notranslate nohighlight">\(\omega_d \nearrow\)</span> si <span class="math notranslate nohighlight">\(\zeta \searrow\)</span></p>
+<ul class="simple">
+<li><p><strong>Si <span class="math notranslate nohighlight">\(\zeta &lt; 1\)</span> :</strong> Il y a des oscillations et celles-ci sont d’autant plus grandes que <span class="math notranslate nohighlight">\(\zeta\)</span> est faible.</p></li>
+<li><p><strong>Si <span class="math notranslate nohighlight">\(\zeta \geqslant 1\)</span> :</strong> Il n’y a pas d’oscillations.</p></li>
+</ul>
+<p><em>(cf. page 3-6 à 3-7)</em></p>
+</div>
 </div>
 <div class="section" id="temps-de-reponse-a-5">
 <h3>Temps de réponse à 5%<a class="headerlink" href="#temps-de-reponse-a-5" title="Permalink to this headline">¶</a></h3>
@@ -398,14 +371,52 @@ Créez un script qui permette de tracer de manière itérative les différentes 
 <p><img alt="Abaque_tr5" src="../_images/Abaque_tr5.png" /></p>
 <p>Expliquez l’allure particulière de cette courbe :</p>
 <ul class="simple">
-<li><p>si <span class="math notranslate nohighlight">\(\zeta\)</span>&gt;1 : …</p></li>
-<li><p>en <span class="math notranslate nohighlight">\(\zeta\)</span> = 0.7 : …</p></li>
-<li><p>si <span class="math notranslate nohighlight">\(\zeta\)</span>&lt;1 : « escaliers » dans la partie gauche car …</p></li>
+<li><p>si <span class="math notranslate nohighlight">\(\zeta\)</span> &gt; 0.7: …</p></li>
+<li><p>en <span class="math notranslate nohighlight">\(\zeta\)</span> = 0.7: …</p></li>
+<li><p>si <span class="math notranslate nohighlight">\(\zeta\)</span> &lt; 0.7: « escaliers » dans la partie gauche car …</p></li>
 </ul>
-<p>Pourquoi le <span class="math notranslate nohighlight">\(t_{r_{5\%}}\)</span> est-il identique pour un <span class="math notranslate nohighlight">\(\zeta\)</span> de 0,6 ou 0,5 ?</p>
+<div class="toggle docutils container">
+<ul class="simple">
+<li><p>si <span class="math notranslate nohighlight">\(\zeta\)</span> &gt; 0.7: comportement d’un système d’ordre 1.</p></li>
+<li><p>en <span class="math notranslate nohighlight">\(\zeta\)</span> = 0.7: le système possède le <span class="math notranslate nohighlight">\(t_{r_{5\%}}\)</span> le plus faible possible =&gt; <strong>système le plus rapide</strong> à se stabiliser possible.</p></li>
+<li><p>si <span class="math notranslate nohighlight">\(\zeta\)</span> &lt; 0.7: « escaliers » dans la partie gauche car il y a des oscillations qui font sortir le système de la plage des 5% de tolérance autour de la valeur atteinte en régime établi.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Le nombre de “marches” équivaut au nombre de dépassements des valeurs limites 0.95 et 1.05.</p>
 </div>
-<div class="section" id="position-des-poles-to-do">
-<h3>Position des pôles [TO DO]<a class="headerlink" href="#position-des-poles-to-do" title="Permalink to this headline">¶</a></h3>
+</div>
+<p>Pourquoi le <span class="math notranslate nohighlight">\(t_{r_{5\%}}\)</span> est-il “identique” pour un <span class="math notranslate nohighlight">\(\zeta\)</span> de 0,6 ou 0,5 ?</p>
+<div class="toggle docutils container">
+<p>Le <span class="math notranslate nohighlight">\(t_{r_{5\%}}\)</span> est “identique” pour un <span class="math notranslate nohighlight">\(\zeta\)</span> de 0,6 ou 0,5 car ils se trouvent sur la même “marche”.</p>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">K</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">wn</span><span class="o">=</span><span class="mi">1</span>
+
+<span class="c1"># Définition des coefficients d&#39;amortissement</span>
+<span class="n">zeta_values</span> <span class="o">=</span><span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.42</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.41</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+
+<span class="c1"># Création de la fenêtre à une taille donnée</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s2">&quot;Steps&quot;</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+
+<span class="c1"># Réponse indicielle</span>
+<span class="c1"># Calcule les différentes fonctions de transfert ainsi que la réponse indicielle</span>
+<span class="k">for</span> <span class="n">zeta</span> <span class="ow">in</span> <span class="n">zeta_values</span><span class="p">:</span> 
+    <span class="n">G</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">tf</span><span class="p">(</span><span class="n">K</span><span class="p">,</span> <span class="p">[(</span><span class="mi">1</span><span class="o">/</span><span class="n">wn</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">zeta</span><span class="o">/</span><span class="n">wn</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span> <span class="c1"># Calcul de la fonction de transfert</span>
+    <span class="n">rlf</span><span class="o">.</span><span class="n">stepWithInfo</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">NameOfFigure</span><span class="o">=</span><span class="s1">&#39;Steps&#39;</span><span class="p">,</span> <span class="n">sysName</span><span class="o">=</span><span class="n">zeta</span><span class="p">,</span> <span class="n">plot_rt</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">plot_overshoot</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">plot_DCGain</span><span class="o">=</span><span class="kc">False</span><span class="p">);</span> <span class="c1"># Traçage de la réponse indicielle avec juste le point du tr5%</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/LaboSeance2_9_0.png" src="../_images/LaboSeance2_9_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="position-des-poles">
+<h3>Position des pôles<a class="headerlink" href="#position-des-poles" title="Permalink to this headline">¶</a></h3>
 <p>Vous pouvez faire le lien entre l’allure de la réponse indicielle et la position des pôles dans le plan complexe tracé par la fonction <code class="docutils literal notranslate"><span class="pre">pzmap(h)</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -413,21 +424,21 @@ Créez un script qui permette de tracer de manière itérative les différentes 
 <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s2">&quot;Pole Zero Map&quot;</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 
-<span class="c1"># Pour pouvoir boucler sur les couleurs standards afin de directement jouer avec les couleurs des graphes</span>
+<span class="c1"># Pour pouvoir boucler sur lnombrees couleurs standards afin de directement jouer avec les couleurs des graphes</span>
 <span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">cycle</span>
 <span class="n">prop_cycle</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;axes.prop_cycle&#39;</span><span class="p">]</span>
 <span class="n">colors</span> <span class="o">=</span> <span class="n">cycle</span><span class="p">(</span><span class="n">prop_cycle</span><span class="o">.</span><span class="n">by_key</span><span class="p">()[</span><span class="s1">&#39;color&#39;</span><span class="p">])</span>
 
 <span class="c1"># Trace les poles et zéros pour chacune des fonctions de transfert stockées dans &#39;g&#39;</span>
-<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">zeta</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">zetas</span><span class="p">):</span> 
-    <span class="n">h</span><span class="o">=</span><span class="n">g</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-    <span class="n">poles</span><span class="p">,</span> <span class="n">zeros</span> <span class="o">=</span> <span class="n">rlf</span><span class="o">.</span><span class="n">pzmap</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">NameOfFigure</span><span class="o">=</span><span class="s2">&quot;Pole Zero Map&quot;</span><span class="p">,</span> <span class="n">sysName</span><span class="o">=</span><span class="n">zeta</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="nb">next</span><span class="p">(</span><span class="n">colors</span><span class="p">));</span>
+<span class="k">for</span> <span class="n">zeta</span> <span class="ow">in</span> <span class="n">zeta_values</span><span class="p">:</span> 
+    <span class="n">G</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">tf</span><span class="p">(</span><span class="n">K</span><span class="p">,</span> <span class="p">[(</span><span class="mi">1</span><span class="o">/</span><span class="n">wn</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">zeta</span><span class="o">/</span><span class="n">wn</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span> <span class="c1"># Calcul de la fonction de transfert</span>
+    <span class="n">poles</span><span class="p">,</span> <span class="n">zeros</span> <span class="o">=</span> <span class="n">rlf</span><span class="o">.</span><span class="n">pzmap</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">NameOfFigure</span><span class="o">=</span><span class="s2">&quot;Pole Zero Map&quot;</span><span class="p">,</span> <span class="n">sysName</span><span class="o">=</span><span class="n">zeta</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="nb">next</span><span class="p">(</span><span class="n">colors</span><span class="p">));</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">poles</span><span class="o">.</span><span class="n">real</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;k:&#39;</span><span class="p">);</span> <span class="c1"># Ligne horizontale passant par 0 pour marquer l&#39;axe des imaginaires</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/LaboSeance2_10_0.png" src="../_images/LaboSeance2_10_0.png" />
+<img alt="../_images/LaboSeance2_11_0.png" src="../_images/LaboSeance2_11_0.png" />
 </div>
 </div>
 <p>Pour chaque valeur de <span class="math notranslate nohighlight">\(\zeta\)</span>, la fonction <code class="docutils literal notranslate"><span class="pre">pzmap</span></code> vous trace 2 croix pour indiquer les 2 pôles du système dans le plan complexe :</p>
@@ -439,9 +450,26 @@ Créez un script qui permette de tracer de manière itérative les différentes 
 <li><p>Si <span class="math notranslate nohighlight">\(\zeta&lt;1\)</span>, les pôles deviennent ………</p></li>
 <li><p>Si <span class="math notranslate nohighlight">\(\zeta\)</span> <span class="math notranslate nohighlight">\(\searrow\)</span> encore, les pôles se déplacent ………</p></li>
 </ul>
+<div class="toggle docutils container">
+<ul>
+<li><p>Pour <span class="math notranslate nohighlight">\(\zeta=10\)</span>, les pôles sont en : -19.9 et -0.05</p>
+<p>C’est le pôle en -0.05 qui domine dans le tracé de la réponse indicielle car <span class="math notranslate nohighlight">\(\tau=\frac{-1}{p}\)</span>. La constante de temps est donc plus grande.</p>
+</li>
+<li><p>Si <span class="math notranslate nohighlight">\(\zeta\)</span> <span class="math notranslate nohighlight">\(\searrow\)</span> jusque <span class="math notranslate nohighlight">\(\zeta=1\)</span>, les pôles se déplacent sur l’axe des réels (vers la gauche pour les pôles dominants, vers la droite pour les autres).</p></li>
+<li><p>Si <span class="math notranslate nohighlight">\(\zeta&lt;1\)</span>, les pôles deviennent complexes conjugués.</p></li>
+<li><p>Si <span class="math notranslate nohighlight">\(\zeta\)</span> <span class="math notranslate nohighlight">\(\searrow\)</span> encore, les pôles se déplacent sur l’axe des imaginaires et l’axe des réels. La valeur absolue de la partie imaginaire (<em>oscillations</em>) <span class="math notranslate nohighlight">\(\nearrow\)</span>, et la valeur absolue de la partie réelle (<em>amortissement</em>) <span class="math notranslate nohighlight">\(\searrow\)</span>.</p></li>
+</ul>
+</div>
 <p>Observez l’influence des pôles réels par rapport aux pôles complexes : …</p>
+<div class="toggle docutils container">
+<p>Si les pôles du système sont réels alors le système se comporte comme un système du <span class="math notranslate nohighlight">\(1^{er}\)</span> ordre <span class="math notranslate nohighlight">\(\Rightarrow\)</span> Pas d’oscillations.</p>
+<p>Si par contre, ses pôles sont complexes, le système oscille.</p>
+</div>
 <p> </p>
 <p>et si <span class="math notranslate nohighlight">\(\zeta&lt;0\)</span> : …</p>
+<div class="toggle docutils container">
+<p>Si <span class="math notranslate nohighlight">\(\zeta&lt;0\)</span>, le système est instable!</p>
+</div>
 <p> </p>
 </div>
 <div class="section" id="exercice-1">
@@ -449,7 +477,7 @@ Créez un script qui permette de tracer de manière itérative les différentes 
 <p>Soit un système asservi à retour unitaire décrit par la fonction de transfert :</p>
 <div class="math notranslate nohighlight">
 \[
-H(s) = \frac{8}{s^2+s+10}
+H_{BF}(s) = \frac{8}{s^2+s+10}
 \]</div>
 <div class="section" id="etude-de-la-reponse-indicielle">
 <h4>Etude de la réponse indicielle<a class="headerlink" href="#etude-de-la-reponse-indicielle" title="Permalink to this headline">¶</a></h4>
@@ -457,19 +485,19 @@ H(s) = \frac{8}{s^2+s+10}
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num</span> <span class="o">=</span> <span class="mi">8</span>
 <span class="n">den</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
-<span class="n">H</span> <span class="o">=</span> <span class="n">tf</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">den</span><span class="p">)</span>
-<span class="n">rlf</span><span class="o">.</span><span class="n">step_</span><span class="p">(</span><span class="n">H</span><span class="p">);</span>
+<span class="n">H_BF</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">tf</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">den</span><span class="p">)</span>
+<span class="n">rlf</span><span class="o">.</span><span class="n">step_</span><span class="p">(</span><span class="n">H_BF</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/LaboSeance2_14_0.png" src="../_images/LaboSeance2_14_0.png" />
+<img alt="../_images/LaboSeance2_15_0.png" src="../_images/LaboSeance2_15_0.png" />
 </div>
 </div>
 <p>La fonction présente 2 pôles complexes conjugués et les constantes associées à sa réponse sont:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">w</span><span class="p">,</span> <span class="n">zetas</span><span class="p">,</span> <span class="n">poles</span> <span class="o">=</span> <span class="n">damp</span><span class="p">(</span><span class="n">H</span><span class="p">);</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">w</span><span class="p">,</span> <span class="n">zetas</span><span class="p">,</span> <span class="n">poles</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">damp</span><span class="p">(</span><span class="n">H_BF</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -482,53 +510,201 @@ H(s) = \frac{8}{s^2+s+10}
 </div>
 </div>
 <p>Vous pouvez le vérifier en identifiant à la représentation canonique (p. 3-6) : …</p>
+<div class="toggle docutils container">
+<p>1°) Mise sour forme canonique:</p>
+<div class="math notranslate nohighlight">
+\[
+H_{BF}(s) = \frac{8}{s^2+s+10} = \frac{0.8}{\frac{s^2}{10}+\frac{s}{10}+\mathbf{1}}
+\]</div>
+<p>2°) Identification:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{alignat*}{2}
+\left\{ \begin{aligned}
+    \begin{array}{ll}
+        \frac{2\zeta}{\omega_n} = \frac{1}{10} \\
+        \frac{1}{\omega_n^2} = \frac{1}{10}
+    \end{array}
+\end{aligned}\right.
+\Rightarrow
+\left\{ \begin{aligned}
+    \begin{array}{ll}
+        \zeta = \frac{\sqrt{10}}{20}=0.16 \\
+        \omega_n = \sqrt{10} = 3.16
+    \end{array}
+\end{aligned}\right.
+\end{alignat*}\
+\end{split}\]</div>
+</div>
 <p> </p>
 <p> </p>
 <p>Déterminez les caractéristiques de la réponse par les abaques :</p>
 <ul class="simple">
-<li><p>le dépassement D% = ……………</p></li>
-<li><p>le temps de réponse à 5% = ……………</p></li>
+<li><p>le dépassement (<span class="math notranslate nohighlight">\(D_\%\)</span>) = ……………</p></li>
+<li><p>le temps de réponse à 5% (<span class="math notranslate nohighlight">\(t_{r_{5\%}}\)</span>) = ……………</p></li>
 </ul>
+<div class="toggle docutils container">
+<ul class="simple">
+<li><p>le dépassement (<span class="math notranslate nohighlight">\(D_\%\)</span>) <span class="math notranslate nohighlight">\(\approx\)</span> 60%</p></li>
+<li><p>le temps de réponse à 5% (<span class="math notranslate nohighlight">\(t_{r_{5\%}}\)</span>) <span class="math notranslate nohighlight">\(\approx \frac{16}{3.16} = 5\)</span> s</p></li>
+</ul>
+</div>
 <p>et comparez avec les caractéristiques fournies par <code class="docutils literal notranslate"><span class="pre">stepWithInfo</span></code> :</p>
 <ul class="simple">
-<li><p>la valeur atteinte en régime établi = ……………</p></li>
-<li><p>l’erreur statique = ……………</p></li>
-<li><p>le temps de réponse à 5% = ……………</p></li>
-<li><p>le temps de montée = ……………</p></li>
-<li><p>le dépassement D% = ……………</p></li>
-<li><p>l’instant du premier pic <em>tpic</em> = ……………</p></li>
+<li><p>la valeur atteinte en régime établi (DCGain) = ……………</p></li>
+<li><p>l’erreur statique (<span class="math notranslate nohighlight">\(\varepsilon_0\)</span>) = ……………</p></li>
+<li><p>le temps de réponse à 5% (<span class="math notranslate nohighlight">\(t_{r_{5\%}}\)</span>) = ……………</p></li>
+<li><p>le temps de montée (<span class="math notranslate nohighlight">\(t_m\)</span>) = ……………</p></li>
+<li><p>le dépassement (<span class="math notranslate nohighlight">\(D_\%\)</span>) = ……………</p></li>
+<li><p>l’instant du premier pic (<span class="math notranslate nohighlight">\(t_{peak}\)</span>) = ……………</p></li>
 </ul>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">info</span> <span class="o">=</span> <span class="n">rlf</span><span class="o">.</span><span class="n">stepWithInfo</span><span class="p">(</span><span class="n">H_BF</span><span class="p">)</span>
+<span class="n">rlf</span><span class="o">.</span><span class="n">printInfo</span><span class="p">(</span><span class="n">info</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Erreur statique :&quot;</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">info</span><span class="o">.</span><span class="n">DCGain</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span> <span class="s2">&quot;%&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DCGain : 0.7995637249145586
+Overshoot : 60.55544633040029
+Peak : 1.2837431072325436
+PeakTime : 1.005869755595359
+RiseTime : 0.36752933377522723
+SettlingTime : 5.334702096639671
+Erreur statique : 20.043627508544137 %
+</pre></div>
+</div>
+<img alt="../_images/LaboSeance2_21_1.png" src="../_images/LaboSeance2_21_1.png" />
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="exercice-2">
 <h3>Exercice 2<a class="headerlink" href="#exercice-2" title="Permalink to this headline">¶</a></h3>
 <p>L’application 2 d’asservissement de position est décrite par le schéma bloc :</p>
-<p><img alt="Appli2" src="../_images/2_Appli2.png" /></p>
+<img alt="Appli2" class="align-center" src="../_images/2_Appli2.png" />
 <p>où A représente un correcteur proportionnel.</p>
 <p>La fonction de transfert en BF de l’application d’asservissement de vitesse est :</p>
 <div class="math notranslate nohighlight">
 \[
-F_{BF}(p) = \frac{\frac{A}{A+1}}{1+\frac{10,875*10^{-3}}{A+1}p+\frac{1,36*10^{-6}}{A+1}p²}
+H_{BF}(p) = \frac{\frac{A}{A+1}}{1+\frac{10,875*10^{-3}}{A+1}p+\frac{1,36*10^{-6}}{A+1}p²}
 \]</div>
 <p>Utilisez les abaques ou équations pour :</p>
 <ul>
 <li><p>Prédire l’allure de la réponse indicielle du système si A=99 :</p>
 <p> </p>
 <p> </p>
+<p> </p>
 <ul class="simple">
 <li><p>dépassement : ……………</p></li>
 <li><p>temps de réponse : ……………</p></li>
 </ul>
-</li>
-<li><p>Déterminer le correcteur A si on veut un dépassement de 40% :</p>
-<p> </p>
-<p> </p>
-<p> </p>
-<p> </p>
-<p> </p>
+<div class="toggle docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}
+  \begin{alignat*}{2}
+  \left\{ \begin{aligned}
+      \begin{array}{ll}
+          \frac{2\zeta}{\omega_n} = \frac{10.875*10^{-3}}{A+1} \\
+          \frac{1}{\omega_n^2} = \frac{1.36*10^{-6}}{A+1}
+      \end{array}
+  \end{aligned}\right.
+  \Rightarrow
+  \left\{ \begin{aligned}
+      \begin{array}{ll}
+          \zeta = \frac{10.875*10^{-3}}{100}*\frac{8574.93}{2} = 0.466 \\
+          \omega_n = \sqrt{\frac{100}{1.36*10^{-6}}} = 8574.93 rad/s
+      \end{array}
+  \end{aligned}\right.
+  \end{alignat*}\
+  \end{split}\]</div>
+<ul class="simple">
+<li><p>dépassement :
+<span class="math notranslate nohighlight">\(
+D_p=100*e^{-\frac{\pi*0.466}{\sqrt{1-0.466^2}}} = 19.09\%
+\)</span></p></li>
+<li><p>temps de réponse à 5%:
+<span class="math notranslate nohighlight">\(
+\frac{5.3}{8574.93} = 618 µs
+\)</span></p></li>
+</ul>
+</div>
+<p>Vérifiez en traçant les réponses via python.</p>
 </li>
 </ul>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="mi">99</span>
+<span class="n">num</span> <span class="o">=</span> <span class="n">A</span><span class="o">/</span><span class="p">(</span><span class="n">A</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">den</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.36e-6</span><span class="o">/</span><span class="p">(</span><span class="n">A</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="mf">10.875e-3</span><span class="o">/</span><span class="p">(</span><span class="n">A</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">H_BF</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">tf</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">den</span><span class="p">)</span>
+<span class="n">info</span> <span class="o">=</span> <span class="n">rlf</span><span class="o">.</span><span class="n">stepWithInfo</span><span class="p">(</span><span class="n">H_BF</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dépassement :&quot;</span><span class="p">,</span> <span class="n">info</span><span class="o">.</span><span class="n">Overshoot</span><span class="p">,</span> <span class="s2">&quot;%&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Temps de réponse à 5% :&quot;</span><span class="p">,</span> <span class="n">info</span><span class="o">.</span><span class="n">SettlingTime</span><span class="p">,</span> <span class="s2">&quot;s&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dépassement : 19.228357919246108 %
+Temps de réponse à 5% : 0.0006151343954389906 s
+</pre></div>
+</div>
+<img alt="../_images/LaboSeance2_23_1.png" src="../_images/LaboSeance2_23_1.png" />
+</div>
+</div>
+<ul>
+<li><p>Déterminer le correcteur A si on veut un dépassement de 40% :</p>
+<div class="toggle docutils container">
+<div class="math notranslate nohighlight">
+\[
+ D_p=100*e^{-\frac{k\pi\zeta}{\sqrt{1-\zeta^2}}} \Rightarrow 40 = 100*e^{-\frac{k\pi\zeta}{\sqrt{1-\zeta^2}}} \Rightarrow \zeta=0.28
+\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+  \begin{alignat*}{2}
+  \left\{ \begin{aligned}
+      \begin{array}{ll}
+          \frac{2*0.28}{\omega_n} = \frac{10.875*10^{-3}}{A+1} \\
+          \frac{1}{\omega_n^2} = \frac{1.36*10^{-6}}{A+1}
+      \end{array}
+  \end{aligned}\right.
+  \Rightarrow
+  \left\{ \begin{aligned}
+      \begin{array}{ll}
+          A = 276 \\
+          \omega_n = 14279 rad/s
+      \end{array}
+  \end{aligned}\right.
+  \end{alignat*}\
+  \end{split}\]</div>
+</div>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
 <p>Vérifiez en traçant les réponses via python.</p>
+</li>
+</ul>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="mi">276</span>
+<span class="n">num</span> <span class="o">=</span> <span class="n">A</span><span class="o">/</span><span class="p">(</span><span class="n">A</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">den</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.36e-6</span><span class="o">/</span><span class="p">(</span><span class="n">A</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="mf">10.875e-3</span><span class="o">/</span><span class="p">(</span><span class="n">A</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">H_BF</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">tf</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">den</span><span class="p">)</span>
+<span class="n">info</span> <span class="o">=</span> <span class="n">rlf</span><span class="o">.</span><span class="n">stepWithInfo</span><span class="p">(</span><span class="n">H_BF</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dépassement :&quot;</span><span class="p">,</span> <span class="n">info</span><span class="o">.</span><span class="n">Overshoot</span><span class="p">,</span> <span class="s2">&quot;%&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dépassement : 39.95296631023082 %
+</pre></div>
+</div>
+<img alt="../_images/LaboSeance2_25_1.png" src="../_images/LaboSeance2_25_1.png" />
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -556,12 +732,32 @@ F_{BF}(p) = \frac{\frac{A}{A+1}}{1+\frac{10,875*10^{-3}}{A+1}p+\frac{1,36*10^{-6
               </div>
               
         
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="LaboSeance1.html" title="previous page">Séance 1</a>
-    <a class='right-next' id="next-link" href="LaboSeance3.html" title="next page">Séance 3</a>
 
-        </div>
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="LaboSeance1.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Séance 1</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="LaboSeance3.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Séance 3</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
         
         </div>
     </div>
