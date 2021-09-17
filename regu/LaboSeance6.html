@@ -42,6 +42,8 @@
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -212,6 +214,57 @@
    Objectifs de la séance
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#regulateur-pd">
+   Régulateur PD
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercice-6-page-7-15-fait-au-cours">
+     Exercice 6 page 7-15 (fait au cours)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#regulateur-pid">
+   Régulateur PID
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercice-7-page-7-18-resolution-dans-les-notes-facultatif">
+     Exercice 7 page 7-18 (résolution dans les notes) (facultatif)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercices-recapitulatifs">
+   Exercices récapitulatifs
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercice-type-examen-cf-helmo-learn">
+     Exercice type examen (cf. HELMo Learn)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#application-5-cf-p-application-8">
+     Application 5 (cf. p. “application-8”)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercice-3-page-7-27">
+     Exercice 3 page 7-27
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#application-3-cf-p-application-4">
+     Application 3  (cf. p. “application-4”)
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
             </nav>
@@ -228,10 +281,45 @@
 <div class="section" id="objectifs-de-la-seance">
 <h2>Objectifs de la séance<a class="headerlink" href="#objectifs-de-la-seance" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Forme de fonction de transfert exploitant une variable ‘p’</p></li>
 <li><p>Résolution graphique de la détermination du correcteur PD par placement fréquentiel</p></li>
 <li><p>Résolution graphique de la correction du correcteur PID</p></li>
 </ul>
+</div>
+<div class="section" id="regulateur-pd">
+<h2>Régulateur PD<a class="headerlink" href="#regulateur-pd" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="exercice-6-page-7-15-fait-au-cours">
+<h3>Exercice 6 page 7-15 (fait au cours)<a class="headerlink" href="#exercice-6-page-7-15-fait-au-cours" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="regulateur-pid">
+<h2>Régulateur PID<a class="headerlink" href="#regulateur-pid" title="Permalink to this headline">¶</a></h2>
+<p>Soit le système asservi à retour unitaire dont la fonction de boucle ouverte est :</p>
+<div class="math notranslate nohighlight">
+\[
+ G(p)=\frac{20}{(5+p)(2p+3)(4+3p)}
+\]</div>
+<p>On demande de déterminer le correcteur dont le but est de permettre une erreur statique nulle et une erreur de
+vitesse minimale, tout en assurant une réponse indicielle dont le dépassement est limité à 5%.</p>
+<div class="section" id="exercice-7-page-7-18-resolution-dans-les-notes-facultatif">
+<h3>Exercice 7 page 7-18 (résolution dans les notes) (facultatif)<a class="headerlink" href="#exercice-7-page-7-18-resolution-dans-les-notes-facultatif" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="exercices-recapitulatifs">
+<h2>Exercices récapitulatifs<a class="headerlink" href="#exercices-recapitulatifs" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="exercice-type-examen-cf-helmo-learn">
+<h3>Exercice type examen (cf. HELMo Learn)<a class="headerlink" href="#exercice-type-examen-cf-helmo-learn" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="application-5-cf-p-application-8">
+<h3>Application 5 (cf. p. “application-8”)<a class="headerlink" href="#application-5-cf-p-application-8" title="Permalink to this headline">¶</a></h3>
+<p>Effectuez la résolution par programmation Python.</p>
+</div>
+<div class="section" id="exercice-3-page-7-27">
+<h3>Exercice 3 page 7-27<a class="headerlink" href="#exercice-3-page-7-27" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="application-3-cf-p-application-4">
+<h3>Application 3  (cf. p. “application-4”)<a class="headerlink" href="#application-3-cf-p-application-4" title="Permalink to this headline">¶</a></h3>
+<p>Effectuez la résolution par programmation Python.</p>
+</div>
 </div>
 </div>
 
