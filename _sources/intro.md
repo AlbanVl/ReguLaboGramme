@@ -2,9 +2,9 @@
 
 Bienvenue dans la documentation du laboratoire de régulation.
 
-## Présentation de la structure de la doc
+<!-- ## Présentation de la structure de la doc -->
 
-## Présentation du langage Python
+<!-- ## Présentation du langage Python -->
 
 ## Installation d'Anaconda
 
@@ -156,11 +156,11 @@ Vous pouvez créer ce dossier où vous le souhaitez mais devrez impérativement 
 
 **Exemple de structure:**
 
-Dossier/
+DossierLaboRegu/
 
 - ReguLabFct.py
-- Labo1
-- Labo2
+- Labo1.py
+- Labo2.py
 - ...
 :::
 
