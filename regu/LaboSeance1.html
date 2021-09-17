@@ -349,7 +349,7 @@ import ReguLabFct as rlf # Library useful for the laboratory of regulation of HE
 </div>
 <div class="section" id="etude-d-un-systeme-du-premier-ordre-rc">
 <h2>Etude d’un système du premier ordre : RC<a class="headerlink" href="#etude-d-un-systeme-du-premier-ordre-rc" title="Permalink to this headline">¶</a></h2>
-<p>Soit la fonction de transfert:</p>
+<p>Soit la fonction de transfert d’un circuit RC (avec <span class="math notranslate nohighlight">\(R = 205 \Omega\)</span> et <span class="math notranslate nohighlight">\(C = 33 pF\)</span>):</p>
 <div class="math notranslate nohighlight">
 \[
  H(s)={\frac {1}{6,8*10^{-9}*s+1}}
@@ -383,23 +383,17 @@ import ReguLabFct as rlf # Library useful for the laboratory of regulation of HE
 <h3>Tracé de la réponse indicielle<a class="headerlink" href="#trace-de-la-reponse-indicielle" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rlf</span><span class="o">.</span><span class="n">step_</span><span class="p">(</span><span class="n">H</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rlf</span><span class="o">.</span><span class="n">step_</span><span class="p">(</span><span class="n">H</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[array([0.00000000e+00, 6.90606034e-04, 1.38073513e-03, ...,
-        9.98998617e-01, 9.98999309e-01, 9.99000000e-01]),
- array([0.00000000e+00, 4.69774336e-12, 9.39548673e-12, ...,
-        4.69633404e-08, 4.69680382e-08, 4.69727359e-08])]
-</pre></div>
-</div>
-<img alt="../_images/LaboSeance1_9_1.png" src="../_images/LaboSeance1_9_1.png" />
+<img alt="../_images/LaboSeance1_9_0.png" src="../_images/LaboSeance1_9_0.png" />
 </div>
 </div>
-<div class="tip admonition">
-<p class="admonition-title">Astuce</p>
-<p>Pour éviter d’afficher les retours d’une fonction, il suffit de mettre un <strong>;</strong> en fin de ligne.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Le <strong>;</strong> en fin de ligne n’est pas nécessaire dans Spyder. Il est juste là pour éviter d’afficher des informations non nécessaires lors de la compilation de cette page.</p>
 </div>
 <p>La fonction <code class="docutils literal notranslate"><span class="pre">step_</span></code> adapte automatiquement l’échelle des axes. Si vous voulez spécifier l’axe du temps :</p>
 <div class="cell docutils container">
@@ -411,7 +405,7 @@ import ReguLabFct as rlf # Library useful for the laboratory of regulation of HE
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/LaboSeance1_12_0.png" src="../_images/LaboSeance1_12_0.png" />
+<img alt="../_images/LaboSeance1_13_0.png" src="../_images/LaboSeance1_13_0.png" />
 </div>
 </div>
 </div>
@@ -423,6 +417,10 @@ import ReguLabFct as rlf # Library useful for the laboratory of regulation of HE
 \[
 H_{mot}(s)={\frac {31,25}{10,875*10^{-3}*s+1}}
 \]</div>
+<div class="seealso admonition">
+<p class="admonition-title">Lien avec la théorie</p>
+<p>L’application du moteur est détaillée au §2.6.4.1 p.2-16 (p.42 dans le PDF)</p>
+</div>
 <div class="section" id="ecriture-de-la-fonction-de-transfert-du-moteur">
 <h3>Ecriture de la fonction de transfert du moteur<a class="headerlink" href="#ecriture-de-la-fonction-de-transfert-du-moteur" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
@@ -457,7 +455,7 @@ H_{mot}(s)={\frac {31,25}{10,875*10^{-3}*s+1}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/LaboSeance1_18_0.png" src="../_images/LaboSeance1_18_0.png" />
+<img alt="../_images/LaboSeance1_19_0.png" src="../_images/LaboSeance1_19_0.png" />
 </div>
 </div>
 <div class="section" id="considerations-a-propos-du-gain-statique">
@@ -475,7 +473,7 @@ H_{mot}(s)={\frac {31,25}{10,875*10^{-3}*s+1}}
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Le gain statique vaut : 31.21875000000746
 </pre></div>
 </div>
-<img alt="../_images/LaboSeance1_20_1.png" src="../_images/LaboSeance1_20_1.png" />
+<img alt="../_images/LaboSeance1_21_1.png" src="../_images/LaboSeance1_21_1.png" />
 </div>
 </div>
 <div class="section" id="commentaires">
@@ -573,7 +571,7 @@ H_{mot_l}(s)={\frac {31,25}{1,36*10^{-6}*s^2+10,875*10^{-3}*s+1}}
 1.36e-06 s^2 + 0.01087 s + 1
 </pre></div>
 </div>
-<img alt="../_images/LaboSeance1_30_1.png" src="../_images/LaboSeance1_30_1.png" />
+<img alt="../_images/LaboSeance1_31_1.png" src="../_images/LaboSeance1_31_1.png" />
 </div>
 </div>
 <p>Convaincu que l est bien négligeable?</p>

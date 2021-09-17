@@ -116,6 +116,8 @@ La version de Python installée avec Anaconda n'est pas celle qu'il faut pour ut
 
 ## Configurer Spyder
 
+Spyder est un environnement de développement (IDE) pour Python qui est libre et multiplateforme. Voici une présentation de son interface: https://youtu.be/Txibtd8zWBs
+
 ### Avoir les figures dans des fenêtres séparées
 
 1. Ouvrez la fenêtre des préférences.
