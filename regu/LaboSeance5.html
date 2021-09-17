@@ -230,16 +230,43 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#bode">
-     Bode
+    <a class="reference internal nav-link" href="#bode-cf-p-4-7-a-4-12">
+     Bode (
+     <em>
+      cf. p. 4-7 à 4-12
+     </em>
+     )
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#nichols">
-     Nichols
+    <a class="reference internal nav-link" href="#nichols-cf-p-4-18">
+     Nichols (
+     <em>
+      cf. p. 4-18
+     </em>
+     )
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#resume-sur-l-effet-d-un-pole-cf-p-4-16">
+     Résumé sur l’effet d’un pôle (
+     <em>
+      cf. p. 4-16
+     </em>
+     )
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#effet-dune-modification-du-gain-statique-sur-les-differents-diagrammes">
+     Effet d’une modification du gain statique sur les différents diagrammes
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#regulateur-p">
+   Régulateur P
+  </a>
  </li>
 </ul>
 
@@ -270,7 +297,7 @@
  H_{BO}(p)=\frac{1}{p+1}
 \)</span>
 dans les différents diagrammes pour visualiser l’effet d’un pôle : p=-1, <span class="math notranslate nohighlight">\(\tau\)</span>=1s et <span class="math notranslate nohighlight">\(\omega_n\)</span>=1rad/s</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">H_BO</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">tf</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
 </pre></div>
@@ -279,6 +306,7 @@ dans les différents diagrammes pour visualiser l’effet d’un pôle : p=-1, <
 </div>
 <div class="section" id="nyquist-cf-p-4-6">
 <h3>Nyquist (<em>cf. p. 4-6</em>)<a class="headerlink" href="#nyquist-cf-p-4-6" title="Permalink to this headline">¶</a></h3>
+<p>Afin de tracer le diagramme de Nyquist, il suffit d’entrer la ligne de code suivante:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">real</span><span class="p">,</span> <span class="n">imag</span><span class="p">,</span> <span class="n">freq</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">nyquist</span><span class="p">(</span><span class="n">H_BO</span><span class="p">);</span>
@@ -293,13 +321,214 @@ dans les différents diagrammes pour visualiser l’effet d’un pôle : p=-1, <
 <p class="admonition-title">Attention</p>
 <p>Attention, le graphique est tracé aussi pour des <span class="math notranslate nohighlight">\(\omega_n&lt;0\)</span> (en trait discontinu) ce qui n’a aucun sens physiquement! Il ne faut donc tenir compte <strong>que</strong> du tracé en trait plein.</p>
 </div>
+<p>On peut également demander à python d’afficher les fréquences sur le graphe:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ml</span><span class="o">.</span><span class="n">nyquist</span><span class="p">(</span><span class="n">H_BO</span><span class="p">,</span> <span class="n">label_freq</span><span class="o">=</span><span class="mi">200</span><span class="p">);</span>
+</pre></div>
 </div>
-<div class="section" id="bode">
-<h3>Bode<a class="headerlink" href="#bode" title="Permalink to this headline">¶</a></h3>
 </div>
-<div class="section" id="nichols">
-<h3>Nichols<a class="headerlink" href="#nichols" title="Permalink to this headline">¶</a></h3>
+<div class="cell_output docutils container">
+<img alt="../_images/LaboSeance5_9_0.png" src="../_images/LaboSeance5_9_0.png" />
 </div>
+</div>
+</div>
+<div class="section" id="bode-cf-p-4-7-a-4-12">
+<h3>Bode (<em>cf. p. 4-7 à 4-12</em>)<a class="headerlink" href="#bode-cf-p-4-7-a-4-12" title="Permalink to this headline">¶</a></h3>
+<p>Pour tracer le diagramme de Bode, on peut soit laisser python fixer automatiquement la plage de variation de la pulsation:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ml</span><span class="o">.</span><span class="n">bode</span><span class="p">(</span><span class="n">H_BO</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/LaboSeance5_11_0.png" src="../_images/LaboSeance5_11_0.png" />
+</div>
+</div>
+<p>ou si on préfère imposer l’intervalle de variation de la pulsation, on peut faire cela ainsi:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span> <span class="c1"># Echelle logarithmique allant de 10^-2 à 10^2</span>
+<span class="n">ml</span><span class="o">.</span><span class="n">bode</span><span class="p">(</span><span class="n">H_BO</span><span class="p">,</span> <span class="n">w</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/LaboSeance5_13_0.png" src="../_images/LaboSeance5_13_0.png" />
+</div>
+</div>
+<p>La différence entre les 2 solutions est le nombre de points de calculs (= points d’affichage)</p>
+<div class="seealso admonition">
+<p class="admonition-title">À faire</p>
+<p>Comparez la courbe réelle à son tracé asymptotique (voir pages 4-11 et 12).</p>
+</div>
+</div>
+<div class="section" id="nichols-cf-p-4-18">
+<h3>Nichols (<em>cf. p. 4-18</em>)<a class="headerlink" href="#nichols-cf-p-4-18" title="Permalink to this headline">¶</a></h3>
+<p>On peut soit utiliser la fonction <code class="docutils literal notranslate"><span class="pre">nichols</span></code> du package <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">Control</span></code> et on obtient ceci:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ml</span><span class="o">.</span><span class="n">nichols</span><span class="p">(</span><span class="n">H_BO</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/LaboSeance5_16_0.png" src="../_images/LaboSeance5_16_0.png" />
+</div>
+</div>
+<p>Ou on utilise la fonction <code class="docutils literal notranslate"><span class="pre">nichols</span></code> revue dans le package <code class="docutils literal notranslate"><span class="pre">ReguLabFct</span></code> pour faciliter sa lecture dans le cadre du laboratoire de régulation:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rlf</span><span class="o">.</span><span class="n">nichols</span><span class="p">(</span><span class="n">H_BO</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/LaboSeance5_18_0.png" src="../_images/LaboSeance5_18_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="resume-sur-l-effet-d-un-pole-cf-p-4-16">
+<h3>Résumé sur l’effet d’un pôle (<em>cf. p. 4-16</em>)<a class="headerlink" href="#resume-sur-l-effet-d-un-pole-cf-p-4-16" title="Permalink to this headline">¶</a></h3>
+<p>Module: <span class="math notranslate nohighlight">\(\left\{
+    \begin{array}{ll}
+        \omega&lt;\omega_c : rien\\
+        \omega&gt;\omega_c : -20dB/décade
+    \end{array}
+\right.\)</span></p>
+<p>Phase: <span class="math notranslate nohighlight">\(\left\{
+    \begin{array}{ll}
+        \omega&lt;\omega_c : rien\\
+        \omega&gt;\omega_c : -90°
+    \end{array}
+\right.\)</span></p>
+</div>
+<div class="section" id="effet-dune-modification-du-gain-statique-sur-les-differents-diagrammes">
+<h3>Effet d’une modification du gain statique sur les différents diagrammes<a class="headerlink" href="#effet-dune-modification-du-gain-statique-sur-les-differents-diagrammes" title="Permalink to this headline">¶</a></h3>
+<p>Observez l’effet du gain statique : K=2, 5, 10 …</p>
+<p>Ecrivez un script qui trace les 3 graphiques dans une même figure:</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">K_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">K</span> <span class="ow">in</span> <span class="n">K_list</span><span class="p">:</span>
+
+    <span class="n">fig_nyquist</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s2">&quot;Nyquist&quot;</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+    <span class="n">ml</span><span class="o">.</span><span class="n">nyquist</span><span class="p">(</span><span class="n">K</span><span class="o">*</span><span class="n">H_BO</span><span class="p">,</span> <span class="n">label_freq</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+    
+    <span class="n">fig_bode</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s2">&quot;Bode&quot;</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+    <span class="n">ml</span><span class="o">.</span><span class="n">bode</span><span class="p">(</span><span class="n">K</span><span class="o">*</span><span class="n">H_BO</span><span class="p">)</span>
+    
+    <span class="n">fig_nichols</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s2">&quot;Nichols&quot;</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+    <span class="n">rlf</span><span class="o">.</span><span class="n">nichols</span><span class="p">(</span><span class="n">K</span><span class="o">*</span><span class="n">H_BO</span><span class="p">,</span> <span class="n">NameOfFigure</span><span class="o">=</span><span class="s2">&quot;Nichols&quot;</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">K</span><span class="p">)])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/LaboSeance5_21_0.png" src="../_images/LaboSeance5_21_0.png" />
+<img alt="../_images/LaboSeance5_21_1.png" src="../_images/LaboSeance5_21_1.png" />
+<img alt="../_images/LaboSeance5_21_2.png" src="../_images/LaboSeance5_21_2.png" />
+</div>
+</div>
+<p>Concluez sur l’effet d’une augmentation de constante (cf. augmentation du gain proportionnel en BO) :</p>
+<p>Effet dans:</p>
+<ul class="simple">
+<li><p>Nyquist : …</p></li>
+<li><p>Bode : …</p></li>
+<li><p>Nichols : …</p></li>
+</ul>
+<div class="toggle docutils container">
+<ul class="simple">
+<li><p>Nyquist : Étalement suivant l’axe des réels</p></li>
+<li><p>Bode: Translation verticale du gain de 20log(K) et phase indépendante de K</p></li>
+<li><p>Nichols: Translation verticale de la courb de 20log(K)</p></li>
+</ul>
+<p>Car
+<span class="math notranslate nohighlight">\(
+\begin{alignat*}{2}
+K*H\Rightarrow
+\left\{ \begin{aligned}
+    \begin{array}{ll}
+        M_{dB} = 20*\log(K*H) = 20\log(H)+20\log(K) = 20\log(H) + translation\\
+        \varphi = \varphi(K)+\varphi(H)=0^{\circ}+\varphi(H)
+    \end{array}
+\end{aligned}\right.
+\end{alignat*}\
+\)</span></p>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Attention que l’analyse fréquentielle s’applique sur le système en <strong>boucle ouverte</strong> contrairement à l’analyse temporelle (<span class="math notranslate nohighlight">\(\rightarrow\)</span> réponse indicielle) qui s’applique, elle, sur le système en <strong>boucle fermée</strong>!</p>
+</div>
+</div>
+</div>
+<div class="section" id="regulateur-p">
+<h2>Régulateur P<a class="headerlink" href="#regulateur-p" title="Permalink to this headline">¶</a></h2>
+<p>Soit la fonction de l’exercice 1 (cf. p. 7-3):</p>
+<div class="math notranslate nohighlight">
+\[
+G(p) = \frac{1}{(1+0,5p)*(1+0,25p)}
+\]</div>
+<p>Déterminez, à l’aide du diagramme de Nichols, le correcteur P qui permette de translater la courbe pour une marge de phase de 45° : KP= …</p>
+<div class="tip admonition">
+<p class="admonition-title">Astuce</p>
+<p>Une fonction fournie dans le package <code class="docutils literal notranslate"><span class="pre">ReguLabFct</span></code> permet d’obtenir le gain et la fréquence d’un système donnée à une phase donnée. Il s’agit de la fonction <code class="docutils literal notranslate"><span class="pre">getValues</span></code> (cf. documentation du packahe <code class="docutils literal notranslate"><span class="pre">ReguLabFct</span></code>).</p>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G1</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">tf</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">G2</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">tf</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mf">0.25</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">G1</span><span class="o">*</span><span class="n">G2</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s2">&quot;Nichols&quot;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">rlf</span><span class="o">.</span><span class="n">nichols</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;G(p)&#39;</span><span class="p">],</span> <span class="n">NameOfFigure</span> <span class="o">=</span> <span class="s2">&quot;Nichols&quot;</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s2">&quot;Bode&quot;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">mag</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">rlf</span><span class="o">.</span><span class="n">getValues</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="o">-</span><span class="mi">135</span><span class="p">,</span> <span class="n">printValue</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">NameOfFigure</span><span class="o">=</span><span class="s2">&quot;Bode&quot;</span><span class="p">)</span>
+
+<span class="n">Kp</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">mag</span>  <span class="c1"># Kp va à l&#39;inverse de ce qu&#39;on mesure</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Kp =&quot;</span><span class="p">,</span> <span class="n">Kp</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Gain à -135° = -17.56544890480597 dB
+Fréquence à -135° = 7.1233661553256065 rad/sec
+Kp = 7.5556606703682965
+</pre></div>
+</div>
+<img alt="../_images/LaboSeance5_25_1.png" src="../_images/LaboSeance5_25_1.png" />
+<img alt="../_images/LaboSeance5_25_2.png" src="../_images/LaboSeance5_25_2.png" />
+</div>
+</div>
+<p>Visualisez l’effet sur la réponse indicielle:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G_BF</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">feedback</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">G_BF_Kp</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">feedback</span><span class="p">(</span><span class="n">Kp</span><span class="o">*</span><span class="n">G</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s2">&quot;Steps&quot;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">rlf</span><span class="o">.</span><span class="n">stepWithInfo</span><span class="p">(</span><span class="n">G_BF</span><span class="p">,</span> <span class="n">NameOfFigure</span><span class="o">=</span><span class="s2">&quot;Steps&quot;</span><span class="p">)</span>
+<span class="n">rlf</span><span class="o">.</span><span class="n">stepWithInfo</span><span class="p">(</span><span class="n">G_BF_Kp</span><span class="p">,</span> <span class="n">NameOfFigure</span><span class="o">=</span><span class="s2">&quot;Steps&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/LaboSeance5_27_0.png" src="../_images/LaboSeance5_27_0.png" />
+</div>
+</div>
+<p>(facultatif) Faites l’exercice 2 page 7-4 et visualisez les calculs par une résolution graphique</p>
+<p>(facultatif) Faites aussi l’exercice 3.</p>
+<p>(facultatif) <strong>application 1 : régulation de vitesse</strong></p>
+<p>Tracez le diag de Nichols qui permette de déterminer graphiquement la valeur max de A pour minimiser l’erreur tout en
+garantissant une marge de phase de 45° ou de 60° et comparez avec la solution A=100.</p>
+<p>(facultatif) <strong>Régulation de position</strong></p>
+<p>Tracez le diag de Nichols qui permette de déterminer graphiquement la valeur max de A pour minimiser l’erreur tout en
+garantissant une marge de phase de 45°
+Comparez à la résolution temporelle …
+Vous pouvez obtenir facilement les valeurs typiques d’une fonction d’ordre 2 par damp(h)</p>
 </div>
 </div>
 

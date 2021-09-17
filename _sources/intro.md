@@ -95,6 +95,25 @@ La version de Python installée avec Anaconda n'est pas celle qu'il faut pour ut
 
 4. Une fois l'installation terminée, vous pouvez fermer la console.
 
+### Installation du package Serial (optionnel)
+
+1. Ouvrez la console de commande d'Anaconda (*Anaconda Prompt*):
+
+    :::{image} images/Intro_ConsoleCMD.png
+    :alt: ConsoleCMD
+    :width: 175px
+    :align: center
+    :::
+
+2. Entrez la commande suivante:
+    ```
+    conda install pyserial
+    ```
+
+3. À la question `Proceed?`, entrez `y` et valider avec la touche `enter`.
+
+4. Une fois l'installation terminée, vous pouvez fermer la console.
+
 ## Configurer Spyder
 
 ### Avoir les figures dans des fenêtres séparées
@@ -130,7 +149,20 @@ Afin de pouvoir utiliser les fonctions utiles pour le laboratoire de régulation
 Il est possible que votre navigateur internet ou votre antivirus empêche le téléchargement en le considérant comme une menace. Vous pouvez forcer le téléchargement car, promis, ce n'est pas un virus 😉
 :::
 
-Une fois téléchargé, il faut le placer dans le répertoire où se trouveront vos scripts afin que ces derniers puissent l'utiliser.
+Une fois téléchargé, il faut le placer dans l'espace de travail (= dossier) où se trouveront tous vos futurs scripts afin que ces derniers puissent l'utiliser. 
+
+:::{note}
+Vous pouvez créer ce dossier où vous le souhaitez mais devrez impérativement écrire vos scripts dans ce dossier durant le laboratoire.
+
+**Exemple de structure:**
+
+Dossier/
+
+- ReguLabFct.py
+- Labo1
+- Labo2
+- ...
+:::
 
 ## Télécharger la documentation du package ReguLabFct
 Afin de faciliter l'usage du package `ReguLabFct`, une documentation existe et peut être téléchargée [ici](https://studenthelmobe-my.sharepoint.com/:f:/g/personal/a_vanlaethem_helmo_be/EvRgBmANcQNMmIhF2nm2kBcBcyePZxDX5ah4yrH_FcUjwg?e=RKFGXU).
