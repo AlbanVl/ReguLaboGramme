@@ -276,6 +276,23 @@
 <p class="admonition-title">Note</p>
 <p>Si l’option <code class="docutils literal notranslate"><span class="pre">3.7</span></code> n’apparaît pas dans la liste déroulante, cela veut dire qu’Anaconda n’est pas encore prêt. Il faut donc attendre que tout s’installe correctement en arrière-plan. Attendez un peu et recommencez l’opération jusqu’à ce que l’option <code class="docutils literal notranslate"><span class="pre">3.7</span></code> apparaisse bien dans la liste déroulante.</p>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Il se peut qu’Anaconda ne vous propose pas d’autres versions de python que la 3.8 même après avoir attendu plus de 15 minutes…</p>
+<p>Pas de panique, voici une solution qui devrait vous sortir du pétrin:</p>
+<p>Ouvrez la console python d’Anaconda</p>
+<a class="reference internal image-reference" href="_images/Intro_ConsoleCMD.png"><img alt="ConsoleCMD" class="align-center" src="_images/Intro_ConsoleCMD.png" style="width: 175px;" /></a>
+<p>et entrez la commande suivante :</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>conda create -n Regulation python=3.7 numpy matplotlib
+</pre></div>
+</div>
+<p>Cela devrait forcer la création de l’environnement mais il faudra peut-être installer des packages supplémentaires par la suite en plus du package <code class="docutils literal notranslate"><span class="pre">control</span></code>.</p>
+<p>Une fois l’environnement créé, il faudra entrer la commande suivante :</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>conda activate Regulation
+</pre></div>
+</div>
+<p>Vous devriez maintenant voir apparaître votre nouvel environnement <code class="docutils literal notranslate"><span class="pre">Regulation</span></code> dans la liste des environnements d’Anaconda 😉</p>
+</div>
 </li>
 <li><p>Retournez dans le menu <code class="docutils literal notranslate"><span class="pre">Home</span></code>.</p></li>
 <li><p>Installez l’application <code class="docutils literal notranslate"><span class="pre">CMD.exe</span> <span class="pre">Prompt</span></code>.</p>

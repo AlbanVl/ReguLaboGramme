@@ -48,6 +48,32 @@ La version de Python installée avec Anaconda n'est pas celle qu'il faut pour ut
     Si l'option `3.7` n'apparaît pas dans la liste déroulante, cela veut dire qu'Anaconda n'est pas encore prêt. Il faut donc attendre que tout s'installe correctement en arrière-plan. Attendez un peu et recommencez l'opération jusqu'à ce que l'option `3.7` apparaisse bien dans la liste déroulante.
     :::
 
+    ::::{note}
+    Il se peut qu'Anaconda ne vous propose pas d'autres versions de python que la 3.8 même après avoir attendu plus de 15 minutes...
+
+    Pas de panique, voici une solution qui devrait vous sortir du pétrin:
+
+    Ouvrez la console python d’Anaconda 
+    
+    :::{image} images/Intro_ConsoleCMD.png
+    :alt: ConsoleCMD
+    :width: 175px
+    :align: center
+    :::
+    
+    et entrez la commande suivante :
+
+        conda create -n Regulation python=3.7 numpy matplotlib
+
+    Cela devrait forcer la création de l’environnement mais il faudra peut-être installer des packages supplémentaires par la suite en plus du package `control`.
+
+    Une fois l’environnement créé, il faudra entrer la commande suivante :
+
+        conda activate Regulation
+
+    Vous devriez maintenant voir apparaître votre nouvel environnement `Regulation` dans la liste des environnements d’Anaconda 😉
+    ::::
+
 4. Retournez dans le menu `Home`.
 
 5. Installez l'application `CMD.exe Prompt`.

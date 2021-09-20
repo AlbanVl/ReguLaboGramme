@@ -464,7 +464,7 @@ dans les différents diagrammes pour visualiser l’effet d’un pôle : p=-1, <
 <div class="section" id="effet-dune-modification-du-gain-statique-sur-les-differents-diagrammes">
 <h3>Effet d’une modification du gain statique sur les différents diagrammes<a class="headerlink" href="#effet-dune-modification-du-gain-statique-sur-les-differents-diagrammes" title="Permalink to this headline">¶</a></h3>
 <p>Observez l’effet du gain statique : K=2, 5, 10 …</p>
-<p>Ecrivez un script qui trace les 3 graphiques dans une même figure:</p>
+<p>Tracez les 3 graphiques:</p>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">K_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
@@ -499,7 +499,7 @@ dans les différents diagrammes pour visualiser l’effet d’un pôle : p=-1, <
 <ul class="simple">
 <li><p>Nyquist : Étalement suivant l’axe des réels</p></li>
 <li><p>Bode: Translation verticale du gain de 20log(K) et phase indépendante de K</p></li>
-<li><p>Nichols: Translation verticale de la courb de 20log(K)</p></li>
+<li><p>Nichols: Translation verticale de la courbe de 20log(K)</p></li>
 </ul>
 <p>Car
 <span class="math notranslate nohighlight">\(
@@ -530,7 +530,7 @@ G(p) = \frac{1}{(1+0,5p)*(1+0,25p)}
 <p>Déterminez, à l’aide du diagramme de Nichols, le correcteur P qui permette de translater la courbe pour une marge de phase de 45° : KP= …</p>
 <div class="tip admonition">
 <p class="admonition-title">Astuce</p>
-<p>Une fonction fournie dans le package <code class="docutils literal notranslate"><span class="pre">ReguLabFct</span></code> permet d’obtenir le gain et la fréquence d’un système donnée à une phase donnée. Il s’agit de la fonction <code class="docutils literal notranslate"><span class="pre">getValues</span></code> (cf. documentation du packahe <code class="docutils literal notranslate"><span class="pre">ReguLabFct</span></code>).</p>
+<p>Une fonction fournie dans le package <code class="docutils literal notranslate"><span class="pre">ReguLabFct</span></code> permet d’obtenir le gain et la fréquence d’un système donnée à une phase donnée. Il s’agit de la fonction <code class="docutils literal notranslate"><span class="pre">getValues</span></code> (cf. documentation du package <code class="docutils literal notranslate"><span class="pre">ReguLabFct</span></code>).</p>
 </div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
@@ -561,7 +561,7 @@ Kp = 7.5556606703682965
 </div>
 </div>
 <p>Visualisez l’effet sur la réponse indicielle:</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G_BF</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">feedback</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">G_BF_Kp</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">feedback</span><span class="p">(</span><span class="n">Kp</span><span class="o">*</span><span class="n">G</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
@@ -576,16 +576,6 @@ Kp = 7.5556606703682965
 <img alt="../_images/LaboSeance5_27_0.png" src="../_images/LaboSeance5_27_0.png" />
 </div>
 </div>
-<p>(facultatif) Faites l’exercice 2 page 7-4 et visualisez les calculs par une résolution graphique</p>
-<p>(facultatif) Faites aussi l’exercice 3.</p>
-<p>(facultatif) <strong>application 1 : régulation de vitesse</strong></p>
-<p>Tracez le diag de Nichols qui permette de déterminer graphiquement la valeur max de A pour minimiser l’erreur tout en
-garantissant une marge de phase de 45° ou de 60° et comparez avec la solution A=100.</p>
-<p>(facultatif) <strong>Régulation de position</strong></p>
-<p>Tracez le diag de Nichols qui permette de déterminer graphiquement la valeur max de A pour minimiser l’erreur tout en
-garantissant une marge de phase de 45°
-Comparez à la résolution temporelle …
-Vous pouvez obtenir facilement les valeurs typiques d’une fonction d’ordre 2 par damp(h)</p>
 <div class="section" id="limite-de-stabilite">
 <h3>Limite de stabilité<a class="headerlink" href="#limite-de-stabilite" title="Permalink to this headline">¶</a></h3>
 <p>Analysez le système asservi à retour unitaire dont la fonction de transfert de boucle ouverte est la
@@ -601,6 +591,16 @@ G(p) = \frac{1}{(1+0,5p)*(1+4p)*(0.1p+1)}
 <li><p><span class="math notranslate nohighlight">\(M_\Phi\)</span> = …</p></li>
 <li><p><span class="math notranslate nohighlight">\(M_G\)</span> = …</p></li>
 </ul>
+<div class="tip admonition">
+<p class="admonition-title">Astuce</p>
+<p>Pour calculer la marge de gain et de phase d’un système, vous pouvez utiliser la fonction <code class="docutils literal notranslate"><span class="pre">margin</span></code> du package <code class="docutils literal notranslate"><span class="pre">control</span></code>.</p>
+<p><strong>Exemple:</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>from control import matlab as ml
+G_BO = ml.tf(1, [1, 1])
+mg, mp, __, __ = ml.margin(G_BO)
+</pre></div>
+</div>
+</div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G1</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">tf</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
@@ -608,13 +608,12 @@ G(p) = \frac{1}{(1+0,5p)*(1+4p)*(0.1p+1)}
 <span class="n">G3</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">tf</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
 <span class="n">G_BO</span> <span class="o">=</span> <span class="n">G1</span><span class="o">*</span><span class="n">G2</span><span class="o">*</span><span class="n">G3</span>
 
-<span class="n">ml</span><span class="o">.</span><span class="n">nichols</span><span class="p">(</span><span class="n">G_BO</span><span class="p">)</span>
 <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s2">&quot;Nichols&quot;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
 <span class="n">rlf</span><span class="o">.</span><span class="n">nichols</span><span class="p">(</span><span class="n">G_BO</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;G_BO(p)&#39;</span><span class="p">],</span> <span class="n">NameOfFigure</span> <span class="o">=</span> <span class="s2">&quot;Nichols&quot;</span><span class="p">)</span>
 
-<span class="n">gm</span><span class="p">,</span> <span class="n">pm</span><span class="p">,</span> <span class="n">__</span><span class="p">,</span> <span class="n">__</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">margin</span><span class="p">(</span><span class="n">G_BO</span><span class="p">)</span>
-<span class="n">gm</span> <span class="o">=</span> <span class="mi">20</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">gm</span><span class="p">)</span>  <span class="c1"># Conversion de gm in dB</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Marge de phase = </span><span class="si">{MP}</span><span class="s2">° </span><span class="se">\n</span><span class="s2">Marge de gain = </span><span class="si">{MG}</span><span class="s2"> dB&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">MP</span><span class="o">=</span><span class="n">pm</span><span class="p">,</span> <span class="n">MG</span><span class="o">=</span><span class="n">gm</span><span class="p">))</span>
+<span class="n">mg</span><span class="p">,</span> <span class="n">mp</span><span class="p">,</span> <span class="n">__</span><span class="p">,</span> <span class="n">__</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">margin</span><span class="p">(</span><span class="n">G_BO</span><span class="p">)</span>
+<span class="n">mg</span> <span class="o">=</span> <span class="mi">20</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">mg</span><span class="p">)</span>  <span class="c1"># Conversion de mg en dB</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Marge de phase = </span><span class="si">{MP}</span><span class="s2">° </span><span class="se">\n</span><span class="s2">Marge de gain = </span><span class="si">{MG}</span><span class="s2"> dB&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">MP</span><span class="o">=</span><span class="n">mp</span><span class="p">,</span> <span class="n">MG</span><span class="o">=</span><span class="n">mg</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -623,32 +622,142 @@ G(p) = \frac{1}{(1+0,5p)*(1+4p)*(0.1p+1)}
 Marge de gain = 34.86235250429483 dB
 </pre></div>
 </div>
-<img alt="../_images/LaboSeance5_33_1.png" src="../_images/LaboSeance5_33_1.png" />
-<img alt="../_images/LaboSeance5_33_2.png" src="../_images/LaboSeance5_33_2.png" />
+<img alt="../_images/LaboSeance5_29_1.png" src="../_images/LaboSeance5_29_1.png" />
 </div>
 </div>
 <p>Calculez la valeur critique de <span class="math notranslate nohighlight">\(K_p\)</span> pour passer par le point « -1 » càd (0dB, -180°) : <span class="math notranslate nohighlight">\(K_p\)</span> = …</p>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Kp</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">mag</span>  <span class="c1"># Kp va à l&#39;inverse de ce qu&#39;on mesure</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Kp</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="n">mg</span><span class="o">/</span><span class="mi">20</span><span class="p">)</span> <span class="c1"># Kp ne doit pas être en dB =&gt; conversion</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Kp =&quot;</span><span class="p">,</span> <span class="n">Kp</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s2">&quot;Nichols&quot;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">rlf</span><span class="o">.</span><span class="n">nichols</span><span class="p">(</span><span class="n">Kp</span><span class="o">*</span><span class="n">G_BO</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;G_BO(p)&#39;</span><span class="p">],</span> <span class="n">NameOfFigure</span> <span class="o">=</span> <span class="s2">&quot;Nichols&quot;</span><span class="p">)</span>
+
+<span class="n">G_BF</span><span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">feedback</span><span class="p">(</span><span class="n">Kp</span><span class="o">*</span><span class="n">G_BO</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s2">&quot;Steps&quot;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">rlf</span><span class="o">.</span><span class="n">step_</span><span class="p">(</span><span class="n">G_BF</span><span class="p">,</span> <span class="n">NameOfFigure</span><span class="o">=</span><span class="s2">&quot;Steps&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Kp = 7.5556606703682965
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Kp = 55.349999999999994
 </pre></div>
 </div>
+<img alt="../_images/LaboSeance5_31_1.png" src="../_images/LaboSeance5_31_1.png" />
+<img alt="../_images/LaboSeance5_31_2.png" src="../_images/LaboSeance5_31_2.png" />
 </div>
 </div>
 </div>
 <div class="section" id="step">
 <h4>Step<a class="headerlink" href="#step" title="Permalink to this headline">¶</a></h4>
-<p>Avec <span class="math notranslate nohighlight">\(K_p\)</span> = 54, observez la réponse indicielle.</p>
-<p>Que se passe-t-il si on insère un correcteur proportionnel de gain K=56 ?</p>
+<p>Avec <span class="math notranslate nohighlight">\(K_p = 54\)</span>, observez la réponse indicielle.</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Kp</span> <span class="o">=</span> <span class="mi">54</span>
+<span class="n">G_BF</span><span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">feedback</span><span class="p">(</span><span class="n">Kp</span><span class="o">*</span><span class="n">G_BO</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s2">&quot;Steps&quot;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">rlf</span><span class="o">.</span><span class="n">step_</span><span class="p">(</span><span class="n">G_BF</span><span class="p">,</span> <span class="n">NameOfFigure</span><span class="o">=</span><span class="s2">&quot;Steps&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/LaboSeance5_33_0.png" src="../_images/LaboSeance5_33_0.png" />
+</div>
+</div>
+<p>Que se passe-t-il si on insère un correcteur proportionnel de gain <span class="math notranslate nohighlight">\(K_p = 56\)</span> ?</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Kp</span> <span class="o">=</span> <span class="mi">56</span>
+<span class="n">G_BF</span><span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">feedback</span><span class="p">(</span><span class="n">Kp</span><span class="o">*</span><span class="n">G_BO</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s2">&quot;Steps&quot;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">rlf</span><span class="o">.</span><span class="n">step_</span><span class="p">(</span><span class="n">G_BF</span><span class="p">,</span> <span class="n">NameOfFigure</span><span class="o">=</span><span class="s2">&quot;Steps&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/LaboSeance5_35_0.png" src="../_images/LaboSeance5_35_0.png" />
+</div>
+</div>
 <p>Calculez <span class="math notranslate nohighlight">\(K_p\)</span> pour obtenir une marge de phase de 45° :</p>
+<div class="tip admonition">
+<p class="admonition-title">Astuce</p>
+<p>Pour calculer la valeur du gain et/ou de la fréquence d’un système à une marge de phase donnée, vous pouvez utiliser la fonction <code class="docutils literal notranslate"><span class="pre">getValues</span></code> du package <code class="docutils literal notranslate"><span class="pre">ReguLabFct</span></code>.</p>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mag</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">rlf</span><span class="o">.</span><span class="n">getValues</span><span class="p">(</span><span class="n">G_BO</span><span class="p">,</span> <span class="o">-</span><span class="mi">135</span><span class="p">,</span> <span class="n">NameOfFigure</span><span class="o">=</span><span class="s2">&quot;Bode Gbo&quot;</span><span class="p">)</span> <span class="c1"># -135° car on souhaite regarder le gain du système en BO à 45° du point critique (-180°, 0dB)</span>
+<span class="n">Kp_45</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">mag</span>  <span class="c1"># Donne directement la valeur de l&#39;amplitude =&gt; Pas besoin de la convertir à partir d&#39;une valeur en dB + Kp va à l&#39;inverse de ce qu&#39;on mesure</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Kp =&quot;</span><span class="p">,</span> <span class="n">Kp_45</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s2">&quot;Nichols&quot;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">rlf</span><span class="o">.</span><span class="n">nichols</span><span class="p">(</span><span class="n">Kp_45</span><span class="o">*</span><span class="n">G_BO</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Kp_45*G_BO(p)&#39;</span><span class="p">],</span> <span class="n">NameOfFigure</span> <span class="o">=</span> <span class="s2">&quot;Nichols&quot;</span><span class="p">)</span>
+<span class="n">__</span><span class="p">,</span> <span class="n">mp</span><span class="p">,</span> <span class="n">__</span><span class="p">,</span> <span class="n">__</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">margin</span><span class="p">(</span><span class="n">Kp_45</span><span class="o">*</span><span class="n">G_BO</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Marge de phase = </span><span class="si">{MP}</span><span class="s2">°&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">MP</span><span class="o">=</span><span class="n">mp</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Gain à -135° = -20.136844108498554 dB
+Fréquence à -135° = 1.8273687032470145 rad/sec
+Kp = 10.158795207791778
+Marge de phase = 45.016953712610785°
+</pre></div>
+</div>
+<img alt="../_images/LaboSeance5_37_1.png" src="../_images/LaboSeance5_37_1.png" />
+<img alt="../_images/LaboSeance5_37_2.png" src="../_images/LaboSeance5_37_2.png" />
+</div>
+</div>
 <p>Calculez <span class="math notranslate nohighlight">\(K_p\)</span> pour obtenir une marge de phase de 60° :</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mag</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">rlf</span><span class="o">.</span><span class="n">getValues</span><span class="p">(</span><span class="n">G_BO</span><span class="p">,</span> <span class="o">-</span><span class="mi">120</span><span class="p">,</span> <span class="n">NameOfFigure</span><span class="o">=</span><span class="s2">&quot;Bode Gbo&quot;</span><span class="p">)</span> <span class="c1"># -120° car on souhaite regarder le gain du système en BO à 60° du point critique (-180°, 0dB)</span>
+<span class="n">Kp_60</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">mag</span>  <span class="c1"># Donne directement la valeur de l&#39;amplitude =&gt; Pas besoin de la convertir à partir d&#39;une valeur en dB + Kp va à l&#39;inverse de ce qu&#39;on mesure</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Kp =&quot;</span><span class="p">,</span> <span class="n">Kp_60</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s2">&quot;Nichols&quot;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">rlf</span><span class="o">.</span><span class="n">nichols</span><span class="p">(</span><span class="n">Kp</span><span class="o">*</span><span class="n">G_BO</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Kp_60*G_BO(p)&#39;</span><span class="p">],</span> <span class="n">NameOfFigure</span> <span class="o">=</span> <span class="s2">&quot;Nichols&quot;</span><span class="p">)</span>
+<span class="n">__</span><span class="p">,</span> <span class="n">mp</span><span class="p">,</span> <span class="n">__</span><span class="p">,</span> <span class="n">__</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">margin</span><span class="p">(</span><span class="n">Kp_60</span><span class="o">*</span><span class="n">G_BO</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Marge de phase = </span><span class="si">{MP}</span><span class="s2">°&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">MP</span><span class="o">=</span><span class="n">mp</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Gain à -120° = -16.200670408217633 dB
+Fréquence à -120° = 1.3140499110790103 rad/sec
+Kp = 6.457040648746092
+Marge de phase = 59.97990291672397°
+</pre></div>
+</div>
+<img alt="../_images/LaboSeance5_39_1.png" src="../_images/LaboSeance5_39_1.png" />
+<img alt="../_images/LaboSeance5_39_2.png" src="../_images/LaboSeance5_39_2.png" />
+</div>
+</div>
 <p>Et comparez les réponses indicielles respectives pour ces 2 marges typiques habituelles.</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G_BF_45</span><span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">feedback</span><span class="p">(</span><span class="n">Kp_45</span><span class="o">*</span><span class="n">G_BO</span><span class="p">)</span>
+<span class="n">G_BF_60</span><span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">feedback</span><span class="p">(</span><span class="n">Kp_60</span><span class="o">*</span><span class="n">G_BO</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s2">&quot;Steps&quot;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">rlf</span><span class="o">.</span><span class="n">stepWithInfo</span><span class="p">(</span><span class="n">G_BF_45</span><span class="p">,</span> <span class="n">NameOfFigure</span><span class="o">=</span><span class="s2">&quot;Steps&quot;</span><span class="p">,</span> <span class="n">sysName</span><span class="o">=</span><span class="s1">&#39;G_BF_45&#39;</span><span class="p">)</span>
+<span class="n">rlf</span><span class="o">.</span><span class="n">stepWithInfo</span><span class="p">(</span><span class="n">G_BF_60</span><span class="p">,</span> <span class="n">NameOfFigure</span><span class="o">=</span><span class="s2">&quot;Steps&quot;</span><span class="p">,</span> <span class="n">sysName</span><span class="o">=</span><span class="s1">&#39;G_BF_60&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/LaboSeance5_41_0.png" src="../_images/LaboSeance5_41_0.png" />
+</div>
+</div>
+<p>(facultatif) Faites l’exercice 2 page 7-4 et visualisez les calculs par une résolution graphique</p>
+<p>(facultatif) Faites aussi l’exercice 3.</p>
+<p>(facultatif) <strong>application 1 : régulation de vitesse</strong></p>
+<p>Tracez le diagramme de Nichols qui permette de déterminer graphiquement la valeur max de A pour minimiser l’erreur tout en
+garantissant une marge de phase de 45° ou de 60° et comparez avec la solution A=100.</p>
+<p>(facultatif) <strong>Régulation de position</strong></p>
+<p>Tracez le diagramme de Nichols qui permette de déterminer graphiquement la valeur max de A pour minimiser l’erreur tout en
+garantissant une marge de phase de 45°.</p>
+<p>Comparez à la résolution temporelle …</p>
+<p>Pour rappel, vous pouvez facilement obtenir les valeurs typiques d’une fonction d’ordre 2 grâce à la fonction <code class="docutils literal notranslate"><span class="pre">damp</span></code> du package <code class="docutils literal notranslate"><span class="pre">control</span></code>.</p>
 </div>
 </div>
 </div>
@@ -674,10 +783,11 @@ C_{PI}(p)=K_p*\frac{1+\tau_I*p}{\tau_I*p}
 </ul>
 <p><span class="math notranslate nohighlight">\(\Rightarrow\)</span> Observez la construction de la fonction <span class="math notranslate nohighlight">\(C_{PI}\)</span> par morceaux</p>
 <p><span class="math notranslate nohighlight">\(\Rightarrow\)</span> Observez qu’en HF, le pôle compense le zéro</p>
-<p>(Facultatif) allons construire le diagramme de Bode de la fonction de transfert de la page 4-17 :
-$<span class="math notranslate nohighlight">\(
+<p>(Facultatif) Construisez le diagramme de Bode de la fonction de transfert de la page 4-17 :</p>
+<div class="math notranslate nohighlight">
+\[
 G(p) = K*\frac{\tau_1p+1}{(\tau_2p+1)(\tau_3p+1)}
-\)</span>$</p>
+\]</div>
 <p>Prenez <span class="math notranslate nohighlight">\(\tau_1\)</span>=1s, <span class="math notranslate nohighlight">\(\tau_2\)</span>=10000s, <span class="math notranslate nohighlight">\(\tau_3\)</span> = 0.001s et K = 2</p>
 <ul class="simple">
 <li><p>Tracez le diagramme de Bode de <span class="math notranslate nohighlight">\(f_2=\frac{1}{\tau_2p+1}\)</span>:</p></li>
