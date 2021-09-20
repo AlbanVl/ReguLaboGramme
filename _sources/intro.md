@@ -49,7 +49,7 @@ La version de Python installée avec Anaconda n'est pas celle qu'il faut pour ut
     :::
 
     ::::{note}
-    Il se peut qu'Anaconda ne vous propose pas d'autres versions de python que la 3.8 même après avoir attendu plus de 15 minutes...
+    Il se peut qu'Anaconda ne vous propose pas d'autres versions de python que sa version par défaut même après avoir attendu plus de 15 minutes...
 
     Pas de panique, voici une solution qui devrait vous sortir du pétrin:
 
