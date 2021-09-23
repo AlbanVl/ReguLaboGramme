@@ -23,7 +23,7 @@ La version de Python installée avec Anaconda n'est pas celle qu'il faut pour ut
 1. Ouvrez l'onglet `Environments`.
 
     :::{image} images/Intro_AnacondaInstallation1.png
-    :alt: ConsoleCMD
+    :alt: AnacondaSelectEnvironnement
     :width: 525px
     :align: center
     :::
@@ -31,7 +31,7 @@ La version de Python installée avec Anaconda n'est pas celle qu'il faut pour ut
 2. Poussez sur le bouton `Create`.
 
     :::{image} images/Intro_AnacondaInstallation2.png
-    :alt: ConsoleCMD
+    :alt: AnacondaCreateEnvironnement
     :width: 525px
     :align: center
     :::
@@ -39,7 +39,7 @@ La version de Python installée avec Anaconda n'est pas celle qu'il faut pour ut
 3. Configurez le nouvel environnement en lui donnant un nom sans espaces ni caractères spéciaux et en choisissant la version **3.7** de Python.
 
     :::{image} images/Intro_AnacondaInstallation3.png
-    :alt: ConsoleCMD
+    :alt: AnacondaSelectPythonVersion
     :width: 525px
     :align: center
     :::
@@ -84,6 +84,10 @@ La version de Python installée avec Anaconda n'est pas celle qu'il faut pour ut
     :align: center
     :::
 
+    :::{note}
+    Si vous utiliser un mac, Anaconda ne vous propose pas d'installer cette application car vous n'en avez pas besoin vu qu'une version équivalente existe déjà sur iOS. Il s'agit de l'application `Terminal`. 
+    :::
+
 6. Installer l'IDE `Spyder`.
 
     :::{image} images/Intro_AnacondaInstallation5.png
@@ -112,6 +116,14 @@ La version de Python installée avec Anaconda n'est pas celle qu'il faut pour ut
     :align: center
     :::
 
+    :::{note}
+    Pour ceux qui utilisent un mac, vous devez passer par l'application `Terminal` d'iOS et entrer la commande suivante avant de passer au point suivant:
+    
+        conda activate Regulation
+
+    Cette commande vous permet d'activer l'environnement `Regulation` que vous avez créé dans la précédente section. Vous devriez maintenant voir le nom de votre environnement (`Regulation`) entre parenthèses à la place de l'environnement de base (`base`).
+    :::
+
 2. Entrez la commande suivante:
     ```
     conda install -c conda-forge control
@@ -129,6 +141,14 @@ La version de Python installée avec Anaconda n'est pas celle qu'il faut pour ut
     :alt: ConsoleCMD
     :width: 175px
     :align: center
+    :::
+
+    :::{note}
+    Pour ceux qui utilise un mac, vous devez ouvrir l'application `Terminal` d'iOS et entrer la commande suivante avant de passer au point suivant:
+    
+        conda activate Regulation
+
+    Cette commande vous permet d'activer l'environnement `Regulation` que vous avez créé précédemment.
     :::
 
 2. Entrez la commande suivante:

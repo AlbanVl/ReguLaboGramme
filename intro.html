@@ -265,13 +265,13 @@
 <p>La version de Python installée avec Anaconda n’est pas celle qu’il faut pour utiliser les packages utiles pour le laboratoire de régulation. Dès lors, il faut créer un environnement avec la bonne version de Python. Pour ce faire, il suffit de suivre les instructions suivantes:</p>
 <ol>
 <li><p>Ouvrez l’onglet <code class="docutils literal notranslate"><span class="pre">Environments</span></code>.</p>
-<a class="reference internal image-reference" href="_images/Intro_AnacondaInstallation1.png"><img alt="ConsoleCMD" class="align-center" src="_images/Intro_AnacondaInstallation1.png" style="width: 525px;" /></a>
+<a class="reference internal image-reference" href="_images/Intro_AnacondaInstallation1.png"><img alt="AnacondaSelectEnvironnement" class="align-center" src="_images/Intro_AnacondaInstallation1.png" style="width: 525px;" /></a>
 </li>
 <li><p>Poussez sur le bouton <code class="docutils literal notranslate"><span class="pre">Create</span></code>.</p>
-<a class="reference internal image-reference" href="_images/Intro_AnacondaInstallation2.png"><img alt="ConsoleCMD" class="align-center" src="_images/Intro_AnacondaInstallation2.png" style="width: 525px;" /></a>
+<a class="reference internal image-reference" href="_images/Intro_AnacondaInstallation2.png"><img alt="AnacondaCreateEnvironnement" class="align-center" src="_images/Intro_AnacondaInstallation2.png" style="width: 525px;" /></a>
 </li>
 <li><p>Configurez le nouvel environnement en lui donnant un nom sans espaces ni caractères spéciaux et en choisissant la version <strong>3.7</strong> de Python.</p>
-<a class="reference internal image-reference" href="_images/Intro_AnacondaInstallation3.png"><img alt="ConsoleCMD" class="align-center" src="_images/Intro_AnacondaInstallation3.png" style="width: 525px;" /></a>
+<a class="reference internal image-reference" href="_images/Intro_AnacondaInstallation3.png"><img alt="AnacondaSelectPythonVersion" class="align-center" src="_images/Intro_AnacondaInstallation3.png" style="width: 525px;" /></a>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Si l’option <code class="docutils literal notranslate"><span class="pre">3.7</span></code> n’apparaît pas dans la liste déroulante, cela veut dire qu’Anaconda n’est pas encore prêt. Il faut donc attendre que tout s’installe correctement en arrière-plan. Attendez un peu et recommencez l’opération jusqu’à ce que l’option <code class="docutils literal notranslate"><span class="pre">3.7</span></code> apparaisse bien dans la liste déroulante.</p>
@@ -297,6 +297,10 @@
 <li><p>Retournez dans le menu <code class="docutils literal notranslate"><span class="pre">Home</span></code>.</p></li>
 <li><p>Installez l’application <code class="docutils literal notranslate"><span class="pre">CMD.exe</span> <span class="pre">Prompt</span></code>.</p>
 <a class="reference internal image-reference" href="_images/Intro_AnacondaInstallation4.png"><img alt="ConsoleCMD" class="align-center" src="_images/Intro_AnacondaInstallation4.png" style="width: 525px;" /></a>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Si vous utiliser un mac, Anaconda ne vous propose pas d’installer cette application car vous n’en avez pas besoin vu qu’une version équivalente existe déjà sur iOS. Il s’agit de l’application <code class="docutils literal notranslate"><span class="pre">Terminal</span></code>.</p>
+</div>
 </li>
 <li><p>Installer l’IDE <code class="docutils literal notranslate"><span class="pre">Spyder</span></code>.</p>
 <a class="reference internal image-reference" href="_images/Intro_AnacondaInstallation5.png"><img alt="ConsoleCMD" class="align-center" src="_images/Intro_AnacondaInstallation5.png" style="width: 525px;" /></a>
@@ -312,6 +316,14 @@
 <ol>
 <li><p>Ouvrez la console de commande d’Anaconda (<em>Anaconda Prompt</em>):</p>
 <a class="reference internal image-reference" href="_images/Intro_ConsoleCMD.png"><img alt="ConsoleCMD" class="align-center" src="_images/Intro_ConsoleCMD.png" style="width: 175px;" /></a>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Pour ceux qui utilisent un mac, vous devez passer par l’application <code class="docutils literal notranslate"><span class="pre">Terminal</span></code> d’iOS et entrer la commande suivante avant de passer au point suivant:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>conda activate Regulation
+</pre></div>
+</div>
+<p>Cette commande vous permet d’activer l’environnement <code class="docutils literal notranslate"><span class="pre">Regulation</span></code> que vous avez créé dans la précédente section. Vous devriez maintenant voir le nom de votre environnement (<code class="docutils literal notranslate"><span class="pre">Regulation</span></code>) entre parenthèses à la place de l’environnement de base (<code class="docutils literal notranslate"><span class="pre">base</span></code>).</p>
+</div>
 </li>
 <li><p>Entrez la commande suivante:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">control</span>
@@ -327,6 +339,14 @@
 <ol>
 <li><p>Ouvrez la console de commande d’Anaconda (<em>Anaconda Prompt</em>):</p>
 <a class="reference internal image-reference" href="_images/Intro_ConsoleCMD.png"><img alt="ConsoleCMD" class="align-center" src="_images/Intro_ConsoleCMD.png" style="width: 175px;" /></a>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Pour ceux qui utilise un mac, vous devez ouvrir l’application <code class="docutils literal notranslate"><span class="pre">Terminal</span></code> d’iOS et entrer la commande suivante avant de passer au point suivant:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>conda activate Regulation
+</pre></div>
+</div>
+<p>Cette commande vous permet d’activer l’environnement <code class="docutils literal notranslate"><span class="pre">Regulation</span></code> que vous avez créé précédemment.</p>
+</div>
 </li>
 <li><p>Entrez la commande suivante:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">pyserial</span>
