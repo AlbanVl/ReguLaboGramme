@@ -777,29 +777,132 @@ C_{PI}(p)=K_p*\frac{1+\tau_I*p}{\tau_I*p}
 <li><p>du zéro: <span class="math notranslate nohighlight">\(f_1=1+p\tau_I\)</span></p>
 <p>et observez l’influence d’un zéro de la fonction de transfert lorsque <span class="math notranslate nohighlight">\(\omega&lt;&lt;&lt;\frac{1}{\tau_I}\)</span> et  <span class="math notranslate nohighlight">\(\omega&gt;&gt;&gt;\frac{1}{\tau_I}\)</span> <span class="math notranslate nohighlight">\(\Rightarrow\)</span> <strong>synthèse sur l’effet d’un zéro à la page 4-16 !</strong></p>
 </li>
-<li><p>du pôle: <span class="math notranslate nohighlight">\(f_2=\frac{1}{1+p\tau_I}\)</span></p>
+<li><p>du pôle: <span class="math notranslate nohighlight">\(f_2=\frac{1}{p\tau_I}\)</span></p>
 <p>et observez l’influence d’un pôle à l’origine</p>
 </li>
 </ul>
 <p><span class="math notranslate nohighlight">\(\Rightarrow\)</span> Observez la construction de la fonction <span class="math notranslate nohighlight">\(C_{PI}\)</span> par morceaux</p>
 <p><span class="math notranslate nohighlight">\(\Rightarrow\)</span> Observez qu’en HF, le pôle compense le zéro</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Kp</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">tI</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">f_Kp</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">tf</span><span class="p">(</span><span class="n">Kp</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">f1</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">tf</span><span class="p">([</span><span class="n">tI</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">f2</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">tf</span><span class="p">([</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="n">tI</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">ml</span><span class="o">.</span><span class="n">bode</span><span class="p">(</span><span class="n">f_Kp</span><span class="p">)</span>
+<span class="n">ml</span><span class="o">.</span><span class="n">bode</span><span class="p">(</span><span class="n">f1</span><span class="p">)</span>
+<span class="n">ml</span><span class="o">.</span><span class="n">bode</span><span class="p">(</span><span class="n">f2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Kp&#39;</span><span class="p">,</span> <span class="s1">&#39;f1&#39;</span><span class="p">,</span> <span class="s1">&#39;f2&#39;</span><span class="p">]);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/LaboSeance5_48_0.png" src="../_images/LaboSeance5_48_0.png" />
+</div>
+</div>
 <p>(Facultatif) Construisez le diagramme de Bode de la fonction de transfert de la page 4-17 :</p>
 <div class="math notranslate nohighlight">
 \[
-G(p) = K*\frac{\tau_1p+1}{(\tau_2p+1)(\tau_3p+1)}
+G(p) = K_P*\frac{\tau_1p+1}{(\tau_2p+1)(\tau_3p+1)}
 \]</div>
-<p>Prenez <span class="math notranslate nohighlight">\(\tau_1\)</span>=1s, <span class="math notranslate nohighlight">\(\tau_2\)</span>=10000s, <span class="math notranslate nohighlight">\(\tau_3\)</span> = 0.001s et K = 2</p>
+<p>Prenez <span class="math notranslate nohighlight">\(\tau_1\)</span>=1s, <span class="math notranslate nohighlight">\(\tau_2\)</span>=10000s, <span class="math notranslate nohighlight">\(\tau_3\)</span> = 0.001s et <span class="math notranslate nohighlight">\(K_P\)</span> = 2</p>
 <ul class="simple">
 <li><p>Tracez le diagramme de Bode de <span class="math notranslate nohighlight">\(f_2=\frac{1}{\tau_2p+1}\)</span>:</p></li>
 </ul>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tI2</span> <span class="o">=</span> <span class="mi">10000</span>
+<span class="n">f2</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">tf</span><span class="p">([</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="n">tI2</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">ml</span><span class="o">.</span><span class="n">bode</span><span class="p">(</span><span class="n">f2</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/LaboSeance5_50_0.png" src="../_images/LaboSeance5_50_0.png" />
+</div>
+</div>
 <ul class="simple">
 <li><p>Tracez le diagramme de Bode de <span class="math notranslate nohighlight">\(f_1=\tau_1p+1\)</span>:</p></li>
 </ul>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tI1</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">f1</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">tf</span><span class="p">([</span><span class="n">tI1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">ml</span><span class="o">.</span><span class="n">bode</span><span class="p">(</span><span class="n">f1</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/LaboSeance5_52_0.png" src="../_images/LaboSeance5_52_0.png" />
+</div>
+</div>
 <ul class="simple">
 <li><p>Tracez le diagramme de Bode de la fonction finale <span class="math notranslate nohighlight">\(H=f_1*f_2*f_3\)</span> et observez l’addition graphique des différentes contributions :</p></li>
 </ul>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Kp</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">tI3</span> <span class="o">=</span> <span class="mf">0.001</span>
+<span class="n">f3</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">tf</span><span class="p">([</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="n">tI3</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+
+<span class="n">H</span> <span class="o">=</span> <span class="n">Kp</span><span class="o">*</span><span class="n">f1</span><span class="o">*</span><span class="n">f2</span><span class="o">*</span><span class="n">f3</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">ml</span><span class="o">.</span><span class="n">bode</span><span class="p">(</span><span class="n">H</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/LaboSeance5_54_0.png" src="../_images/LaboSeance5_54_0.png" />
+</div>
+</div>
 <p>Effet si les pulsations caractéristiques sont plus proches : <span class="math notranslate nohighlight">\(\tau_1=1s\)</span>, <span class="math notranslate nohighlight">\(\tau_2=10s\)</span> et <span class="math notranslate nohighlight">\(\tau_3=0,01s\)</span>:</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tI1</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">tI2</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">tI3</span> <span class="o">=</span> <span class="mf">0.01</span>
+
+<span class="n">f1</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">tf</span><span class="p">([</span><span class="n">tI1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">f2</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">tf</span><span class="p">([</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="n">tI2</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">f3</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">tf</span><span class="p">([</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="n">tI3</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+
+<span class="n">H</span> <span class="o">=</span> <span class="n">Kp</span><span class="o">*</span><span class="n">f1</span><span class="o">*</span><span class="n">f2</span><span class="o">*</span><span class="n">f3</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">ml</span><span class="o">.</span><span class="n">bode</span><span class="p">(</span><span class="n">H</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/LaboSeance5_56_0.png" src="../_images/LaboSeance5_56_0.png" />
+</div>
+</div>
 <p>Effet si les pulsations caractéristiques sont dispersées : <span class="math notranslate nohighlight">\(\tau_1=0.001s\)</span>, <span class="math notranslate nohighlight">\(\tau_2=10000s\)</span> et <span class="math notranslate nohighlight">\(\tau_3=1s\)</span> et <span class="math notranslate nohighlight">\(K_P=2\)</span>:</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tI1</span> <span class="o">=</span> <span class="mf">0.001</span>
+<span class="n">tI2</span> <span class="o">=</span> <span class="mi">10000</span>
+<span class="n">tI3</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">Kp</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="n">f1</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">tf</span><span class="p">([</span><span class="n">tI1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">f2</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">tf</span><span class="p">([</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="n">tI2</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">f3</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">tf</span><span class="p">([</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="n">tI3</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+
+<span class="n">H</span> <span class="o">=</span> <span class="n">Kp</span><span class="o">*</span><span class="n">f1</span><span class="o">*</span><span class="n">f2</span><span class="o">*</span><span class="n">f3</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">ml</span><span class="o">.</span><span class="n">bode</span><span class="p">(</span><span class="n">H</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/LaboSeance5_58_0.png" src="../_images/LaboSeance5_58_0.png" />
+</div>
+</div>
 </div>
 <div class="section" id="exercice-4-page-7-9-fait-au-cours">
 <h3>Exercice 4 page 7-9 (fait au cours)<a class="headerlink" href="#exercice-4-page-7-9-fait-au-cours" title="Permalink to this headline">¶</a></h3>
@@ -824,7 +927,7 @@ assurant une réponse indicielle dont le dépassement est limité à 10% (tablez
 <li><p>Par la méthode du pôle dominant</p></li>
 <li><p>Par la méthode de placement fréquentiel</p></li>
 </ul>
-<p>Tracez le diagramme de Nichols ainsi corrigé pour le système réel et pour le système ramené à 2 pôles dominant.</p>
+<p>Tracez le diagramme de Nichols ainsi corrigé pour le système réel et pour le système ramené à 2 pôles dominants.</p>
 <p>Tracez également les 2 réponses indicielles.</p>
 <div class="section" id="methode-du-pole-dominant">
 <h4>Méthode du pôle dominant<a class="headerlink" href="#methode-du-pole-dominant" title="Permalink to this headline">¶</a></h4>
