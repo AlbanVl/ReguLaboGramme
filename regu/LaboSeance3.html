@@ -445,19 +445,19 @@ SettlingTime : 2.997574773027652
 
 <span class="c1"># Réponse indicielle</span>
 <span class="c1"># Calcule les différentes fonctions de transfert ainsi que la réponse indicielle</span>
-<span class="n">info</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">infos</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">K</span> <span class="ow">in</span> <span class="n">K_values</span><span class="p">:</span> 
     <span class="n">G1</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">tf</span><span class="p">([</span><span class="n">K</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span> <span class="c1"># Calcul la fonction de transfert en foncion de K</span>
     <span class="n">G2</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">tf</span><span class="p">([</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
     <span class="n">G_BO</span> <span class="o">=</span> <span class="n">G1</span><span class="o">*</span><span class="n">G2</span>
     <span class="n">G_BF</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">feedback</span><span class="p">(</span><span class="n">G_BO</span><span class="p">)</span>
-    <span class="n">info</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rlf</span><span class="o">.</span><span class="n">stepWithInfo</span><span class="p">(</span><span class="n">G_BF</span><span class="p">,</span> <span class="n">NameOfFigure</span><span class="o">=</span><span class="s1">&#39;Steps&#39;</span><span class="p">,</span> <span class="n">sysName</span><span class="o">=</span><span class="n">K</span><span class="p">))</span>
+    <span class="n">infos</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rlf</span><span class="o">.</span><span class="n">stepWithInfo</span><span class="p">(</span><span class="n">G_BF</span><span class="p">,</span> <span class="n">NameOfFigure</span><span class="o">=</span><span class="s1">&#39;Steps&#39;</span><span class="p">,</span> <span class="n">sysName</span><span class="o">=</span><span class="n">K</span><span class="p">))</span>
 
 <span class="c1"># Impression des résultats pour K = 1 et K = 10</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Les résultats pour K = 1 sont:&quot;</span><span class="p">)</span>
-<span class="n">rlf</span><span class="o">.</span><span class="n">printInfo</span><span class="p">(</span><span class="n">info</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">rlf</span><span class="o">.</span><span class="n">printInfo</span><span class="p">(</span><span class="n">infos</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Les résultats pour K = 10 sont:&quot;</span><span class="p">)</span>
-<span class="n">rlf</span><span class="o">.</span><span class="n">printInfo</span><span class="p">(</span><span class="n">info</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># -1 pour sélectionner le dernier élément de la liste info.</span>
+<span class="n">rlf</span><span class="o">.</span><span class="n">printInfo</span><span class="p">(</span><span class="n">infos</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># -1 pour sélectionner le dernier élément de la liste info.</span>
 </pre></div>
 </div>
 </div>
@@ -484,7 +484,7 @@ SettlingTime : 3.3879019790107407
 </div>
 <p>Pourquoi insiste-t-on sur le fait qu’il doit être à retour unitaire ?</p>
 <div class="toggle docutils container">
-<p>On insiste sur le fait que le système doit être à retour unitaire afin de directement pourvoir comparer l’entrée ( = consigne) et le sortie de celui-ci.</p>
+<p>On insiste sur le fait que le système doit être à retour unitaire afin de directement pouvoir comparer l’entrée ( = consigne) et le sortie de celui-ci.</p>
 </div>
 <p>Observez l’effet sur les grandeurs caractéristiques de la réponse et concluez :</p>
 <p><span class="math notranslate nohighlight">\(\nearrow\)</span> K a pour effet de:</p>
