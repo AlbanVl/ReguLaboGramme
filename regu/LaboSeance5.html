@@ -298,8 +298,8 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercice-4-page-7-9-fait-au-cours">
-     Exercice 4 page 7-9 (fait au cours)
+    <a class="reference internal nav-link" href="#facultatif-exercice-4-page-7-9-fait-au-cours">
+     [facultatif] Exercice 4 page 7-9 (fait au cours)
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -312,13 +312,21 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#methode-du-pole-dominant">
-       Méthode du pôle dominant
+      <a class="reference internal nav-link" href="#methode-de-compensation-du-pole-dominant-cf-p-7-8">
+       Méthode de compensation du pôle dominant (
+       <em>
+        cf. p. 7-8
+       </em>
+       )
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#methode-de-placement-frequentiel">
-       Méthode de placement fréquentiel
+      <a class="reference internal nav-link" href="#methode-de-placement-frequentiel-cf-p-7-8">
+       Méthode de placement fréquentiel (
+       <em>
+        cf. p. 7-8
+       </em>
+       )
       </a>
      </li>
     </ul>
@@ -748,12 +756,12 @@ Marge de phase = 59.97990291672397°
 <img alt="../_images/LaboSeance5_41_0.png" src="../_images/LaboSeance5_41_0.png" />
 </div>
 </div>
-<p>(facultatif) Faites l’exercice 2 page 7-4 et visualisez les calculs par une résolution graphique</p>
-<p>(facultatif) Faites aussi l’exercice 3.</p>
-<p>(facultatif) <strong>application 1 : régulation de vitesse</strong></p>
+<p>[facultatif] Faites l’exercice 2 page 7-4 et visualisez les calculs par une résolution graphique</p>
+<p>[facultatif] Faites aussi l’exercice 3.</p>
+<p>[facultatif] <strong>application 1 : régulation de vitesse</strong></p>
 <p>Tracez le diagramme de Nichols qui permette de déterminer graphiquement la valeur max de A pour minimiser l’erreur tout en
 garantissant une marge de phase de 45° ou de 60° et comparez avec la solution A=100.</p>
-<p>(facultatif) <strong>Régulation de position</strong></p>
+<p>[facultatif] <strong>Régulation de position</strong></p>
 <p>Tracez le diagramme de Nichols qui permette de déterminer graphiquement la valeur max de A pour minimiser l’erreur tout en
 garantissant une marge de phase de 45°.</p>
 <p>Comparez à la résolution temporelle …</p>
@@ -803,7 +811,7 @@ C_{PI}(p)=K_p*\frac{1+\tau_I*p}{\tau_I*p}
 <img alt="../_images/LaboSeance5_48_0.png" src="../_images/LaboSeance5_48_0.png" />
 </div>
 </div>
-<p>(Facultatif) Construisez le diagramme de Bode de la fonction de transfert de la page 4-17 :</p>
+<p>[facultatif] Construisez le diagramme de Bode de la fonction de transfert de la page 4-17 :</p>
 <div class="math notranslate nohighlight">
 \[
 G(p) = K_P*\frac{\tau_1p+1}{(\tau_2p+1)(\tau_3p+1)}
@@ -904,8 +912,14 @@ G(p) = K_P*\frac{\tau_1p+1}{(\tau_2p+1)(\tau_3p+1)}
 </div>
 </div>
 </div>
-<div class="section" id="exercice-4-page-7-9-fait-au-cours">
-<h3>Exercice 4 page 7-9 (fait au cours)<a class="headerlink" href="#exercice-4-page-7-9-fait-au-cours" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="facultatif-exercice-4-page-7-9-fait-au-cours">
+<h3>[facultatif] Exercice 4 page 7-9 (fait au cours)<a class="headerlink" href="#facultatif-exercice-4-page-7-9-fait-au-cours" title="Permalink to this headline">¶</a></h3>
+<p>Soit la fonction de boucle ouverte d’un processus d’asservissement de position:</p>
+<div class="math notranslate nohighlight">
+\[G(p)=\frac {1}{(1+0,1p)(1+0,01p)}\]</div>
+<p>Auquel on applique un correcteur PI:</p>
+<div class="math notranslate nohighlight">
+\[C_{PI}=\frac{15.55p+18.42}{0.8445p}\]</div>
 <p>Observez l’effet du pôle à l’origine :</p>
 <ul class="simple">
 <li><p>sur le module :</p></li>
@@ -920,20 +934,305 @@ G(p) = K_P*\frac{\tau_1p+1}{(\tau_2p+1)(\tau_3p+1)}
 \[
  G(p)=\frac{7500}{(p+4)(p+10)(p+500)}
 \]</div>
-<p>Ramenez le système à ses 2 pôles dominants. Vérifiez dans Nichols et sur la réponse indicielle.</p>
+<p>Ramenez le système à ses 2 pôles dominants.</p>
+<div class="toggle docutils container">
+<p>Si on écrit G(p) sous sa forme canonique, on a:</p>
+<div class="math notranslate nohighlight">
+\[
+ G(p)=\frac{\frac{1}{4}*\frac{1}{10}*\frac{1}{500}*7500}{(\frac{1}{4}p+1)(\frac{1}{10}p+1)(\frac{1}{500}p+1)}
+\]</div>
+<p><span class="math notranslate nohighlight">\(\Rightarrow\)</span> Le pôle le moins dominant est celui dont la constante de temps est la plus faible, soit <span class="math notranslate nohighlight">\(\frac{1}{500}\)</span>. Dès lors, si on approxime G(p) à un système d’ordre 2 en retirant son pôle le moins dominant, on obtient:</p>
+<div class="math notranslate nohighlight">
+\[
+ G_{approx}(p)=\frac{0.375}{(\frac{1}{4}p+1)(\frac{1}{10}p+1)}
+\]</div>
+</div>
+<p>Vérifiez dans Nichols et sur la réponse indicielle.</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G1</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">tf</span><span class="p">(</span><span class="mi">7500</span><span class="o">/</span><span class="mi">4</span><span class="o">/</span><span class="mi">10</span><span class="o">/</span><span class="mi">500</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">G2</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">tf</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">G3</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">tf</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="mi">500</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">G1</span><span class="o">*</span><span class="n">G2</span><span class="o">*</span><span class="n">G3</span>
+<span class="n">G_approx</span> <span class="o">=</span> <span class="n">G1</span><span class="o">*</span><span class="n">G2</span>
+
+<span class="c1"># Nichols</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s2">&quot;Nichols&quot;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">frequencies</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">10</span><span class="o">**-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="o">**</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span> <span class="c1"># Pour bien voir vers où on converge dans les hautes fréquences (jusqu&#39;à 10^5 rad/s ici)</span>
+<span class="n">rlf</span><span class="o">.</span><span class="n">nichols</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;G_BO(p)&#39;</span><span class="p">],</span> <span class="n">NameOfFigure</span> <span class="o">=</span> <span class="s2">&quot;Nichols&quot;</span><span class="p">,</span> <span class="n">omega</span><span class="o">=</span><span class="n">frequencies</span><span class="p">)</span>
+<span class="n">rlf</span><span class="o">.</span><span class="n">nichols</span><span class="p">(</span><span class="n">G_approx</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;G_approx_BO(p)&#39;</span><span class="p">],</span> <span class="n">NameOfFigure</span> <span class="o">=</span> <span class="s2">&quot;Nichols&quot;</span><span class="p">,</span> <span class="n">omega</span><span class="o">=</span><span class="n">frequencies</span><span class="p">)</span>
+
+<span class="c1"># Réponse indicielle</span>
+<span class="n">G_BF</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">feedback</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">G_approx_BF</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">feedback</span><span class="p">(</span><span class="n">G_approx</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s2">&quot;Steps&quot;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">rlf</span><span class="o">.</span><span class="n">step_</span><span class="p">(</span><span class="n">G_BF</span><span class="p">,</span> <span class="n">NameOfFigure</span><span class="o">=</span><span class="s2">&quot;Steps&quot;</span><span class="p">,</span> <span class="n">sysName</span><span class="o">=</span><span class="s1">&#39;G_BF(p)&#39;</span><span class="p">)</span>
+<span class="n">rlf</span><span class="o">.</span><span class="n">step_</span><span class="p">(</span><span class="n">G_approx_BF</span><span class="p">,</span> <span class="n">NameOfFigure</span><span class="o">=</span><span class="s2">&quot;Steps&quot;</span><span class="p">,</span> <span class="n">sysName</span><span class="o">=</span><span class="s1">&#39;G_approx_BF(p)&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/LaboSeance5_64_0.png" src="../_images/LaboSeance5_64_0.png" />
+<img alt="../_images/LaboSeance5_64_1.png" src="../_images/LaboSeance5_64_1.png" />
+</div>
+</div>
 <p>On demande de déterminer le correcteur PI dont le but est d’annuler l’erreur en régime permanent tout en
-assurant une réponse indicielle dont le dépassement est limité à 10% (tablez sur une marge de phase de 60°).</p>
+assurant une réponse indicielle dont le dépassement est limité à 10% (tablez ici sur une marge de phase de 60°).</p>
 <ul class="simple">
 <li><p>Par la méthode du pôle dominant</p></li>
 <li><p>Par la méthode de placement fréquentiel</p></li>
 </ul>
 <p>Tracez le diagramme de Nichols ainsi corrigé pour le système réel et pour le système ramené à 2 pôles dominants.</p>
 <p>Tracez également les 2 réponses indicielles.</p>
-<div class="section" id="methode-du-pole-dominant">
-<h4>Méthode du pôle dominant<a class="headerlink" href="#methode-du-pole-dominant" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="methode-de-compensation-du-pole-dominant-cf-p-7-8">
+<h4>Méthode de compensation du pôle dominant (<em>cf. p. 7-8</em>)<a class="headerlink" href="#methode-de-compensation-du-pole-dominant-cf-p-7-8" title="Permalink to this headline">¶</a></h4>
+<p>Il faut tout d’abord lire la valeur du gain lorsqu’on est à 60° de marge de phase (= gain à 60° du point d’instabilitité (0, -180°)). Cela peut se faire grâce à la fonction <code class="docutils literal notranslate"><span class="pre">getValues</span></code> du package <code class="docutils literal notranslate"><span class="pre">ReguLabFct</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Lecture phase</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s2">&quot;Bode G_BO&quot;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Valeurs pour G_BO:&quot;</span><span class="p">)</span>
+<span class="n">mag</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">rlf</span><span class="o">.</span><span class="n">getValues</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="o">-</span><span class="mi">180</span><span class="o">+</span><span class="mi">60</span><span class="p">,</span> <span class="n">NameOfFigure</span><span class="o">=</span><span class="s2">&quot;Bode G_BO&quot;</span><span class="p">)</span>
+</pre></div>
 </div>
-<div class="section" id="methode-de-placement-frequentiel">
-<h4>Méthode de placement fréquentiel<a class="headerlink" href="#methode-de-placement-frequentiel" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Valeurs pour G_BO:
+Gain à -120° = -21.547793018711413 dB
+Fréquence à -120° = 11.228067905278133 rad/sec
+</pre></div>
+</div>
+<img alt="../_images/LaboSeance5_67_1.png" src="../_images/LaboSeance5_67_1.png" />
+</div>
+</div>
+<p>On peut ensuite en déterminer <span class="math notranslate nohighlight">\(K_P\)</span> en faisant bien attention que le gain mesuré est en dB et qu’il faut s’y opposer pour atteindre une valeur de 0 dB.</p>
+<div class="math notranslate nohighlight">
+\[\Rightarrow 20*\log(K_P) = 21.55\]</div>
+<p>Pour trouver <span class="math notranslate nohighlight">\(\tau_I\)</span>, on sait que notre pôle dominant est égale à <span class="math notranslate nohighlight">\(\frac{1}{4}\)</span>. Dès lors, on fixe <span class="math notranslate nohighlight">\(\tau_I=\frac{1}{4}\)</span> secondes.</p>
+<p>Maintenant que nous connaissons les paramètres <span class="math notranslate nohighlight">\(K_P\)</span> et <span class="math notranslate nohighlight">\(\tau_I\)</span> de notre correcteur <strong>PI</strong>, il ne reste plus qu’à implémenter ce dernier! Ceci se fait ainsi en code python:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Kp</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="mf">21.55</span><span class="o">/</span><span class="mi">20</span><span class="p">)</span>
+
+<span class="n">tI</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">4</span>
+<span class="n">C_I</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">tf</span><span class="p">([</span><span class="n">tI</span><span class="p">,</span> <span class="mi">1</span><span class="p">],[</span><span class="n">tI</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+
+<span class="n">G_BO_PI</span> <span class="o">=</span> <span class="n">Kp</span><span class="o">*</span><span class="n">C_I</span><span class="o">*</span><span class="n">G</span>
+<span class="n">G_approx_BO_PI</span> <span class="o">=</span> <span class="n">Kp</span><span class="o">*</span><span class="n">C_I</span><span class="o">*</span><span class="n">G_approx</span>
+
+<span class="c1"># Nichols</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s2">&quot;Nichols - Pôles dominants&quot;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">frequencies</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">10</span><span class="o">**-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="o">**</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span> <span class="c1"># Pour bien voir vers où on converge dans les hautes fréquences (jusqu&#39;à 10^5 rad/s ici)</span>
+<span class="n">rlf</span><span class="o">.</span><span class="n">nichols</span><span class="p">(</span><span class="n">Kp</span><span class="o">*</span><span class="n">G</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;G_BO_Kp(p)&#39;</span><span class="p">],</span> <span class="n">NameOfFigure</span> <span class="o">=</span> <span class="s2">&quot;Nichols - Pôles dominants&quot;</span><span class="p">,</span> <span class="n">omega</span><span class="o">=</span><span class="n">frequencies</span><span class="p">)</span>
+<span class="n">rlf</span><span class="o">.</span><span class="n">nichols</span><span class="p">(</span><span class="n">G_BO_PI</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;G_BO_PI(p)&#39;</span><span class="p">],</span> <span class="n">NameOfFigure</span> <span class="o">=</span> <span class="s2">&quot;Nichols - Pôles dominants&quot;</span><span class="p">,</span> <span class="n">omega</span><span class="o">=</span><span class="n">frequencies</span><span class="p">)</span>
+<span class="n">rlf</span><span class="o">.</span><span class="n">nichols</span><span class="p">(</span><span class="n">G_approx_BO_PI</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;G_approx_BO_PI(p)&#39;</span><span class="p">],</span> <span class="n">NameOfFigure</span> <span class="o">=</span> <span class="s2">&quot;Nichols - Pôles dominants&quot;</span><span class="p">,</span> <span class="n">omega</span><span class="o">=</span><span class="n">frequencies</span><span class="p">)</span>
+
+<span class="c1"># Réponse indicielle</span>
+<span class="n">G_BF_Kp</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">feedback</span><span class="p">(</span><span class="n">Kp</span><span class="o">*</span><span class="n">G</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">G_BF_PI</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">feedback</span><span class="p">(</span><span class="n">G_BO_PI</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">G_approx_BF_PI</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">feedback</span><span class="p">(</span><span class="n">G_approx_BO_PI</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s2">&quot;Steps - Pôles dominants&quot;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">info</span> <span class="o">=</span> <span class="n">rlf</span><span class="o">.</span><span class="n">stepWithInfo</span><span class="p">(</span><span class="n">G_BF_Kp</span><span class="p">,</span> <span class="n">NameOfFigure</span><span class="o">=</span><span class="s2">&quot;Steps - Pôles dominants&quot;</span><span class="p">,</span> <span class="n">sysName</span><span class="o">=</span><span class="s1">&#39;G_BF_Kp(p)&#39;</span><span class="p">)</span>
+<span class="n">info</span> <span class="o">=</span> <span class="n">rlf</span><span class="o">.</span><span class="n">stepWithInfo</span><span class="p">(</span><span class="n">G_BF_PI</span><span class="p">,</span> <span class="n">NameOfFigure</span><span class="o">=</span><span class="s2">&quot;Steps - Pôles dominants&quot;</span><span class="p">,</span> <span class="n">sysName</span><span class="o">=</span><span class="s1">&#39;G_BF_PI(p)&#39;</span><span class="p">)</span>
+<span class="n">info_approx</span> <span class="o">=</span> <span class="n">rlf</span><span class="o">.</span><span class="n">stepWithInfo</span><span class="p">(</span><span class="n">G_approx_BF_PI</span><span class="p">,</span> <span class="n">NameOfFigure</span><span class="o">=</span><span class="s2">&quot;Steps - Pôles dominants&quot;</span><span class="p">,</span> <span class="n">sysName</span><span class="o">=</span><span class="s1">&#39;G_approx_BF_PI(p)&#39;</span><span class="p">);</span>
+
+<span class="c1"># Pour vérifier que la marge de phase est bonne</span>
+<span class="n">mg</span><span class="p">,</span> <span class="n">mp</span><span class="p">,</span> <span class="n">__</span><span class="p">,</span> <span class="n">__</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">margin</span><span class="p">(</span><span class="n">Kp</span><span class="o">*</span><span class="n">G</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Marge de phase système original corrigé par Kp =&quot;</span><span class="p">,</span> <span class="n">mp</span><span class="p">,</span> <span class="s2">&quot;°&quot;</span><span class="p">)</span>
+<span class="n">mg</span><span class="p">,</span> <span class="n">mp</span><span class="p">,</span> <span class="n">__</span><span class="p">,</span> <span class="n">__</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">margin</span><span class="p">(</span><span class="n">G_BO_PI</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Marge de phase système original corrigé par PI =&quot;</span><span class="p">,</span> <span class="n">mp</span><span class="p">,</span> <span class="s2">&quot;°&quot;</span><span class="p">)</span>
+<span class="n">mg</span><span class="p">,</span> <span class="n">mp</span><span class="p">,</span> <span class="n">__</span><span class="p">,</span> <span class="n">__</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">margin</span><span class="p">(</span><span class="n">G_approx_BO_PI</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Marge de phase système approx corrigé par PI =&quot;</span><span class="p">,</span> <span class="n">mp</span><span class="p">,</span> <span class="s2">&quot;°</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Dépassement</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dépassement système original corrigé par PI =&quot;</span><span class="p">,</span> <span class="n">info</span><span class="o">.</span><span class="n">Overshoot</span><span class="p">,</span> <span class="s2">&quot;%&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dépassement système approx corrigé par PI =&quot;</span><span class="p">,</span> <span class="n">info_approx</span><span class="o">.</span><span class="n">Overshoot</span><span class="p">,</span> <span class="s2">&quot;%&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Marge de phase système original corrigé par Kp = 60.00267242116146 °
+Marge de phase système original corrigé par PI = 39.26601808288615 °
+Marge de phase système approx corrigé par PI = 40.59772796407222 °
+
+Dépassement système original corrigé par PI = 29.787597954275036 %
+Dépassement système approx corrigé par PI = 28.222220587721438 %
+</pre></div>
+</div>
+<img alt="../_images/LaboSeance5_69_1.png" src="../_images/LaboSeance5_69_1.png" />
+<img alt="../_images/LaboSeance5_69_2.png" src="../_images/LaboSeance5_69_2.png" />
+</div>
+</div>
+<p>On remarque que bien que le <span class="math notranslate nohighlight">\(K_P\)</span> ait corrigé correctement le système donné (on a bien 60° de marge de phase), ceci n’est plus la cas lorsqu’on ajoute le correcteur <strong>I</strong> (on obtient un marge de phase d’environ 40°)… Il faut donc réitérer l’opération en rajoutant un <span class="math notranslate nohighlight">\(K_P\)</span> supplémentaire afin de descendre la courbe de Nichols du système et ainsi garantir une marge de phase de 60°.</p>
+<div class="cell tag_hide_input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Lecture phase</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s2">&quot;Bode G_BO_PI&quot;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Valeurs pour G_BO_PI:&quot;</span><span class="p">)</span>
+<span class="n">mag</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">rlf</span><span class="o">.</span><span class="n">getValues</span><span class="p">(</span><span class="n">G_BO_PI</span><span class="p">,</span> <span class="o">-</span><span class="mi">180</span><span class="o">+</span><span class="mi">60</span><span class="p">,</span> <span class="n">NameOfFigure</span><span class="o">=</span><span class="s2">&quot;Bode G_BO_PI&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Valeurs pour G_BO_PI:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Gain à -120° = 8.871141985102017 dB
+Fréquence à -120° = 5.626975542423636 rad/sec
+</pre></div>
+</div>
+<img alt="../_images/LaboSeance5_71_2.png" src="../_images/LaboSeance5_71_2.png" />
+</div>
+</div>
+<p>On peut ensuite en déterminer <span class="math notranslate nohighlight">\(K_{P_2}\)</span> en faisant bien attention que le gain mesuré est en dB et qu’il faut s’y opposer pour atteindre une valeur de 0dB.</p>
+<div class="math notranslate nohighlight">
+\[\Rightarrow 20*\log(K_{P_2}) = -8.87\]</div>
+<p>En utilisant ce nouveau <span class="math notranslate nohighlight">\(K_P\)</span>, on otbient:</p>
+<div class="cell tag_hide_input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Kp_1</span> <span class="o">=</span> <span class="n">Kp</span>
+<span class="n">Kp_2</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mf">8.87</span><span class="o">/</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">Kp</span> <span class="o">=</span> <span class="n">Kp_1</span><span class="o">*</span><span class="n">Kp_2</span>
+
+<span class="n">tI</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">4</span>
+<span class="n">C_I</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">tf</span><span class="p">([</span><span class="n">tI</span><span class="p">,</span> <span class="mi">1</span><span class="p">],[</span><span class="n">tI</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+
+<span class="n">G_BO_PI</span> <span class="o">=</span> <span class="n">Kp</span><span class="o">*</span><span class="n">C_I</span><span class="o">*</span><span class="n">G</span>
+<span class="n">G_approx_BO_PI</span> <span class="o">=</span> <span class="n">Kp</span><span class="o">*</span><span class="n">C_I</span><span class="o">*</span><span class="n">G_approx</span>
+
+<span class="c1"># Nichols</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s2">&quot;Nichols - Pôles dominants&quot;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">frequencies</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">10</span><span class="o">**-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="o">**</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span> <span class="c1"># Pour bien voir vers où on converge dans les hautes fréquences (jusqu&#39;à 10^5 rad/s ici)</span>
+<span class="n">rlf</span><span class="o">.</span><span class="n">nichols</span><span class="p">(</span><span class="n">G_BO_PI</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;G_BO_PI(p)&#39;</span><span class="p">],</span> <span class="n">NameOfFigure</span> <span class="o">=</span> <span class="s2">&quot;Nichols - Pôles dominants&quot;</span><span class="p">,</span> <span class="n">omega</span><span class="o">=</span><span class="n">frequencies</span><span class="p">)</span>
+<span class="n">rlf</span><span class="o">.</span><span class="n">nichols</span><span class="p">(</span><span class="n">G_approx_BO_PI</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;G_approx_BO_PI(p)&#39;</span><span class="p">],</span> <span class="n">NameOfFigure</span> <span class="o">=</span> <span class="s2">&quot;Nichols - Pôles dominants&quot;</span><span class="p">,</span> <span class="n">omega</span><span class="o">=</span><span class="n">frequencies</span><span class="p">)</span>
+
+<span class="c1"># Réponse indicielle</span>
+<span class="n">G_BF_PI</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">feedback</span><span class="p">(</span><span class="n">G_BO_PI</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">G_approx_BF_PI</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">feedback</span><span class="p">(</span><span class="n">G_approx_BO_PI</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s2">&quot;Steps - Pôles dominants&quot;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">info</span> <span class="o">=</span> <span class="n">rlf</span><span class="o">.</span><span class="n">stepWithInfo</span><span class="p">(</span><span class="n">G_BF_PI</span><span class="p">,</span> <span class="n">NameOfFigure</span><span class="o">=</span><span class="s2">&quot;Steps - Pôles dominants&quot;</span><span class="p">,</span> <span class="n">sysName</span><span class="o">=</span><span class="s1">&#39;G_BF_PI(p)&#39;</span><span class="p">)</span>
+<span class="n">info_approx</span> <span class="o">=</span> <span class="n">rlf</span><span class="o">.</span><span class="n">stepWithInfo</span><span class="p">(</span><span class="n">G_approx_BF_PI</span><span class="p">,</span> <span class="n">NameOfFigure</span><span class="o">=</span><span class="s2">&quot;Steps - Pôles dominants&quot;</span><span class="p">,</span> <span class="n">sysName</span><span class="o">=</span><span class="s1">&#39;G_approx_BF_PI(p)&#39;</span><span class="p">);</span>
+
+<span class="c1"># Pour vérifier que la marge de phase est bonne</span>
+<span class="n">mg</span><span class="p">,</span> <span class="n">mp</span><span class="p">,</span> <span class="n">__</span><span class="p">,</span> <span class="n">__</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">margin</span><span class="p">(</span><span class="n">G_BO_PI</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Marge de phase système original corrigé par PI =&quot;</span><span class="p">,</span> <span class="n">mp</span><span class="p">,</span> <span class="s2">&quot;°&quot;</span><span class="p">)</span>
+<span class="n">mg</span><span class="p">,</span> <span class="n">mp</span><span class="p">,</span> <span class="n">__</span><span class="p">,</span> <span class="n">__</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">margin</span><span class="p">(</span><span class="n">G_approx_BO_PI</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Marge de phase système approx corrigé par PI =&quot;</span><span class="p">,</span> <span class="n">mp</span><span class="p">,</span> <span class="s2">&quot;°</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Dépassement</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dépassement système original corrigé par PI =&quot;</span><span class="p">,</span> <span class="n">info</span><span class="o">.</span><span class="n">Overshoot</span><span class="p">,</span> <span class="s2">&quot;%&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dépassement système approx corrigé par PI =&quot;</span><span class="p">,</span> <span class="n">info_approx</span><span class="o">.</span><span class="n">Overshoot</span><span class="p">,</span> <span class="s2">&quot;%&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Marge de phase système original corrigé par PI = 59.98620867072424 °
+Marge de phase système approx corrigé par PI = 60.62980341859125 °
+
+Dépassement système original corrigé par PI = 8.629575441367464 %
+Dépassement système approx corrigé par PI = 8.21695174459216 %
+</pre></div>
+</div>
+<img alt="../_images/LaboSeance5_73_1.png" src="../_images/LaboSeance5_73_1.png" />
+<img alt="../_images/LaboSeance5_73_2.png" src="../_images/LaboSeance5_73_2.png" />
+</div>
+</div>
+<p>La marge de phase conseillée ici (60°) est maintenant bonne et on observe bien un dépassement inférieur à 10 %.</p>
+</div>
+<div class="section" id="methode-de-placement-frequentiel-cf-p-7-8">
+<h4>Méthode de placement fréquentiel (<em>cf. p. 7-8</em>)<a class="headerlink" href="#methode-de-placement-frequentiel-cf-p-7-8" title="Permalink to this headline">¶</a></h4>
+<p>La méthode du <strong>placement fréquentiel</strong> consiste à trouver la pulsation critique (= pulsation à laquelle le gain vaut 0 dB) et de choisir un <span class="math notranslate nohighlight">\(\tau_I&gt;\frac{10}{\omega_{critique}}\)</span> afin que le correcteur <strong>PI</strong> n’agisse qu’en-deçà de cette pulsation critique.</p>
+<p>Comme pour la méthode de compensation du pôle dominant, la première chose à faire est de trouver le <span class="math notranslate nohighlight">\(K_P\)</span> permettant d’assurer la marge de phase souhaitée.</p>
+<div class="cell tag_hide_input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Kp</span> <span class="o">=</span> <span class="n">Kp_1</span> <span class="c1"># On reprend le même Kp que lors de la première étape lors de la technique du pôle dominant puisqu&#39;on souhaite obtenir la même marge de phase (60°).</span>
+
+<span class="c1"># Lecture de la fréquence à la phase souhaitée</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s2">&quot;Bode G_BO&quot;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Valeurs pour Kp*G:&quot;</span><span class="p">)</span>
+<span class="n">mag</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">rlf</span><span class="o">.</span><span class="n">getValues</span><span class="p">(</span><span class="n">Kp</span><span class="o">*</span><span class="n">G</span><span class="p">,</span> <span class="o">-</span><span class="mi">180</span><span class="o">+</span><span class="mi">60</span><span class="p">,</span> <span class="n">NameOfFigure</span><span class="o">=</span><span class="s2">&quot;Bode G_BO&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Valeurs pour Kp*G:
+Gain à -120° = 0.0022069812885906273 dB
+Fréquence à -120° = 11.228067905278133 rad/sec
+</pre></div>
+</div>
+<img alt="../_images/LaboSeance5_76_1.png" src="../_images/LaboSeance5_76_1.png" />
+</div>
+</div>
+<p>On remarque que la fréqence du système à -120° reste la même que pour le système non corrigé (cf. début de la méthode de la compensation du pôle dominant). Le <span class="math notranslate nohighlight">\(K_P\)</span> n’a donc pas d’effet sur la fréquence du système. On prend donc <span class="math notranslate nohighlight">\(\omega_{critique} = 11.23\)</span> rad/s.</p>
+<p>Puisqu’on ne veut pas que le correcteur <strong>I</strong> agisse au-delà de cette pulsation critique, on fixe <span class="math notranslate nohighlight">\(\tau_I=\frac{10}{\omega_{critique}}\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">w_crit</span> <span class="o">=</span> <span class="mf">11.23</span>
+<span class="n">tI</span> <span class="o">=</span> <span class="mi">10</span><span class="o">/</span><span class="n">w_crit</span>
+<span class="n">C_I</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">tf</span><span class="p">([</span><span class="n">tI</span><span class="p">,</span> <span class="mi">1</span><span class="p">],[</span><span class="n">tI</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+
+<span class="n">G_BO_PI</span> <span class="o">=</span> <span class="n">Kp</span><span class="o">*</span><span class="n">C_I</span><span class="o">*</span><span class="n">G</span>
+<span class="n">G_approx_BO_PI</span> <span class="o">=</span> <span class="n">Kp</span><span class="o">*</span><span class="n">C_I</span><span class="o">*</span><span class="n">G_approx</span>
+
+<span class="c1"># Nichols</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s2">&quot;Nichols - Placement fréquentiel&quot;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">frequencies</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">10</span><span class="o">**-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="o">**</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span> <span class="c1"># Pour bien voir vers où on converge dans les hautes fréquences (jusqu&#39;à 10^5 rad/s ici)</span>
+<span class="n">rlf</span><span class="o">.</span><span class="n">nichols</span><span class="p">(</span><span class="n">G_BO_PI</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;G_BO_PI(p)&#39;</span><span class="p">],</span> <span class="n">NameOfFigure</span> <span class="o">=</span> <span class="s2">&quot;Nichols - Placement fréquentiel&quot;</span><span class="p">,</span> <span class="n">omega</span><span class="o">=</span><span class="n">frequencies</span><span class="p">)</span>
+<span class="n">rlf</span><span class="o">.</span><span class="n">nichols</span><span class="p">(</span><span class="n">G_approx_BO_PI</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;G_approx_BO_PI(p)&#39;</span><span class="p">],</span> <span class="n">NameOfFigure</span> <span class="o">=</span> <span class="s2">&quot;Nichols - Placement fréquentiel&quot;</span><span class="p">,</span> <span class="n">omega</span><span class="o">=</span><span class="n">frequencies</span><span class="p">)</span>
+
+<span class="c1"># Réponse indicielle</span>
+<span class="n">G_BF_PI</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">feedback</span><span class="p">(</span><span class="n">G_BO_PI</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">G_approx_BF_PI</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">feedback</span><span class="p">(</span><span class="n">G_approx_BO_PI</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s2">&quot;Steps - Placement fréquentiel&quot;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">info</span> <span class="o">=</span> <span class="n">rlf</span><span class="o">.</span><span class="n">stepWithInfo</span><span class="p">(</span><span class="n">G_BF_PI</span><span class="p">,</span> <span class="n">NameOfFigure</span><span class="o">=</span><span class="s2">&quot;Steps - Placement fréquentiel&quot;</span><span class="p">,</span> <span class="n">sysName</span><span class="o">=</span><span class="s1">&#39;G_BF_PI(p)&#39;</span><span class="p">)</span>
+<span class="n">info_approx</span> <span class="o">=</span> <span class="n">rlf</span><span class="o">.</span><span class="n">stepWithInfo</span><span class="p">(</span><span class="n">G_approx_BF_PI</span><span class="p">,</span> <span class="n">NameOfFigure</span><span class="o">=</span><span class="s2">&quot;Steps - Placement fréquentiel&quot;</span><span class="p">,</span> <span class="n">sysName</span><span class="o">=</span><span class="s1">&#39;G_approx_BF_PI(p)&#39;</span><span class="p">);</span>
+
+<span class="c1"># Pour vérifier que la marge de phase est bonne</span>
+<span class="n">mg</span><span class="p">,</span> <span class="n">mp</span><span class="p">,</span> <span class="n">__</span><span class="p">,</span> <span class="n">__</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">margin</span><span class="p">(</span><span class="n">G_BO_PI</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Marge de phase système original corrigé par PI =&quot;</span><span class="p">,</span> <span class="n">mp</span><span class="p">,</span> <span class="s2">&quot;°&quot;</span><span class="p">)</span>
+<span class="n">mg</span><span class="p">,</span> <span class="n">mp</span><span class="p">,</span> <span class="n">__</span><span class="p">,</span> <span class="n">__</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">margin</span><span class="p">(</span><span class="n">G_approx_BO_PI</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Marge de phase système approx corrigé par PI =&quot;</span><span class="p">,</span> <span class="n">mp</span><span class="p">,</span> <span class="s2">&quot;°</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Dépassement</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dépassement système original corrigé par PI =&quot;</span><span class="p">,</span> <span class="n">info</span><span class="o">.</span><span class="n">Overshoot</span><span class="p">,</span> <span class="s2">&quot;%&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dépassement système approx corrigé par PI =&quot;</span><span class="p">,</span> <span class="n">info_approx</span><span class="o">.</span><span class="n">Overshoot</span><span class="p">,</span> <span class="s2">&quot;%&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Marge de phase système original corrigé par PI = 54.14810405581133 °
+Marge de phase système approx corrigé par PI = 55.43203927473394 °
+
+Dépassement système original corrigé par PI = 7.4363350761182945 %
+Dépassement système approx corrigé par PI = 6.423418111862422 %
+</pre></div>
+</div>
+<img alt="../_images/LaboSeance5_78_1.png" src="../_images/LaboSeance5_78_1.png" />
+<img alt="../_images/LaboSeance5_78_2.png" src="../_images/LaboSeance5_78_2.png" />
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>On remarque qu’on peut se permettre d’avoir une marge de phase plus petite puisque le dépassement mesuré est assez faible par rapport aux 10% tolérés. On peut donc diminuer <span class="math notranslate nohighlight">\(\tau_I\)</span> en augmentant <span class="math notranslate nohighlight">\(\omega_{critique}\)</span> par essais-erreurs.
+On obtient par exemple le résultat qui suit pour une <span class="math notranslate nohighlight">\(\omega_{critique}\)</span> de 14$ rad/s.</p>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Marge de phase système original corrigé par PI = 52.681463005553184 °
+Marge de phase système approx corrigé par PI = 53.96804155763061 °
+
+Dépassement système original corrigé par PI = 9.751797844378963 %
+Dépassement système approx corrigé par PI = 8.69700871832626 %
+</pre></div>
+</div>
+<img alt="../_images/LaboSeance5_80_1.png" src="../_images/LaboSeance5_80_1.png" />
+<img alt="../_images/LaboSeance5_80_2.png" src="../_images/LaboSeance5_80_2.png" />
+</div>
+</div>
 <p>Observations: …</p>
 </div>
 </div>
