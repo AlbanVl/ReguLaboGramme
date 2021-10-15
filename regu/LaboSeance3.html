@@ -122,6 +122,11 @@
    Séance 6
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="LaboSeance7.html">
+   Séance 7
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -342,7 +347,7 @@ s^2 + 2 s + 30
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wn</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">poles</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">damp</span><span class="p">(</span><span class="n">H_BF</span><span class="p">,</span> <span class="n">doprint</span><span class="o">=</span><span class="kc">False</span><span class="p">);</span> <span class="c1"># doprint = False afin de ne pas afficher les résultat mais seulement de les stocker. </span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;wn = </span><span class="si">{:.3f}</span><span class="s2"> rad/s et zeta = </span><span class="si">{:.3f}</span><span class="s2">.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">wn</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">z</span><span class="p">[</span><span class="mi">0</span><span class="p">]),)</span> <span class="c1"># la fonction &#39;format()&#39; permet de gérer le nombre de décimales qu&#39;on souhaite afficher dans la chaîne de caractères. </span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;wn = </span><span class="si">{:.3f}</span><span class="s2"> rad/s et zeta = </span><span class="si">{:.3f}</span><span class="s2">.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">wn</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">z</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span> <span class="c1"># la fonction &#39;format()&#39; permet de gérer le nombre de décimales qu&#39;on souhaite afficher dans la chaîne de caractères. </span>
 </pre></div>
 </div>
 </div>
@@ -972,15 +977,16 @@ L&#39;erreur de position pour A = 1 vaut 0.5005123591407734  et pour A = 100 : 0
 
 Le coefficient d&#39;amortissement pour A = 1 vaut 1.0 et pour A = 100 : 0.46394780983786194
 =&gt; z diminue.
-
-La pseudo pulsation pour A = 1 vaut 0.0 rad/s et 0.0 rad/s et pour A = 100 : 7634.0951255271175 rad/s et -7634.0951255271175 rad/s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>La pseudo pulsation pour A = 1 vaut 0.0 rad/s et 0.0 rad/s et pour A = 100 : 7634.0951255271175 rad/s et -7634.0951255271175 rad/s
 =&gt; wd diverge de 0 =&gt; Le système oscille plus.
 
 L&#39;amortissement pour A = 1 vaut -7807.97924871505 et -188.3442806967156 et pour A = 100 : -3998.161764705883 et -3998.161764705883
 =&gt; sigma converge vers une seule valeur =&gt; Le système est plus rapide.
 </pre></div>
 </div>
-<img alt="../_images/LaboSeance3_44_1.png" src="../_images/LaboSeance3_44_1.png" />
+<img alt="../_images/LaboSeance3_44_2.png" src="../_images/LaboSeance3_44_2.png" />
 </div>
 </div>
 <p><strong>En déduire l’effet d’un correcteur proportionnel sur le régime transitoire:</strong> …</p>

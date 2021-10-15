@@ -122,6 +122,11 @@
    Séance 6
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="LaboSeance7.html">
+   Séance 7
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -216,54 +221,6 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#diagrammes-frequentiels">
-   Diagrammes fréquentiels
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#nyquist-cf-p-4-6">
-     Nyquist (
-     <em>
-      cf. p. 4-6
-     </em>
-     )
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#bode-cf-p-4-7-a-4-12">
-     Bode (
-     <em>
-      cf. p. 4-7 à 4-12
-     </em>
-     )
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#nichols-cf-p-4-18">
-     Nichols (
-     <em>
-      cf. p. 4-18
-     </em>
-     )
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#resume-sur-l-effet-d-un-pole-cf-p-4-16">
-     Résumé sur l’effet d’un pôle (
-     <em>
-      cf. p. 4-16
-     </em>
-     )
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#effet-dune-modification-du-gain-statique-sur-les-differents-diagrammes">
-     Effet d’une modification du gain statique sur les différents diagrammes
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#regulateur-p">
    Régulateur P
   </a>
@@ -299,7 +256,7 @@
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#facultatif-exercice-4-page-7-9-fait-au-cours">
-     [facultatif] Exercice 4 page 7-9 (fait au cours)
+     [Facultatif] Exercice 4 page 7-9 (fait au cours)
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -349,184 +306,11 @@
 <div class="section" id="objectifs-de-la-seance">
 <h2>Objectifs de la séance<a class="headerlink" href="#objectifs-de-la-seance" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Tracé des différents diagrammes fréquentiels</p></li>
-<li><p>Effet d’un correcteur proportionnel dans ces différents diagrammes =&gt; régulateur P</p></li>
+<li><p>Régulateur P</p></li>
 <li><p>Construction asymptotiques du diagramme de Bode par décomposition de la fonction de transfert en fonction simple</p></li>
 <li><p>Analyse de la stabilité/instabilité</p></li>
+<li><p>Régulateur PI</p></li>
 </ul>
-</div>
-<div class="section" id="diagrammes-frequentiels">
-<h2>Diagrammes fréquentiels<a class="headerlink" href="#diagrammes-frequentiels" title="Permalink to this headline">¶</a></h2>
-<p>Représentez le système modélisé par un pôle simple
-<span class="math notranslate nohighlight">\(
- H_{BO}(p)=\frac{1}{p+1}
-\)</span>
-dans les différents diagrammes pour visualiser l’effet d’un pôle : p=-1, <span class="math notranslate nohighlight">\(\tau\)</span>=1s et <span class="math notranslate nohighlight">\(\omega_n\)</span>=1rad/s</p>
-<div class="cell tag_hide-cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">H_BO</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">tf</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="nyquist-cf-p-4-6">
-<h3>Nyquist (<em>cf. p. 4-6</em>)<a class="headerlink" href="#nyquist-cf-p-4-6" title="Permalink to this headline">¶</a></h3>
-<p>Afin de tracer le diagramme de Nyquist, il suffit d’entrer la ligne de code suivante:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">real</span><span class="p">,</span> <span class="n">imag</span><span class="p">,</span> <span class="n">freq</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">nyquist</span><span class="p">(</span><span class="n">H_BO</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/LaboSeance5_6_0.png" src="../_images/LaboSeance5_6_0.png" />
-</div>
-</div>
-<div class="warning admonition">
-<p class="admonition-title">Attention</p>
-<p>Attention, le graphique est tracé aussi pour des <span class="math notranslate nohighlight">\(\omega_n&lt;0\)</span> (en trait discontinu) ce qui n’a aucun sens physiquement! Il ne faut donc tenir compte <strong>que</strong> du tracé en trait plein.</p>
-</div>
-<p>On peut également demander à python d’afficher les fréquences sur le graphe:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ml</span><span class="o">.</span><span class="n">nyquist</span><span class="p">(</span><span class="n">H_BO</span><span class="p">,</span> <span class="n">label_freq</span><span class="o">=</span><span class="mi">200</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/LaboSeance5_9_0.png" src="../_images/LaboSeance5_9_0.png" />
-</div>
-</div>
-</div>
-<div class="section" id="bode-cf-p-4-7-a-4-12">
-<h3>Bode (<em>cf. p. 4-7 à 4-12</em>)<a class="headerlink" href="#bode-cf-p-4-7-a-4-12" title="Permalink to this headline">¶</a></h3>
-<p>Pour tracer le diagramme de Bode, on peut soit laisser python fixer automatiquement la plage de variation de la pulsation:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ml</span><span class="o">.</span><span class="n">bode</span><span class="p">(</span><span class="n">H_BO</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/LaboSeance5_11_0.png" src="../_images/LaboSeance5_11_0.png" />
-</div>
-</div>
-<p>ou si on préfère imposer l’intervalle de variation de la pulsation, on peut faire cela ainsi:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span> <span class="c1"># Echelle logarithmique allant de 10^-2 à 10^2</span>
-<span class="n">ml</span><span class="o">.</span><span class="n">bode</span><span class="p">(</span><span class="n">H_BO</span><span class="p">,</span> <span class="n">w</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/LaboSeance5_13_0.png" src="../_images/LaboSeance5_13_0.png" />
-</div>
-</div>
-<p>La différence entre les 2 solutions est le nombre de points de calculs (= points d’affichage)</p>
-<div class="seealso admonition">
-<p class="admonition-title">À faire</p>
-<p>Comparez la courbe réelle à son tracé asymptotique (voir pages 4-11 et 12).</p>
-</div>
-</div>
-<div class="section" id="nichols-cf-p-4-18">
-<h3>Nichols (<em>cf. p. 4-18</em>)<a class="headerlink" href="#nichols-cf-p-4-18" title="Permalink to this headline">¶</a></h3>
-<p>On peut soit utiliser la fonction <code class="docutils literal notranslate"><span class="pre">nichols</span></code> du package <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">Control</span></code> et on obtient ceci:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ml</span><span class="o">.</span><span class="n">nichols</span><span class="p">(</span><span class="n">H_BO</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/LaboSeance5_16_0.png" src="../_images/LaboSeance5_16_0.png" />
-</div>
-</div>
-<p>Ou on utilise la fonction <code class="docutils literal notranslate"><span class="pre">nichols</span></code> revue dans le package <code class="docutils literal notranslate"><span class="pre">ReguLabFct</span></code> pour faciliter sa lecture dans le cadre du laboratoire de régulation:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rlf</span><span class="o">.</span><span class="n">nichols</span><span class="p">(</span><span class="n">H_BO</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/LaboSeance5_18_0.png" src="../_images/LaboSeance5_18_0.png" />
-</div>
-</div>
-</div>
-<div class="section" id="resume-sur-l-effet-d-un-pole-cf-p-4-16">
-<h3>Résumé sur l’effet d’un pôle (<em>cf. p. 4-16</em>)<a class="headerlink" href="#resume-sur-l-effet-d-un-pole-cf-p-4-16" title="Permalink to this headline">¶</a></h3>
-<p>Module: <span class="math notranslate nohighlight">\(\left\{
-    \begin{array}{ll}
-        \omega&lt;\omega_c : rien\\
-        \omega&gt;\omega_c : -20dB/décade
-    \end{array}
-\right.\)</span></p>
-<p>Phase: <span class="math notranslate nohighlight">\(\left\{
-    \begin{array}{ll}
-        \omega&lt;\omega_c : rien\\
-        \omega&gt;\omega_c : -90°
-    \end{array}
-\right.\)</span></p>
-</div>
-<div class="section" id="effet-dune-modification-du-gain-statique-sur-les-differents-diagrammes">
-<h3>Effet d’une modification du gain statique sur les différents diagrammes<a class="headerlink" href="#effet-dune-modification-du-gain-statique-sur-les-differents-diagrammes" title="Permalink to this headline">¶</a></h3>
-<p>Observez l’effet du gain statique : K=2, 5, 10 …</p>
-<p>Tracez les 3 graphiques:</p>
-<div class="cell tag_hide-cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">K_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
-
-<span class="k">for</span> <span class="n">K</span> <span class="ow">in</span> <span class="n">K_list</span><span class="p">:</span>
-
-    <span class="n">fig_nyquist</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s2">&quot;Nyquist&quot;</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
-    <span class="n">ml</span><span class="o">.</span><span class="n">nyquist</span><span class="p">(</span><span class="n">K</span><span class="o">*</span><span class="n">H_BO</span><span class="p">,</span> <span class="n">label_freq</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
-    
-    <span class="n">fig_bode</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s2">&quot;Bode&quot;</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
-    <span class="n">ml</span><span class="o">.</span><span class="n">bode</span><span class="p">(</span><span class="n">K</span><span class="o">*</span><span class="n">H_BO</span><span class="p">)</span>
-    
-    <span class="n">fig_nichols</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s2">&quot;Nichols&quot;</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
-    <span class="n">rlf</span><span class="o">.</span><span class="n">nichols</span><span class="p">(</span><span class="n">K</span><span class="o">*</span><span class="n">H_BO</span><span class="p">,</span> <span class="n">NameOfFigure</span><span class="o">=</span><span class="s2">&quot;Nichols&quot;</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">K</span><span class="p">)])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/LaboSeance5_21_0.png" src="../_images/LaboSeance5_21_0.png" />
-<img alt="../_images/LaboSeance5_21_1.png" src="../_images/LaboSeance5_21_1.png" />
-<img alt="../_images/LaboSeance5_21_2.png" src="../_images/LaboSeance5_21_2.png" />
-</div>
-</div>
-<p>Concluez sur l’effet d’une augmentation de constante (cf. augmentation du gain proportionnel en BO) :</p>
-<p>Effet dans:</p>
-<ul class="simple">
-<li><p>Nyquist : …</p></li>
-<li><p>Bode : …</p></li>
-<li><p>Nichols : …</p></li>
-</ul>
-<div class="toggle docutils container">
-<ul class="simple">
-<li><p>Nyquist : Étalement suivant l’axe des réels</p></li>
-<li><p>Bode: Translation verticale du gain de 20log(K) et phase indépendante de K</p></li>
-<li><p>Nichols: Translation verticale de la courbe de 20log(K)</p></li>
-</ul>
-<p>Car
-<span class="math notranslate nohighlight">\(
-\begin{alignat*}{2}
-K*H\Rightarrow
-\left\{ \begin{aligned}
-    \begin{array}{ll}
-        M_{dB} = 20*\log(K*H) = 20\log(H)+20\log(K) = 20\log(H) + translation\\
-        \varphi = \varphi(K)+\varphi(H)=0^{\circ}+\varphi(H)
-    \end{array}
-\end{aligned}\right.
-\end{alignat*}\
-\)</span></p>
-</div>
-<div class="admonition danger">
-<p class="admonition-title">Danger</p>
-<p>Attention que l’analyse fréquentielle s’applique sur le système en <strong>boucle ouverte</strong> contrairement à l’analyse temporelle (<span class="math notranslate nohighlight">\(\rightarrow\)</span> réponse indicielle) qui s’applique, elle, sur le système en <strong>boucle fermée</strong>!</p>
-</div>
-</div>
 </div>
 <div class="section" id="regulateur-p">
 <h2>Régulateur P<a class="headerlink" href="#regulateur-p" title="Permalink to this headline">¶</a></h2>
@@ -564,8 +348,8 @@ Fréquence à -135° = 7.1233661553256065 rad/sec
 Kp = 7.5556606703682965
 </pre></div>
 </div>
-<img alt="../_images/LaboSeance5_25_1.png" src="../_images/LaboSeance5_25_1.png" />
-<img alt="../_images/LaboSeance5_25_2.png" src="../_images/LaboSeance5_25_2.png" />
+<img alt="../_images/LaboSeance5_4_1.png" src="../_images/LaboSeance5_4_1.png" />
+<img alt="../_images/LaboSeance5_4_2.png" src="../_images/LaboSeance5_4_2.png" />
 </div>
 </div>
 <p>Visualisez l’effet sur la réponse indicielle:</p>
@@ -581,7 +365,7 @@ Kp = 7.5556606703682965
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/LaboSeance5_27_0.png" src="../_images/LaboSeance5_27_0.png" />
+<img alt="../_images/LaboSeance5_6_0.png" src="../_images/LaboSeance5_6_0.png" />
 </div>
 </div>
 <div class="section" id="limite-de-stabilite">
@@ -630,7 +414,7 @@ mg, mp, __, __ = ml.margin(G_BO)
 Marge de gain = 34.86235250429483 dB
 </pre></div>
 </div>
-<img alt="../_images/LaboSeance5_29_1.png" src="../_images/LaboSeance5_29_1.png" />
+<img alt="../_images/LaboSeance5_8_1.png" src="../_images/LaboSeance5_8_1.png" />
 </div>
 </div>
 <p>Calculez la valeur critique de <span class="math notranslate nohighlight">\(K_p\)</span> pour passer par le point « -1 » càd (0dB, -180°) : <span class="math notranslate nohighlight">\(K_p\)</span> = …</p>
@@ -652,8 +436,8 @@ Marge de gain = 34.86235250429483 dB
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Kp = 55.349999999999994
 </pre></div>
 </div>
-<img alt="../_images/LaboSeance5_31_1.png" src="../_images/LaboSeance5_31_1.png" />
-<img alt="../_images/LaboSeance5_31_2.png" src="../_images/LaboSeance5_31_2.png" />
+<img alt="../_images/LaboSeance5_10_1.png" src="../_images/LaboSeance5_10_1.png" />
+<img alt="../_images/LaboSeance5_10_2.png" src="../_images/LaboSeance5_10_2.png" />
 </div>
 </div>
 </div>
@@ -670,7 +454,7 @@ Marge de gain = 34.86235250429483 dB
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/LaboSeance5_33_0.png" src="../_images/LaboSeance5_33_0.png" />
+<img alt="../_images/LaboSeance5_12_0.png" src="../_images/LaboSeance5_12_0.png" />
 </div>
 </div>
 <p>Que se passe-t-il si on insère un correcteur proportionnel de gain <span class="math notranslate nohighlight">\(K_p = 56\)</span> ?</p>
@@ -684,7 +468,7 @@ Marge de gain = 34.86235250429483 dB
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/LaboSeance5_35_0.png" src="../_images/LaboSeance5_35_0.png" />
+<img alt="../_images/LaboSeance5_14_0.png" src="../_images/LaboSeance5_14_0.png" />
 </div>
 </div>
 <p>Calculez <span class="math notranslate nohighlight">\(K_p\)</span> pour obtenir une marge de phase de 45° :</p>
@@ -712,8 +496,8 @@ Kp = 10.158795207791778
 Marge de phase = 45.016953712610785°
 </pre></div>
 </div>
-<img alt="../_images/LaboSeance5_37_1.png" src="../_images/LaboSeance5_37_1.png" />
-<img alt="../_images/LaboSeance5_37_2.png" src="../_images/LaboSeance5_37_2.png" />
+<img alt="../_images/LaboSeance5_16_1.png" src="../_images/LaboSeance5_16_1.png" />
+<img alt="../_images/LaboSeance5_16_2.png" src="../_images/LaboSeance5_16_2.png" />
 </div>
 </div>
 <p>Calculez <span class="math notranslate nohighlight">\(K_p\)</span> pour obtenir une marge de phase de 60° :</p>
@@ -737,8 +521,8 @@ Kp = 6.457040648746092
 Marge de phase = 59.97990291672397°
 </pre></div>
 </div>
-<img alt="../_images/LaboSeance5_39_1.png" src="../_images/LaboSeance5_39_1.png" />
-<img alt="../_images/LaboSeance5_39_2.png" src="../_images/LaboSeance5_39_2.png" />
+<img alt="../_images/LaboSeance5_18_1.png" src="../_images/LaboSeance5_18_1.png" />
+<img alt="../_images/LaboSeance5_18_2.png" src="../_images/LaboSeance5_18_2.png" />
 </div>
 </div>
 <p>Et comparez les réponses indicielles respectives pour ces 2 marges typiques habituelles.</p>
@@ -753,15 +537,15 @@ Marge de phase = 59.97990291672397°
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/LaboSeance5_41_0.png" src="../_images/LaboSeance5_41_0.png" />
+<img alt="../_images/LaboSeance5_20_0.png" src="../_images/LaboSeance5_20_0.png" />
 </div>
 </div>
-<p>[facultatif] Faites l’exercice 2 page 7-4 et visualisez les calculs par une résolution graphique</p>
-<p>[facultatif] Faites aussi l’exercice 3.</p>
-<p>[facultatif] <strong>application 1 : régulation de vitesse</strong></p>
+<p>[Facultatif] Faites l’exercice 2 page 7-4 et visualisez les calculs par une résolution graphique</p>
+<p>[Facultatif] Faites aussi l’exercice 3.</p>
+<p>[Facultatif] <strong>application 1 : régulation de vitesse</strong></p>
 <p>Tracez le diagramme de Nichols qui permette de déterminer graphiquement la valeur max de A pour minimiser l’erreur tout en
 garantissant une marge de phase de 45° ou de 60° et comparez avec la solution A=100.</p>
-<p>[facultatif] <strong>Régulation de position</strong></p>
+<p>[Facultatif] <strong>Régulation de position</strong></p>
 <p>Tracez le diagramme de Nichols qui permette de déterminer graphiquement la valeur max de A pour minimiser l’erreur tout en
 garantissant une marge de phase de 45°.</p>
 <p>Comparez à la résolution temporelle …</p>
@@ -808,10 +592,10 @@ C_{PI}(p)=K_p*\frac{1+\tau_I*p}{\tau_I*p}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/LaboSeance5_48_0.png" src="../_images/LaboSeance5_48_0.png" />
+<img alt="../_images/LaboSeance5_27_0.png" src="../_images/LaboSeance5_27_0.png" />
 </div>
 </div>
-<p>[facultatif] Construisez le diagramme de Bode de la fonction de transfert de la page 4-17 :</p>
+<p>[Facultatif] Construisez le diagramme de Bode de la fonction de transfert de la page 4-17 :</p>
 <div class="math notranslate nohighlight">
 \[
 G(p) = K_P*\frac{\tau_1p+1}{(\tau_2p+1)(\tau_3p+1)}
@@ -830,7 +614,7 @@ G(p) = K_P*\frac{\tau_1p+1}{(\tau_2p+1)(\tau_3p+1)}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/LaboSeance5_50_0.png" src="../_images/LaboSeance5_50_0.png" />
+<img alt="../_images/LaboSeance5_29_0.png" src="../_images/LaboSeance5_29_0.png" />
 </div>
 </div>
 <ul class="simple">
@@ -846,7 +630,7 @@ G(p) = K_P*\frac{\tau_1p+1}{(\tau_2p+1)(\tau_3p+1)}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/LaboSeance5_52_0.png" src="../_images/LaboSeance5_52_0.png" />
+<img alt="../_images/LaboSeance5_31_0.png" src="../_images/LaboSeance5_31_0.png" />
 </div>
 </div>
 <ul class="simple">
@@ -865,7 +649,7 @@ G(p) = K_P*\frac{\tau_1p+1}{(\tau_2p+1)(\tau_3p+1)}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/LaboSeance5_54_0.png" src="../_images/LaboSeance5_54_0.png" />
+<img alt="../_images/LaboSeance5_33_0.png" src="../_images/LaboSeance5_33_0.png" />
 </div>
 </div>
 <p>Effet si les pulsations caractéristiques sont plus proches : <span class="math notranslate nohighlight">\(\tau_1=1s\)</span>, <span class="math notranslate nohighlight">\(\tau_2=10s\)</span> et <span class="math notranslate nohighlight">\(\tau_3=0,01s\)</span>:</p>
@@ -886,7 +670,7 @@ G(p) = K_P*\frac{\tau_1p+1}{(\tau_2p+1)(\tau_3p+1)}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/LaboSeance5_56_0.png" src="../_images/LaboSeance5_56_0.png" />
+<img alt="../_images/LaboSeance5_35_0.png" src="../_images/LaboSeance5_35_0.png" />
 </div>
 </div>
 <p>Effet si les pulsations caractéristiques sont dispersées : <span class="math notranslate nohighlight">\(\tau_1=0.001s\)</span>, <span class="math notranslate nohighlight">\(\tau_2=10000s\)</span> et <span class="math notranslate nohighlight">\(\tau_3=1s\)</span> et <span class="math notranslate nohighlight">\(K_P=2\)</span>:</p>
@@ -908,12 +692,12 @@ G(p) = K_P*\frac{\tau_1p+1}{(\tau_2p+1)(\tau_3p+1)}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/LaboSeance5_58_0.png" src="../_images/LaboSeance5_58_0.png" />
+<img alt="../_images/LaboSeance5_37_0.png" src="../_images/LaboSeance5_37_0.png" />
 </div>
 </div>
 </div>
 <div class="section" id="facultatif-exercice-4-page-7-9-fait-au-cours">
-<h3>[facultatif] Exercice 4 page 7-9 (fait au cours)<a class="headerlink" href="#facultatif-exercice-4-page-7-9-fait-au-cours" title="Permalink to this headline">¶</a></h3>
+<h3>[Facultatif] Exercice 4 page 7-9 (fait au cours)<a class="headerlink" href="#facultatif-exercice-4-page-7-9-fait-au-cours" title="Permalink to this headline">¶</a></h3>
 <p>Soit la fonction de boucle ouverte d’un processus d’asservissement de position:</p>
 <div class="math notranslate nohighlight">
 \[G(p)=\frac {1}{(1+0,1p)(1+0,01p)}\]</div>
@@ -973,8 +757,8 @@ G(p) = K_P*\frac{\tau_1p+1}{(\tau_2p+1)(\tau_3p+1)}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/LaboSeance5_64_0.png" src="../_images/LaboSeance5_64_0.png" />
-<img alt="../_images/LaboSeance5_64_1.png" src="../_images/LaboSeance5_64_1.png" />
+<img alt="../_images/LaboSeance5_43_0.png" src="../_images/LaboSeance5_43_0.png" />
+<img alt="../_images/LaboSeance5_43_1.png" src="../_images/LaboSeance5_43_1.png" />
 </div>
 </div>
 <p>On demande de déterminer le correcteur PI dont le but est d’annuler l’erreur en régime permanent tout en
@@ -1003,7 +787,7 @@ Gain à -120° = -21.547793018711413 dB
 Fréquence à -120° = 11.228067905278133 rad/sec
 </pre></div>
 </div>
-<img alt="../_images/LaboSeance5_67_1.png" src="../_images/LaboSeance5_67_1.png" />
+<img alt="../_images/LaboSeance5_46_1.png" src="../_images/LaboSeance5_46_1.png" />
 </div>
 </div>
 <p>On peut ensuite en déterminer <span class="math notranslate nohighlight">\(K_P\)</span> en faisant bien attention que le gain mesuré est en dB et qu’il faut s’y opposer pour atteindre une valeur de 0 dB.</p>
@@ -1061,8 +845,8 @@ Dépassement système original corrigé par PI = 29.787597954275036 %
 Dépassement système approx corrigé par PI = 28.222220587721438 %
 </pre></div>
 </div>
-<img alt="../_images/LaboSeance5_69_1.png" src="../_images/LaboSeance5_69_1.png" />
-<img alt="../_images/LaboSeance5_69_2.png" src="../_images/LaboSeance5_69_2.png" />
+<img alt="../_images/LaboSeance5_48_1.png" src="../_images/LaboSeance5_48_1.png" />
+<img alt="../_images/LaboSeance5_48_2.png" src="../_images/LaboSeance5_48_2.png" />
 </div>
 </div>
 <p>On remarque que bien que le <span class="math notranslate nohighlight">\(K_P\)</span> ait corrigé correctement le système donné (on a bien 60° de marge de phase), ceci n’est plus la cas lorsqu’on ajoute le correcteur <strong>I</strong> (on obtient un marge de phase d’environ 40°)… Il faut donc réitérer l’opération en rajoutant un <span class="math notranslate nohighlight">\(K_P\)</span> supplémentaire afin de descendre la courbe de Nichols du système et ainsi garantir une marge de phase de 60°.</p>
@@ -1083,7 +867,7 @@ Dépassement système approx corrigé par PI = 28.222220587721438 %
 Fréquence à -120° = 5.626975542423636 rad/sec
 </pre></div>
 </div>
-<img alt="../_images/LaboSeance5_71_2.png" src="../_images/LaboSeance5_71_2.png" />
+<img alt="../_images/LaboSeance5_50_2.png" src="../_images/LaboSeance5_50_2.png" />
 </div>
 </div>
 <p>On peut ensuite en déterminer <span class="math notranslate nohighlight">\(K_{P_2}\)</span> en faisant bien attention que le gain mesuré est en dB et qu’il faut s’y opposer pour atteindre une valeur de 0dB.</p>
@@ -1136,8 +920,8 @@ Dépassement système original corrigé par PI = 8.629575441367464 %
 Dépassement système approx corrigé par PI = 8.21695174459216 %
 </pre></div>
 </div>
-<img alt="../_images/LaboSeance5_73_1.png" src="../_images/LaboSeance5_73_1.png" />
-<img alt="../_images/LaboSeance5_73_2.png" src="../_images/LaboSeance5_73_2.png" />
+<img alt="../_images/LaboSeance5_52_1.png" src="../_images/LaboSeance5_52_1.png" />
+<img alt="../_images/LaboSeance5_52_2.png" src="../_images/LaboSeance5_52_2.png" />
 </div>
 </div>
 <p>La marge de phase conseillée ici (60°) est maintenant bonne et on observe bien un dépassement inférieur à 10 %.</p>
@@ -1159,11 +943,13 @@ Dépassement système approx corrigé par PI = 8.21695174459216 %
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Valeurs pour Kp*G:
-Gain à -120° = 0.0022069812885906273 dB
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Gain à -120° = 0.0022069812885906273 dB
 Fréquence à -120° = 11.228067905278133 rad/sec
 </pre></div>
 </div>
-<img alt="../_images/LaboSeance5_76_1.png" src="../_images/LaboSeance5_76_1.png" />
+<img alt="../_images/LaboSeance5_55_2.png" src="../_images/LaboSeance5_55_2.png" />
 </div>
 </div>
 <p>On remarque que la fréqence du système à -120° reste la même que pour le système non corrigé (cf. début de la méthode de la compensation du pôle dominant). Le <span class="math notranslate nohighlight">\(K_P\)</span> n’a donc pas d’effet sur la fréquence du système. On prend donc <span class="math notranslate nohighlight">\(\omega_{critique} = 11.23\)</span> rad/s.</p>
@@ -1211,8 +997,8 @@ Dépassement système original corrigé par PI = 7.4363350761182945 %
 Dépassement système approx corrigé par PI = 6.423418111862422 %
 </pre></div>
 </div>
-<img alt="../_images/LaboSeance5_78_1.png" src="../_images/LaboSeance5_78_1.png" />
-<img alt="../_images/LaboSeance5_78_2.png" src="../_images/LaboSeance5_78_2.png" />
+<img alt="../_images/LaboSeance5_57_1.png" src="../_images/LaboSeance5_57_1.png" />
+<img alt="../_images/LaboSeance5_57_2.png" src="../_images/LaboSeance5_57_2.png" />
 </div>
 </div>
 <div class="admonition note">
@@ -1229,8 +1015,8 @@ Dépassement système original corrigé par PI = 9.751797844378963 %
 Dépassement système approx corrigé par PI = 8.69700871832626 %
 </pre></div>
 </div>
-<img alt="../_images/LaboSeance5_80_1.png" src="../_images/LaboSeance5_80_1.png" />
-<img alt="../_images/LaboSeance5_80_2.png" src="../_images/LaboSeance5_80_2.png" />
+<img alt="../_images/LaboSeance5_59_1.png" src="../_images/LaboSeance5_59_1.png" />
+<img alt="../_images/LaboSeance5_59_2.png" src="../_images/LaboSeance5_59_2.png" />
 </div>
 </div>
 <p>Observations: …</p>

@@ -53,6 +53,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Séance 7" href="LaboSeance7.html" />
     <link rel="prev" title="Séance 5" href="LaboSeance5.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -119,6 +120,11 @@
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Séance 6
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="LaboSeance7.html">
+   Séance 7
   </a>
  </li>
 </ul>
@@ -223,6 +229,31 @@
     <a class="reference internal nav-link" href="#exercice-6-page-7-15-fait-au-cours">
      Exercice 6 page 7-15 (fait au cours)
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#solution">
+       Solution:
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#ere-methode-compensation-du-pole-dominant">
+         <span class="math notranslate nohighlight">
+          \(1^{ère}\)
+         </span>
+         méthode: Compensation du pôle dominant
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#eme-methode-placement-frequentiel">
+         <span class="math notranslate nohighlight">
+          \(2^{ème}\)
+         </span>
+         méthode: placement fréquentiel
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -232,35 +263,8 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercice-7-page-7-18-resolution-dans-les-notes-facultatif">
-     Exercice 7 page 7-18 (résolution dans les notes) (facultatif)
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercices-recapitulatifs">
-   Exercices récapitulatifs
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercice-type-examen-cf-helmo-learn">
-     Exercice type examen (cf. HELMo Learn)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#application-5-cf-p-application-8">
-     Application 5 (cf. p. “application-8”)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercice-3-page-7-27">
-     Exercice 3 page 7-27
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#application-3-cf-p-application-4">
-     Application 3  (cf. p. “application-4”)
+    <a class="reference internal nav-link" href="#facultatif-exercice-7-page-7-18-resolution-dans-les-notes">
+     [Facultatif] Exercice 7 page 7-18 (résolution dans les notes)
     </a>
    </li>
   </ul>
@@ -281,14 +285,289 @@
 <div class="section" id="objectifs-de-la-seance">
 <h2>Objectifs de la séance<a class="headerlink" href="#objectifs-de-la-seance" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Résolution graphique de la détermination du correcteur PD par placement fréquentiel</p></li>
-<li><p>Résolution graphique de la correction du correcteur PID</p></li>
+<li><p>Résolution graphique de la détermination d’un correcteur PD</p></li>
+<li><p>Résolution graphique de la détermination d’un correcteur PID</p></li>
 </ul>
 </div>
 <div class="section" id="regulateur-pd">
 <h2>Régulateur PD<a class="headerlink" href="#regulateur-pd" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="exercice-6-page-7-15-fait-au-cours">
 <h3>Exercice 6 page 7-15 (fait au cours)<a class="headerlink" href="#exercice-6-page-7-15-fait-au-cours" title="Permalink to this headline">¶</a></h3>
+<p>Soit la fonction de boucle ouverte d’un processus:</p>
+<div class="math notranslate nohighlight">
+\[G(p)={\frac {1}{p(1+0,1p)(1+p)}}\]</div>
+<p>On demande de déterminer <em>graphiquement</em> le correcteur PD de manière à optimiser le temps de réponse du système, à garantir une erreur de vitesse de 10% et une marge de phase de 45°.</p>
+<div class="section" id="solution">
+<h4>Solution:<a class="headerlink" href="#solution" title="Permalink to this headline">¶</a></h4>
+<p>Fixer l’erreur de vitesse à 10% impose le gain: <span class="math notranslate nohighlight">\(\varepsilon_v={\frac{1}{K_P}}=0.1\)</span> d’où <span class="math notranslate nohighlight">\(K_P=10\)</span> puisque le système est de classe 1 (<em>cf. p. 6-3</em>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fonction de transfert en boucle ouverte</span>
+<span class="n">G1</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">tf</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="n">G2</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">tf</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">G3</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">tf</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">G1</span><span class="o">*</span><span class="n">G2</span><span class="o">*</span><span class="n">G3</span>  <span class="c1"># G de l&#39;énoncé </span>
+
+<span class="n">MP</span> <span class="o">=</span> <span class="mi">45</span> <span class="c1"># Marge de phase réclamée</span>
+<span class="n">Kp</span> <span class="o">=</span> <span class="mi">10</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Pour choisir la constante de temps de dérivation, nous avons deux possibilités:</p>
+<ol class="simple">
+<li><p>Compensation du pôle dominant</p></li>
+<li><p>Placement fréquentiel</p></li>
+</ol>
+<div class="section" id="ere-methode-compensation-du-pole-dominant">
+<h5><span class="math notranslate nohighlight">\(1^{ère}\)</span> méthode: Compensation du pôle dominant<a class="headerlink" href="#ere-methode-compensation-du-pole-dominant" title="Permalink to this headline">¶</a></h5>
+<p><span class="math notranslate nohighlight">\(\tau_d=1\)</span> et nous vérifions les performances obtenues pour le système corrigé.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tD</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">Corr</span> <span class="o">=</span> <span class="n">Kp</span><span class="o">*</span><span class="n">ml</span><span class="o">.</span><span class="n">tf</span><span class="p">([</span><span class="n">tD</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s2">&quot;Nichols&quot;</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">rlf</span><span class="o">.</span><span class="n">nichols</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">grid</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;G(p)&#39;</span><span class="p">],</span> <span class="n">NameOfFigure</span> <span class="o">=</span> <span class="s2">&quot;Nichols&quot;</span><span class="p">)</span>
+<span class="n">rlf</span><span class="o">.</span><span class="n">nichols</span><span class="p">(</span><span class="n">Kp</span><span class="o">*</span><span class="n">G</span><span class="p">,</span> <span class="n">grid</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;10*G(p)&#39;</span><span class="p">],</span> <span class="n">NameOfFigure</span> <span class="o">=</span> <span class="s2">&quot;Nichols&quot;</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s1">&#39;-.&#39;</span><span class="p">)</span>
+<span class="n">rlf</span><span class="o">.</span><span class="n">nichols</span><span class="p">(</span><span class="n">Corr</span><span class="o">*</span><span class="n">G</span><span class="p">,</span> <span class="n">grid</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;10*(1+p)*G(p)&#39;</span><span class="p">],</span> <span class="n">NameOfFigure</span> <span class="o">=</span> <span class="s2">&quot;Nichols&quot;</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s1">&#39;--&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">-</span><span class="mi">180</span><span class="o">+</span><span class="n">MP</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span><span class="s1">&#39;k+&#39;</span><span class="p">);</span> <span class="c1"># ; pour supprimer les lignes de sortie matplotlib</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/LaboSeance6_8_0.png" src="../_images/LaboSeance6_8_0.png" />
+</div>
+</div>
+<p>Les performances du système ainsi corrigé sont :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s2">&quot;Step Response&quot;</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+
+<span class="c1"># Système non corrigé</span>
+<span class="c1"># -------------------</span>
+
+<span class="n">Gbf</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">feedback</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">info</span> <span class="o">=</span> <span class="n">rlf</span><span class="o">.</span><span class="n">stepWithInfo</span><span class="p">(</span><span class="n">Gbf</span><span class="p">,</span> <span class="n">NameOfFigure</span><span class="o">=</span><span class="s2">&quot;Step Response&quot;</span><span class="p">,</span> <span class="n">sysName</span><span class="o">=</span><span class="s1">&#39;SystInit&#39;</span><span class="p">)</span> <span class="c1"># Renvoie toutes les infos du step</span>
+
+<span class="n">ep</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">info</span><span class="o">.</span><span class="n">DCGain</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span> <span class="c1"># Erreur de position</span>
+
+<span class="n">gm</span><span class="p">,</span> <span class="n">pm</span><span class="p">,</span> <span class="n">wg</span><span class="p">,</span> <span class="n">wp</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">margin</span><span class="p">(</span><span class="n">G</span><span class="p">)</span> <span class="c1"># Extract the gain margin (Gm) and the phase margin (Pm)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Système non corrigé&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-------------------&quot;</span><span class="p">)</span>
+<span class="n">rlf</span><span class="o">.</span><span class="n">printInfo</span><span class="p">(</span><span class="n">info</span><span class="p">)</span>
+
+<span class="c1"># Système corrigé</span>
+<span class="c1"># ---------------</span>
+<span class="n">Gbf_PD</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">feedback</span><span class="p">(</span><span class="n">Corr</span><span class="o">*</span><span class="n">G</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">info_PD</span> <span class="o">=</span> <span class="n">rlf</span><span class="o">.</span><span class="n">stepWithInfo</span><span class="p">(</span><span class="n">Gbf_PD</span><span class="p">,</span> <span class="n">NameOfFigure</span><span class="o">=</span><span class="s2">&quot;Step Response&quot;</span><span class="p">,</span> <span class="n">sysName</span><span class="o">=</span><span class="s1">&#39;SystCorr&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-.&#39;</span><span class="p">)</span> <span class="c1"># Renvoie toutes les infos du step</span>
+
+<span class="n">ep_PD</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">info_PD</span><span class="o">.</span><span class="n">DCGain</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span> <span class="c1"># Erreur de position</span>
+
+<span class="n">gm</span><span class="p">,</span> <span class="n">pm</span><span class="p">,</span> <span class="n">wg</span><span class="p">,</span> <span class="n">wp</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">margin</span><span class="p">(</span><span class="n">Corr</span><span class="o">*</span><span class="n">G</span><span class="p">)</span> <span class="c1"># Extract the gain margin (Gm) and the phase margin (Pm)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Système corrigé&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;---------------&quot;</span><span class="p">)</span>
+<span class="n">rlf</span><span class="o">.</span><span class="n">printInfo</span><span class="p">(</span><span class="n">info_PD</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Système non corrigé
+-------------------
+DCGain : 0.9990781353815176
+Overshoot : 20.711775188004733
+Peak : 1.2060049527342471
+PeakTime : 3.636378059961078
+RiseTime : 1.5608835065561832
+SettlingTime : 5.383265559354145
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Système corrigé
+---------------
+DCGain : 0.9999999999999946
+Overshoot : 16.303349881758788
+Peak : 1.1630334988175817
+PeakTime : 0.3626934214887108
+RiseTime : 0.16373017312918947
+SettlingTime : 0.5284961284549786
+</pre></div>
+</div>
+<img alt="../_images/LaboSeance6_10_2.png" src="../_images/LaboSeance6_10_2.png" />
+</div>
+</div>
+</div>
+<div class="section" id="eme-methode-placement-frequentiel">
+<h5><span class="math notranslate nohighlight">\(2^{ème}\)</span> méthode: placement fréquentiel<a class="headerlink" href="#eme-methode-placement-frequentiel" title="Permalink to this headline">¶</a></h5>
+<p><span class="math notranslate nohighlight">\(K_P\)</span> étant fixé, traçons <span class="math notranslate nohighlight">\(K_P*G(p)\)</span> : le système est instable et nous allons nous efforcer de le
+stabiliser par l’intermédiaire du terme <span class="math notranslate nohighlight">\((1+\tau_D*p)\)</span>.</p>
+<p>Ce terme a pour effet, pour la pulsation <span class="math notranslate nohighlight">\(\omega=\frac{10}{\tau_D}\)</span>, de translater le module de +20 dB et
+d’introduire un déphasage de +90° (+84° pour être précis).</p>
+<p>Comme nous voulons que le système en trait mixte soit corrigé et passe par le point
+(0dB,-135°), cherchons le point qui a une phase de –135°-84° ; son module vaut -23 dB. Il
+sera donc corrigé par le terme <span class="math notranslate nohighlight">\((1+\tau_D*p)\)</span> et passera <em>approximativement</em> par le point voulu
+(0dB,-135°).</p>
+<p>Sur la courbe en trait interrompu, le point (–23dB,–135°-84°) correspond à une pulsation de
+9.9rad/s, soit : <span class="math notranslate nohighlight">\(\tau_D=\frac{10}{\omega_{à -135°-84°}}=\frac{10}{9.9}=1.01s\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Lecture phase</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s2">&quot;Bode&quot;</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">mag</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">rlf</span><span class="o">.</span><span class="n">getValues</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="o">-</span><span class="mi">180</span><span class="o">+</span><span class="n">MP</span><span class="o">-</span><span class="mi">84</span><span class="p">,</span> <span class="n">printValue</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">NameOfFigure</span><span class="o">=</span><span class="s2">&quot;Bode&quot;</span><span class="p">)</span>
+
+<span class="c1"># tD</span>
+<span class="n">tD</span> <span class="o">=</span> <span class="mi">10</span><span class="o">/</span><span class="n">w</span> <span class="c1"># = tD conseillé</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;tau_D = </span><span class="si">{</span><span class="n">tD</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">Corr</span> <span class="o">=</span> <span class="n">Kp</span><span class="o">*</span><span class="n">ml</span><span class="o">.</span><span class="n">tf</span><span class="p">([</span><span class="n">tD</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s2">&quot;Nichols&quot;</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">rlf</span><span class="o">.</span><span class="n">nichols</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">grid</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;G(p)&#39;</span><span class="p">],</span> <span class="n">NameOfFigure</span> <span class="o">=</span> <span class="s2">&quot;Nichols&quot;</span><span class="p">)</span>
+<span class="n">rlf</span><span class="o">.</span><span class="n">nichols</span><span class="p">(</span><span class="n">Kp</span><span class="o">*</span><span class="n">G</span><span class="p">,</span> <span class="n">grid</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Kp*G(p)&#39;</span><span class="p">],</span> <span class="n">NameOfFigure</span> <span class="o">=</span> <span class="s2">&quot;Nichols&quot;</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s1">&#39;-.&#39;</span><span class="p">)</span>
+<span class="n">rlf</span><span class="o">.</span><span class="n">nichols</span><span class="p">(</span><span class="n">Corr</span><span class="o">*</span><span class="n">G</span><span class="p">,</span> <span class="n">grid</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;C(p)*G(p)&#39;</span><span class="p">],</span> <span class="n">NameOfFigure</span> <span class="o">=</span> <span class="s2">&quot;Nichols&quot;</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s1">&#39;--&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">-</span><span class="mi">180</span><span class="o">+</span><span class="n">MP</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span><span class="s1">&#39;k+&#39;</span><span class="p">);</span> <span class="c1"># Ajout du repère (+) par lequel on est censé passer</span>
+
+<span class="n">gm</span><span class="p">,</span> <span class="n">pm</span><span class="p">,</span> <span class="n">wg</span><span class="p">,</span> <span class="n">wp</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">margin</span><span class="p">(</span><span class="n">Corr</span><span class="o">*</span><span class="n">G</span><span class="p">)</span> <span class="c1"># Extrait la marge de gain (Gm) et de phase (Pm)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Le système ainsi corrigé présente une marge de phase de </span><span class="si">{</span><span class="n">pm</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">° et une marge de gain de </span><span class="si">{</span><span class="n">gm</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> dB.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Gain à -219° = -42.869391796777016 dB
+Fréquence à -219° = 9.91515778991914 rad/sec
+tau_D = 1.01
+Le système ainsi corrigé présente une marge de phase de 51.72° et une marge de gain de inf dB.
+</pre></div>
+</div>
+<img alt="../_images/LaboSeance6_12_1.png" src="../_images/LaboSeance6_12_1.png" />
+<img alt="../_images/LaboSeance6_12_2.png" src="../_images/LaboSeance6_12_2.png" />
+</div>
+</div>
+<p>La marge de phase étant malgré tout toujours trop grande, par essai et erreur, nous allons augmenter <span class="math notranslate nohighlight">\(\tau_D\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tD</span> <span class="o">=</span> <span class="mi">15</span><span class="o">/</span><span class="n">w</span> <span class="c1"># tD trouvé par essais-erreurs</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;tau_D = </span><span class="si">{</span><span class="n">tD</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">s&quot;</span><span class="p">)</span>
+<span class="n">Corr2</span> <span class="o">=</span> <span class="n">Kp</span><span class="o">*</span><span class="n">ml</span><span class="o">.</span><span class="n">tf</span><span class="p">([</span><span class="n">tD</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s2">&quot;Nichols&quot;</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">rlf</span><span class="o">.</span><span class="n">nichols</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">grid</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;G(p)&#39;</span><span class="p">],</span> <span class="n">NameOfFigure</span> <span class="o">=</span> <span class="s2">&quot;Nichols&quot;</span><span class="p">)</span>
+<span class="n">rlf</span><span class="o">.</span><span class="n">nichols</span><span class="p">(</span><span class="n">Kp</span><span class="o">*</span><span class="n">G</span><span class="p">,</span> <span class="n">grid</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Kp*G(p)&#39;</span><span class="p">],</span> <span class="n">NameOfFigure</span> <span class="o">=</span> <span class="s2">&quot;Nichols&quot;</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s1">&#39;-.&#39;</span><span class="p">)</span>
+<span class="n">rlf</span><span class="o">.</span><span class="n">nichols</span><span class="p">(</span><span class="n">Corr</span><span class="o">*</span><span class="n">G</span><span class="p">,</span> <span class="n">grid</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;C(p)*G(p)&#39;</span><span class="p">],</span> <span class="n">NameOfFigure</span> <span class="o">=</span> <span class="s2">&quot;Nichols&quot;</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">rlf</span><span class="o">.</span><span class="n">nichols</span><span class="p">(</span><span class="n">Corr2</span><span class="o">*</span><span class="n">G</span><span class="p">,</span> <span class="n">grid</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;C2(p)*G(p)&#39;</span><span class="p">],</span> <span class="n">NameOfFigure</span> <span class="o">=</span> <span class="s2">&quot;Nichols&quot;</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s1">&#39;:&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">-</span><span class="mi">180</span><span class="o">+</span><span class="n">MP</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span><span class="s1">&#39;k+&#39;</span><span class="p">);</span> <span class="c1"># Ajout du repère (+) par lequel on est censé passer</span>
+
+<span class="n">gm</span><span class="p">,</span> <span class="n">pm</span><span class="p">,</span> <span class="n">wg</span><span class="p">,</span> <span class="n">wp</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">margin</span><span class="p">(</span><span class="n">Corr2</span><span class="o">*</span><span class="n">G</span><span class="p">)</span> <span class="c1"># Extrait la marge de gain (Gm) et de phase (Pm)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Le système ainsi corrigé présente une marge de phase de </span><span class="si">{</span><span class="n">pm</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">° et une marge de gain de </span><span class="si">{</span><span class="n">gm</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> dB.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tau_D = 1.51s
+Le système ainsi corrigé présente une marge de phase de 45.62° et une marge de gain de inf dB.
+</pre></div>
+</div>
+<img alt="../_images/LaboSeance6_14_1.png" src="../_images/LaboSeance6_14_1.png" />
+</div>
+</div>
+<p>Les performances du système ainsi corrigé sont :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">PendingDeprecationWarning</span><span class="p">)</span> <span class="c1"># Pour ignorer des message d&#39;avertissement inutiles</span>
+
+<span class="c1"># Système non corrigé</span>
+<span class="c1"># -------------------</span>
+
+<span class="n">Gbf</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">feedback</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s2">&quot;Step Response&quot;</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">info</span> <span class="o">=</span> <span class="n">rlf</span><span class="o">.</span><span class="n">stepWithInfo</span><span class="p">(</span><span class="n">Gbf</span><span class="p">,</span> <span class="n">NameOfFigure</span><span class="o">=</span><span class="s2">&quot;Step Response&quot;</span><span class="p">,</span> <span class="n">sysName</span><span class="o">=</span><span class="s1">&#39;SystInit&#39;</span><span class="p">)</span> <span class="c1"># Renvoie toutes les infos du step</span>
+
+<span class="n">ep</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">info</span><span class="o">.</span><span class="n">DCGain</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span> <span class="c1"># Erreur de position</span>
+
+<span class="n">gm</span><span class="p">,</span> <span class="n">pm</span><span class="p">,</span> <span class="n">wg</span><span class="p">,</span> <span class="n">wp</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">margin</span><span class="p">(</span><span class="n">G</span><span class="p">)</span> <span class="c1"># Extract the gain margin (Gm) and the phase margin (Pm)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Système non corrigé&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-------------------&quot;</span><span class="p">)</span>
+<span class="n">rlf</span><span class="o">.</span><span class="n">printInfo</span><span class="p">(</span><span class="n">info</span><span class="p">)</span>
+
+<span class="c1"># Système corrigé</span>
+<span class="c1"># ---------------</span>
+<span class="n">Gbf_PD</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">feedback</span><span class="p">(</span><span class="n">Corr2</span><span class="o">*</span><span class="n">G</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">info_PD</span> <span class="o">=</span> <span class="n">rlf</span><span class="o">.</span><span class="n">stepWithInfo</span><span class="p">(</span><span class="n">Gbf_PD</span><span class="p">,</span> <span class="n">NameOfFigure</span><span class="o">=</span><span class="s2">&quot;Step Response&quot;</span><span class="p">,</span> <span class="n">sysName</span><span class="o">=</span><span class="s1">&#39;SystCorr&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-.&#39;</span><span class="p">)</span> <span class="c1"># Renvoie toutes les infos du step</span>
+
+<span class="n">ep_PD</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">info_PD</span><span class="o">.</span><span class="n">DCGain</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span> <span class="c1"># Erreur de position</span>
+
+<span class="n">gm</span><span class="p">,</span> <span class="n">pm</span><span class="p">,</span> <span class="n">wg</span><span class="p">,</span> <span class="n">wp</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">margin</span><span class="p">(</span><span class="n">Corr2</span><span class="o">*</span><span class="n">G</span><span class="p">)</span> <span class="c1"># Extract the gain margin (Gm) and the phase margin (Pm)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Système corrigé&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;---------------&quot;</span><span class="p">)</span>
+<span class="n">rlf</span><span class="o">.</span><span class="n">printInfo</span><span class="p">(</span><span class="n">info_PD</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Système non corrigé
+-------------------
+DCGain : 0.9990781353815176
+Overshoot : 20.711775188004733
+Peak : 1.2060049527342471
+PeakTime : 3.636378059961078
+RiseTime : 1.5608835065561832
+SettlingTime : 5.383265559354145
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Système corrigé
+---------------
+DCGain : 0.9999777307492984
+Overshoot : 21.339622232529877
+Peak : 1.2133692009006234
+PeakTime : 0.2787350938997571
+RiseTime : 0.12281431340410752
+SettlingTime : 0.636498528598679
+</pre></div>
+</div>
+<img alt="../_images/LaboSeance6_16_2.png" src="../_images/LaboSeance6_16_2.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Mesure de l&#39;erreur de vitesse</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">t</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span> <span class="c1"># Pour désactiver les warnings inutiles</span>
+<span class="p">[</span><span class="n">y</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">xout</span><span class="p">]</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">lsim</span><span class="p">(</span><span class="n">Gbf</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="n">t</span><span class="p">)</span> <span class="c1"># Simuler la réponse à une rampe =&gt; erreur de vitesse</span>
+<span class="p">[</span><span class="n">y2</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">xout2</span><span class="p">]</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">lsim</span><span class="p">(</span><span class="n">Gbf_PD</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="n">t</span><span class="p">)</span> <span class="c1"># Simuler la réponse à une rampe =&gt; erreur de vitesse</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;default&#39;</span><span class="p">)</span> <span class="c1"># Pour réactiver les warnings</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s2">&quot;Erreur de vitesse&quot;</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">s</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;La rampe S(t)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">y</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-.&#39;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;La réponse Y(t) à la rampe S(t)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,(</span><span class="n">s</span><span class="o">-</span><span class="n">y</span><span class="p">));</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="p">(</span><span class="n">s</span><span class="o">-</span><span class="n">y2</span><span class="p">),</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-.&#39;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;L&#39;erreur S(t)-Y(t)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">hspace</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span> <span class="c1"># Pour laisser un peu d&#39;espace pour les titres</span>
+
+<span class="n">ev</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">y</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># Erreur de vitesse système original</span>
+<span class="n">ev2</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">y2</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># Erreur de vitesse du système corrigé</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;L&#39;erreur de vitesse du système original vaut </span><span class="si">{</span><span class="n">ev</span><span class="o">*</span><span class="mi">100</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">% et celle du système corrigé vaut </span><span class="si">{</span><span class="n">ev2</span><span class="o">*</span><span class="mi">100</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">%.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>L&#39;erreur de vitesse du système original vaut 100.0% et celle du système corrigé vaut 10.0%.
+</pre></div>
+</div>
+<img alt="../_images/LaboSeance6_17_1.png" src="../_images/LaboSeance6_17_1.png" />
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="regulateur-pid">
@@ -296,29 +575,169 @@
 <p>Soit le système asservi à retour unitaire dont la fonction de boucle ouverte est :</p>
 <div class="math notranslate nohighlight">
 \[
- G(p)=\frac{20}{(5+p)(2p+3)(4+3p)}
+ H(p)=\frac{20}{(5+p)(2p+3)(4+3p)}
 \]</div>
 <p>On demande de déterminer le correcteur dont le but est de permettre une erreur statique nulle et une erreur de
 vitesse minimale, tout en assurant une réponse indicielle dont le dépassement est limité à 5%.</p>
-<div class="section" id="exercice-7-page-7-18-resolution-dans-les-notes-facultatif">
-<h3>Exercice 7 page 7-18 (résolution dans les notes) (facultatif)<a class="headerlink" href="#exercice-7-page-7-18-resolution-dans-les-notes-facultatif" title="Permalink to this headline">¶</a></h3>
+<div class="dropdown admonition">
+<p class="admonition-title">Stratégie de dimensionnement du correcteur adéquat</p>
+<p>Puisqu’on cherche à avoir une erreur statique nulle, la théorie nous dit que le système doit être au moins de classe 1 (<em>cf. p. 6-3</em>). Or, il n’y a pas de pôle à l’origine ( = nous ne pouvons pas mettre de pôle en évidence) donc nous sommes avec un système de classe 0. Il faut dès lors augmenter la classe de notre système, ce qui peut se faire en intégrant ce dernier.</p>
+<p>L’erreur de vitesse devant être minimale, il faudra fixer un K le plus grand possible vu qu’on obtient un système de classe 1 après l’avoir intégré et que l’erreur de vitesse est égale à <span class="math notranslate nohighlight">\(\frac{1}{K}\)</span> dans ce cas.</p>
+<p>Enfin, on doit limiter le dépassement à 5%, ce qui limitera notre K. Le problème est qu’on se retrouve avec un système d’ordre 3 à condition d’utiliser la technique de compensation du pôle dominant pour dimensionner <span class="math notranslate nohighlight">\(\tau_I\)</span>. Les pôles n’étant pas si différents, nous ne pouvons pas nous permettre de simplifier le système à un système du second ordre et nous devons donc ajouter un correcteur <strong>D</strong> par compensation du pôle dominant afin de réduire l’ordre de notre système et ainsi retrouver un système d’ordre 2 dont on connaît la forme canonique et pour lequel nous pouvons donc exploiter la technique de l’identifiaction pour fixer K.</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Dimensionnement du correcteur</p>
+<ul class="simple">
+<li><p>En mettant la fonction de transfert sous forme canonique, on obtient:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+ H(p)=\frac{\frac{1}{3}}{(\frac{1}{5}p+1)(\frac{2}{3}p+1)(\frac{3}{4}p+1)}
+\]</div>
+<ul>
+<li><p>Le pôle dominant étant celui lié à la constante de temps <span class="math notranslate nohighlight">\(\tau\)</span> la plus grande, nous dimensionnons <span class="math notranslate nohighlight">\(\tau_I=\frac{3}{4}\)</span></p></li>
+<li><p>Le second pôle dominant nous donne <span class="math notranslate nohighlight">\(\tau_D=\frac{2}{3}\)</span></p></li>
+<li><p>Nous obtenons donc le correcteur PID suivant:</p>
+<div class="math notranslate nohighlight">
+\[
+     C(p)=K_P*\frac{(\frac{2}{3}p+1)*(\frac{3}{4}p+1)}{\frac{3}{4}p}
+    \]</div>
+<p>Ce qui nous donne comme fonction de transfert pour la boucle ouverte:</p>
+<div class="math notranslate nohighlight">
+\[
+     G_{BO}(p) = \frac{K_P*\frac{1}{3}}{\frac{3}{4}p*(\frac{1}{5}p+1)} = \frac{\frac{4}{9}K_P}{\frac{1}{5}p^2+p}
+    \]</div>
+</li>
+<li><p>La boucle fermée étant à retour unitaire, on obtient:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+ G_{BF}(p) = \frac{\frac{4}{9}K_P}{\frac{1}{5}p^2+p+\frac{4}{9}K_P} = \frac{1}{\frac{9}{20K_P}*p^2+\frac{9}{4K_P}*p+1}
+\]</div>
+<ul>
+<li><p>Par identification, on trouve:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    \begin{alignat*}{2}
+        \left\{ \begin{aligned}
+            \begin{array}{ll}
+                \frac{2\zeta}{\omega_n} = \frac{9}{4K_P} \\
+                \frac{1}{\omega_n^2} = \frac{9}{20K_P}
+            \end{array}
+        \end{aligned}\right.
+    \end{alignat*}\
+    \end{split}\]</div>
+<p>Or,</p>
+<div class="math notranslate nohighlight">
+\[
+    D_p=100*e^{-\frac{k\pi\zeta}{\sqrt{1-\zeta^2}}} \Rightarrow 5 = 100*e^{-\frac{\pi\zeta}{\sqrt{1-\zeta^2}}} \Rightarrow \zeta=0.69
+    \]</div>
+<p>Ce qui nous permet de trouver:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    \left\{ \begin{aligned}
+        \begin{array}{ll}
+            K_P = 5.906 \\
+            \omega_n = 3.623 rad/s
+        \end{array}
+    \end{aligned}\right.
+    \end{split}\]</div>
+</li>
+<li><p>Le correcteur PID qui permet d’assurer un erreur statique nulle, une erreur de vitesse minimum et un dépassement de 5% pour le système donné est donc:</p>
+<div class="math notranslate nohighlight">
+\[
+     C(p)=5.906*\frac{(\frac{2}{3}p+1)*(\frac{3}{4}p+1)}{\frac{3}{4}p}
+    \]</div>
+</li>
+</ul>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">PendingDeprecationWarning</span><span class="p">)</span> <span class="c1"># Pour ignorer des message d&#39;avertissement inutiles</span>
+
+<span class="c1"># ------------------------</span>
+<span class="c1"># Configuration du système</span>
+<span class="c1"># ------------------------</span>
+
+<span class="c1"># Système initial</span>
+<span class="n">num</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">H1</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">tf</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+<span class="n">H2</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">tf</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">H3</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">tf</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<span class="n">H</span> <span class="o">=</span> <span class="n">num</span><span class="o">*</span><span class="n">H1</span><span class="o">*</span><span class="n">H2</span><span class="o">*</span><span class="n">H3</span>  <span class="c1"># H de l&#39;énoncé</span>
+<span class="n">G_BF_init</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">feedback</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Correcteur</span>
+<span class="n">Kp</span> <span class="o">=</span> <span class="mf">5.906</span>
+<span class="n">tI</span> <span class="o">=</span> <span class="mi">3</span><span class="o">/</span><span class="mi">4</span>
+<span class="n">tD</span> <span class="o">=</span> <span class="mi">2</span><span class="o">/</span><span class="mi">3</span>
+<span class="n">C</span> <span class="o">=</span> <span class="n">Kp</span><span class="o">*</span><span class="n">ml</span><span class="o">.</span><span class="n">tf</span><span class="p">([</span><span class="n">tI</span><span class="p">,</span> <span class="mi">1</span><span class="p">],[</span><span class="n">tI</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span><span class="o">*</span><span class="n">ml</span><span class="o">.</span><span class="n">tf</span><span class="p">([</span><span class="n">tD</span><span class="p">,</span> <span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="c1"># Système corrigé</span>
+<span class="n">G_BO</span> <span class="o">=</span> <span class="n">C</span><span class="o">*</span><span class="n">H</span>
+<span class="n">G_BF</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">feedback</span><span class="p">(</span><span class="n">G_BO</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># ------------------</span>
+<span class="c1"># Analyse du système</span>
+<span class="c1"># ------------------</span>
+
+<span class="c1"># Step</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s2">&quot;Step Response&quot;</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">info</span> <span class="o">=</span> <span class="n">rlf</span><span class="o">.</span><span class="n">stepWithInfo</span><span class="p">(</span><span class="n">G_BF_init</span><span class="p">,</span> <span class="n">NameOfFigure</span><span class="o">=</span><span class="s2">&quot;Step Response&quot;</span><span class="p">,</span> <span class="n">sysName</span><span class="o">=</span><span class="s1">&#39;Système initial&#39;</span><span class="p">)</span>
+<span class="n">info_PID</span> <span class="o">=</span> <span class="n">rlf</span><span class="o">.</span><span class="n">stepWithInfo</span><span class="p">(</span><span class="n">G_BF</span><span class="p">,</span> <span class="n">NameOfFigure</span><span class="o">=</span><span class="s2">&quot;Step Response&quot;</span><span class="p">,</span> <span class="n">sysName</span><span class="o">=</span><span class="s1">&#39;Système corrigé&#39;</span><span class="p">)</span>
+
+<span class="c1"># Erreurs statiques</span>
+<span class="n">e0_init</span> <span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="n">info</span><span class="o">.</span><span class="n">DCGain</span>
+<span class="n">e0</span> <span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="n">info_PID</span><span class="o">.</span><span class="n">DCGain</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">L&#39;erreur de position du système original vaut </span><span class="si">{</span><span class="n">e0_init</span><span class="o">*</span><span class="mi">100</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">% et celle du système corrigé vaut </span><span class="si">{</span><span class="n">e0</span><span class="o">*</span><span class="mi">100</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">%.&quot;</span><span class="p">)</span>
+
+<span class="c1"># Dépassements</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Le dépassement du système original vaut </span><span class="si">{</span><span class="n">info</span><span class="o">.</span><span class="n">Overshoot</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">% et celui du système corrigé vaut </span><span class="si">{</span><span class="n">info_PID</span><span class="o">.</span><span class="n">Overshoot</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">%.&quot;</span><span class="p">)</span>
+
+<span class="c1"># Erreurs de vitesse</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">t</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span> <span class="c1"># Pour désactiver les warnings inutiles</span>
+<span class="p">[</span><span class="n">y</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">xout</span><span class="p">]</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">lsim</span><span class="p">(</span><span class="n">G_BF_init</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="n">t</span><span class="p">)</span> <span class="c1"># Simuler la réponse à une rampe =&gt; erreur de vitesse</span>
+<span class="p">[</span><span class="n">y2</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">xout2</span><span class="p">]</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">lsim</span><span class="p">(</span><span class="n">G_BF</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="n">t</span><span class="p">)</span> <span class="c1"># Simuler la réponse à une rampe =&gt; erreur de vitesse</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;default&#39;</span><span class="p">)</span> <span class="c1"># Pour réactiver les warnings</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s2">&quot;Erreur de vitesse&quot;</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">s</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;La rampe S(t)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">y</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y2</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;La réponse Y(t) à la rampe S(t)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,(</span><span class="n">s</span><span class="o">-</span><span class="n">y</span><span class="p">));</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="p">(</span><span class="n">s</span><span class="o">-</span><span class="n">y2</span><span class="p">));</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;L&#39;erreur S(t)-Y(t)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">hspace</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span> <span class="c1"># Pour laisser un peu d&#39;espace pour les titres</span>
+
+<span class="n">ev</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">y</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># Erreur de vitesse système original</span>
+<span class="n">ev2</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">y2</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># Erreur de vitesse du système corrigé</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">L&#39;erreur de vitesse du système original vaut </span><span class="si">{</span><span class="n">ev</span><span class="o">*</span><span class="mi">100</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">% et celle du système corrigé vaut </span><span class="si">{</span><span class="n">ev2</span><span class="o">*</span><span class="mi">100</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">%.&quot;</span><span class="p">)</span>
+
+<span class="c1"># Nichols (pas nécessaire ici mais toujours intéressant à observer)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s2">&quot;Nichols&quot;</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">frequencies</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">10</span><span class="o">**-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="o">**</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span> <span class="c1"># Pour bien voir vers où on converge dans les hautes fréquences (jusqu&#39;à 10^5 rad/s ici)</span>
+<span class="n">rlf</span><span class="o">.</span><span class="n">nichols</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">grid</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Système initial&#39;</span><span class="p">],</span> <span class="n">NameOfFigure</span> <span class="o">=</span> <span class="s2">&quot;Nichols&quot;</span><span class="p">,</span> <span class="n">omega</span><span class="o">=</span><span class="n">frequencies</span><span class="p">)</span>
+<span class="n">rlf</span><span class="o">.</span><span class="n">nichols</span><span class="p">(</span><span class="n">G_BO</span><span class="p">,</span> <span class="n">grid</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Système corrigé&#39;</span><span class="p">],</span> <span class="n">NameOfFigure</span> <span class="o">=</span> <span class="s2">&quot;Nichols&quot;</span><span class="p">,</span> <span class="n">omega</span><span class="o">=</span><span class="n">frequencies</span><span class="p">)</span>
+</pre></div>
 </div>
 </div>
-<div class="section" id="exercices-recapitulatifs">
-<h2>Exercices récapitulatifs<a class="headerlink" href="#exercices-recapitulatifs" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="exercice-type-examen-cf-helmo-learn">
-<h3>Exercice type examen (cf. HELMo Learn)<a class="headerlink" href="#exercice-type-examen-cf-helmo-learn" title="Permalink to this headline">¶</a></h3>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>L&#39;erreur de position du système original vaut 75.0% et celle du système corrigé vaut 0.0%.
+
+Le dépassement du système original vaut 0.9% et celui du système corrigé vaut 5.0%.
+
+L&#39;erreur de vitesse du système original vaut 1530.3% et celle du système corrigé vaut 38.1%.
+</pre></div>
 </div>
-<div class="section" id="application-5-cf-p-application-8">
-<h3>Application 5 (cf. p. “application-8”)<a class="headerlink" href="#application-5-cf-p-application-8" title="Permalink to this headline">¶</a></h3>
-<p>Effectuez la résolution par programmation Python.</p>
+<img alt="../_images/LaboSeance6_19_1.png" src="../_images/LaboSeance6_19_1.png" />
+<img alt="../_images/LaboSeance6_19_2.png" src="../_images/LaboSeance6_19_2.png" />
+<img alt="../_images/LaboSeance6_19_3.png" src="../_images/LaboSeance6_19_3.png" />
 </div>
-<div class="section" id="exercice-3-page-7-27">
-<h3>Exercice 3 page 7-27<a class="headerlink" href="#exercice-3-page-7-27" title="Permalink to this headline">¶</a></h3>
 </div>
-<div class="section" id="application-3-cf-p-application-4">
-<h3>Application 3  (cf. p. “application-4”)<a class="headerlink" href="#application-3-cf-p-application-4" title="Permalink to this headline">¶</a></h3>
-<p>Effectuez la résolution par programmation Python.</p>
+<p>On voit donc bien que l’ajout de notre correcteur PID au système à retour unitaire initial nous permet d’avoir une erreur statique nulle, un dépassement de 5% et une erreur de vitesse limitée (38,1%) alors que ce dernier présentait une erreur statique de 75%, un dépassement de 0.9% et une erreur de vitesse infinie.</p>
+<div class="section" id="facultatif-exercice-7-page-7-18-resolution-dans-les-notes">
+<h3>[Facultatif] Exercice 7 page 7-18 (résolution dans les notes)<a class="headerlink" href="#facultatif-exercice-7-page-7-18-resolution-dans-les-notes" title="Permalink to this headline">¶</a></h3>
 </div>
 </div>
 </div>
@@ -361,6 +780,15 @@ vitesse minimale, tout en assurant une réponse indicielle dont le dépassement 
             </div>
         </a>
     </div>
+     <div id="next">
+        <a class="right-next" href="LaboSeance7.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Séance 7</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
 
 </div>
         
