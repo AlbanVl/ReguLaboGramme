@@ -314,7 +314,6 @@ Créez un script qui permette de tracer de manière itérative les différentes 
 
 <span class="c1"># Création de la fenêtre à une taille donnée</span>
 <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s2">&quot;Steps&quot;</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 
 <span class="c1"># Réponse indicielle</span>
 <span class="c1"># Calcule les différentes fonctions de transfert ainsi que la réponse indicielle</span>
@@ -327,6 +326,14 @@ Créez un script qui permette de tracer de manière itérative les différentes 
 <div class="cell_output docutils container">
 <img alt="../_images/LaboSeance2_4_0.png" src="../_images/LaboSeance2_4_0.png" />
 </div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>La ligne de code</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>fig = plt.figure(&quot;Steps&quot;,figsize=(20,10))
+</pre></div>
+</div>
+<p>n’a aucune utilité pour vous dans Spyder, elle permet juste d’ouvrir une fenêtre d’une largeur de 20” et de 10” de haut afin d’éviter d’avoir des graphes qui ne soient trop petits pour être lisibles sur cette page.</p>
 </div>
 <div class="section" id="commentaires-sur-les-courbes">
 <h3>Commentaires sur les courbes<a class="headerlink" href="#commentaires-sur-les-courbes" title="Permalink to this headline">¶</a></h3>
@@ -417,7 +424,7 @@ Créez un script qui permette de tracer de manière itérative les différentes 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/LaboSeance2_10_0.png" src="../_images/LaboSeance2_10_0.png" />
+<img alt="../_images/LaboSeance2_11_0.png" src="../_images/LaboSeance2_11_0.png" />
 </div>
 </div>
 </div>
@@ -444,7 +451,7 @@ Créez un script qui permette de tracer de manière itérative les différentes 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/LaboSeance2_12_0.png" src="../_images/LaboSeance2_12_0.png" />
+<img alt="../_images/LaboSeance2_13_0.png" src="../_images/LaboSeance2_13_0.png" />
 </div>
 </div>
 <p>Pour chaque valeur de <span class="math notranslate nohighlight">\(\zeta\)</span>, la fonction <code class="docutils literal notranslate"><span class="pre">pzmap</span></code> vous trace 2 croix pour indiquer les 2 pôles du système dans le plan complexe :</p>
@@ -497,7 +504,7 @@ H_{BF}(s) = \frac{8}{s^2+s+10}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/LaboSeance2_16_0.png" src="../_images/LaboSeance2_16_0.png" />
+<img alt="../_images/LaboSeance2_17_0.png" src="../_images/LaboSeance2_17_0.png" />
 </div>
 </div>
 <p>La fonction présente 2 pôles complexes conjugués et les constantes associées à sa réponse sont:</p>
@@ -582,7 +589,7 @@ SettlingTime : 5.334702096639671
 Erreur statique : 20.043627508544137 %
 </pre></div>
 </div>
-<img alt="../_images/LaboSeance2_22_1.png" src="../_images/LaboSeance2_22_1.png" />
+<img alt="../_images/LaboSeance2_23_1.png" src="../_images/LaboSeance2_23_1.png" />
 </div>
 </div>
 </div>
@@ -657,7 +664,7 @@ D_p=100*e^{-\frac{\pi*0.466}{\sqrt{1-0.466^2}}} = 19.09\%
 Temps de réponse à 5% : 0.0006151343954389906 s
 </pre></div>
 </div>
-<img alt="../_images/LaboSeance2_24_1.png" src="../_images/LaboSeance2_24_1.png" />
+<img alt="../_images/LaboSeance2_25_1.png" src="../_images/LaboSeance2_25_1.png" />
 </div>
 </div>
 <ul>
@@ -708,7 +715,7 @@ Temps de réponse à 5% : 0.0006151343954389906 s
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dépassement : 39.95296631023082 %
 </pre></div>
 </div>
-<img alt="../_images/LaboSeance2_26_1.png" src="../_images/LaboSeance2_26_1.png" />
+<img alt="../_images/LaboSeance2_27_1.png" src="../_images/LaboSeance2_27_1.png" />
 </div>
 </div>
 </div>

@@ -351,6 +351,17 @@ import ReguLabFct as rlf # Library useful for the laboratory of regulation of HE
 </pre></div>
 </div>
 </div>
+<div class="warning admonition">
+<p class="admonition-title">Attention</p>
+<p>Par défaut, Spyder choisit comme espace de travail le répertoire dans lequel se trouve votre script. Néanmoins, lorsque vous créez un nouveau script, celui-ci n’est pas encore enregistré dans votre dossier de travail où vous avez placé le package <code class="docutils literal notranslate"><span class="pre">ReguLabFct</span></code> et Spyder choisit votre répertoire <em>utilisateur</em> comme répertoire de travail par défaut. Vous devez donc enregistrer votre script dans votre dossier où se trouve le package <code class="docutils literal notranslate"><span class="pre">ReguLabFct</span></code> avant d’exécuter votre script. Si vous ne le faites pas, Spyder est incapable de trouver le package en question et ne pourra dès lors pas s’exécuter.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Si jamais vous souhaitez que Spyder choisisse de travailler par défaut dans votre dossier réservé au laboratoire de régulation plutôt que dans le dossier <em>utilisateur</em>, vous pouvez changer ses paramètres de configuration afin que cela soit le cas. Attention que même lorsque vous ouvrirez un script déjà existant, il faudra que ce dernier se trouve bien dans ce dossier sinon Spyder sera incapable de lancer son exécution!
+Voici la procédure:</p>
+<img alt="../_images/1_RepertoireTravailConfig1.jpg" class="align-center" src="../_images/1_RepertoireTravailConfig1.jpg" />
+<img alt="../_images/1_RepertoireTravailConfig2.jpg" class="align-center" src="../_images/1_RepertoireTravailConfig2.jpg" />
+</div>
+</div>
 </div>
 <div class="section" id="etude-d-un-systeme-du-premier-ordre-rc">
 <h2>Etude d’un système du premier ordre : RC<a class="headerlink" href="#etude-d-un-systeme-du-premier-ordre-rc" title="Permalink to this headline">¶</a></h2>
@@ -400,6 +411,11 @@ import ReguLabFct as rlf # Library useful for the laboratory of regulation of HE
 <p class="admonition-title">Note</p>
 <p>Le <strong>;</strong> en fin de ligne n’est pas nécessaire dans Spyder. Il est juste là pour éviter d’afficher des informations non nécessaires lors de la compilation de cette page.</p>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Les graphes qui sont tracés ne s’affichent pas toujours en premier plan, il faut donc ouvrir soi-même les fenêtres les contenant.</p>
+<img alt="../_images/1_GraphesFenetre.jpg" class="align-center" src="../_images/1_GraphesFenetre.jpg" />
+</div>
 <p>La fonction <code class="docutils literal notranslate"><span class="pre">step_</span></code> adapte automatiquement l’échelle des axes. Si vous voulez spécifier l’axe du temps :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -410,7 +426,7 @@ import ReguLabFct as rlf # Library useful for the laboratory of regulation of HE
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/LaboSeance1_13_0.png" src="../_images/LaboSeance1_13_0.png" />
+<img alt="../_images/LaboSeance1_14_0.png" src="../_images/LaboSeance1_14_0.png" />
 </div>
 </div>
 </div>
@@ -460,7 +476,7 @@ H_{mot}(s)={\frac {31,25}{10,875*10^{-3}*s+1}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/LaboSeance1_19_0.png" src="../_images/LaboSeance1_19_0.png" />
+<img alt="../_images/LaboSeance1_20_0.png" src="../_images/LaboSeance1_20_0.png" />
 </div>
 </div>
 <div class="section" id="considerations-a-propos-du-gain-statique">
@@ -478,7 +494,7 @@ H_{mot}(s)={\frac {31,25}{10,875*10^{-3}*s+1}}
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Le gain statique vaut : 31.21875000000746
 </pre></div>
 </div>
-<img alt="../_images/LaboSeance1_21_1.png" src="../_images/LaboSeance1_21_1.png" />
+<img alt="../_images/LaboSeance1_22_1.png" src="../_images/LaboSeance1_22_1.png" />
 </div>
 </div>
 <div class="section" id="commentaires">
@@ -576,7 +592,7 @@ H_{mot_l}(s)={\frac {31,25}{1,36*10^{-6}*s^2+10,875*10^{-3}*s+1}}
 1.36e-06 s^2 + 0.01087 s + 1
 </pre></div>
 </div>
-<img alt="../_images/LaboSeance1_31_1.png" src="../_images/LaboSeance1_31_1.png" />
+<img alt="../_images/LaboSeance1_32_1.png" src="../_images/LaboSeance1_32_1.png" />
 </div>
 </div>
 <p>Convaincu que l est bien négligeable?</p>

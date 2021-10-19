@@ -305,7 +305,7 @@
 <li><p>Extrapolation à partir de la réponse indicielle</p></li>
 <li><p>Tracé du signal</p></li>
 <li><p>Tracé des différents diagrammes fréquentiels</p></li>
-<li><p>Effet d’un correcteur proportionnel dans les différents diagrammes fréquentiels =&gt;</p></li>
+<li><p>Effet d’un correcteur proportionnel dans les différents diagrammes fréquentiels</p></li>
 </ul>
 </div>
 <div class="section" id="reponse-a-une-variation-quelconque-de-consigne">
@@ -313,7 +313,7 @@
 <p>Pour un système asservi à retour unitaire dont la fonction de transfert de boucle ouverte s’écrit :</p>
 <div class="math notranslate nohighlight">
 \[
- G_{BO}(p)=\frac{6}{2p^2+3s+1}
+ G_{BO}(p)=\frac{6}{2p^2+3p+1}
 \]</div>
 <p>Nous voudrions connaître l’évolution de la sortie si la consigne passe de 10° à 30° :</p>
 <div class="section" id="a-partir-de-la-reponse-indicielle-normee">
@@ -374,7 +374,6 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span> <span class="c1"># Package permettant de gérer l&#39;affichage de messages d&#39;erreurs</span>
 
-<span class="n">G_BF</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">feedback</span><span class="p">(</span><span class="n">ml</span><span class="o">.</span><span class="n">tf</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
 <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span> <span class="c1"># Pour éviter d&#39;afficher un message d&#39;erreur inutile</span>
 <span class="n">peak</span><span class="p">,</span> <span class="n">peakTime</span><span class="p">,</span> <span class="n">__</span><span class="p">,</span> <span class="n">__</span> <span class="o">=</span> <span class="n">rlf</span><span class="o">.</span><span class="n">stepFromTo</span><span class="p">(</span><span class="n">G_BF</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="n">focus</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">warnings</span><span class="o">.</span><span class="n">resetwarnings</span><span class="p">()</span> <span class="c1"># Pour réactiver l&#39;affichage d&#39;erreurs</span>
@@ -402,7 +401,7 @@ T_dep = 1.8328577340232597 s
 <span class="n">warnings</span><span class="o">.</span><span class="n">resetwarnings</span><span class="p">()</span> <span class="c1"># Pour réactiver l&#39;affichage d&#39;erreurs</span>
 <span class="n">info</span> <span class="o">=</span> <span class="n">rlf</span><span class="o">.</span><span class="n">step_info</span><span class="p">(</span><span class="n">yout</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
 <span class="n">rlf</span><span class="o">.</span><span class="n">printInfo</span><span class="p">(</span><span class="n">info</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="c1"># Pour laisser une ligne vide après l&#39;affichage des infos afin de les séparer de ce qui suit</span>
 </pre></div>
 </div>
 </div>
@@ -466,9 +465,8 @@ Peak : 30.04754144710496
 PeakTime : 1.8328577340232597
 RiseTime : 0.7847209996923704
 SettlingTime : 4.076496648636657
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DCGain : 25.715143029346976
+
+DCGain : 25.715143029346976
 Overshoot : 0.8144423371035048
 Peak : 25.9245780412247
 PeakTime : 1.8328577340232597
@@ -476,7 +474,7 @@ RiseTime : 0.7847209996923705
 SettlingTime : 4.078338716711053
 </pre></div>
 </div>
-<img alt="../_images/LaboSeance4_13_3.png" src="../_images/LaboSeance4_13_3.png" />
+<img alt="../_images/LaboSeance4_13_2.png" src="../_images/LaboSeance4_13_2.png" />
 </div>
 </div>
 </div>
