@@ -680,10 +680,10 @@ wn = 1.6431676725154984 rad/s
 <img alt="Appli1" class="align-center" src="../_images/3_Appli1.png" />
 <div class="section" id="a-sur-un-systeme-du-1-er-ordre">
 <h3>a) Sur un système du <span class="math notranslate nohighlight">\(1^{er}\)</span> ordre<a class="headerlink" href="#a-sur-un-systeme-du-1-er-ordre" title="Permalink to this headline">¶</a></h3>
-<p>On a <span class="math notranslate nohighlight">\(H_m(p)=\frac{31.25}{10.875*10^{-3}*p+1}\)</span> <strong>si on néglige l</strong>, soit:</p>
+<p>On a <span class="math notranslate nohighlight">\(H_m(p)=\frac{31.25}{10.875*10^{-3}*p+1}\)</span> <strong>si on néglige l</strong> et <span class="math notranslate nohighlight">\(k_{dt}=33*10^{-3}\frac{Vs}{rad}\)</span>, soit:</p>
 <div class="math notranslate nohighlight">
 \[
-H_{BO}(p)=\frac{A}{10.875*10^{-3}*p+1}
+H_{BO}(p)=\frac{A*31.25*33*10^{-3}}{10.875*10^{-3}*p+1}=\frac{A*B}{10.875*10^{-3}*p+1} avec B =1.03125
 \]</div>
 <p>Calculez la fonction de transfert de boucle fermée pour A (1,2,5,9,20,40,60,100, …) :</p>
 <ul class="simple">
@@ -692,7 +692,7 @@ H_{BO}(p)=\frac{A}{10.875*10^{-3}*p+1}
 <div class="toggle docutils container">
 <div class="math notranslate nohighlight">
 \[
-H_{BF}(p)=\frac{A}{10.875*10^{-3}*p+1+A}= \frac{\frac{A}{A+1}}{\frac{10.875*10^{-3}*p}{A+1}+1}
+H_{BF}(p)=\frac{A*B}{10.875*10^{-3}*p+1+A*B}= \frac{\frac{A*B}{A*B+1}}{\frac{10.875*10^{-3}*p}{A*B+1}+1}
 \]</div>
 </div>
 <ul class="simple">
@@ -701,10 +701,11 @@ H_{BF}(p)=\frac{A}{10.875*10^{-3}*p+1+A}= \frac{\frac{A}{A+1}}{\frac{10.875*10^{
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A_values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">100</span><span class="p">]</span>
+<span class="n">B</span> <span class="o">=</span> <span class="mf">31.25</span><span class="o">*</span><span class="mi">33</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span>
 <span class="n">H_BOs</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">H_BFs</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">A</span> <span class="ow">in</span> <span class="n">A_values</span><span class="p">:</span>
-    <span class="n">H_BO</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">tf</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="p">[</span><span class="mf">10.875e-3</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+    <span class="n">H_BO</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">tf</span><span class="p">(</span><span class="n">A</span><span class="o">*</span><span class="n">B</span><span class="p">,</span> <span class="p">[</span><span class="mf">10.875e-3</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
     <span class="n">H_BOs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">H_BO</span><span class="p">)</span>
     <span class="n">H_BF</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">feedback</span><span class="p">(</span><span class="n">H_BO</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
     <span class="n">H_BFs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">H_BF</span><span class="p">)</span>
@@ -713,44 +714,44 @@ H_{BF}(p)=\frac{A}{10.875*10^{-3}*p+1+A}= \frac{\frac{A}{A+1}}{\frac{10.875*10^{
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      1
--------------
-0.01087 s + 2
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      1.031
+-----------------
+0.01087 s + 2.031
 
 
-      2
--------------
-0.01087 s + 3
+      2.062
+-----------------
+0.01087 s + 3.062
 
 
-      5
--------------
-0.01087 s + 6
+      5.156
+-----------------
+0.01087 s + 6.156
 
 
-      9
---------------
-0.01087 s + 10
+      9.281
+-----------------
+0.01087 s + 10.28
 
 
-      20
---------------
-0.01087 s + 21
+      20.62
+-----------------
+0.01087 s + 21.62
 
 
-      40
---------------
-0.01087 s + 41
+      41.25
+-----------------
+0.01087 s + 42.25
 
 
-      60
---------------
-0.01087 s + 61
+      61.88
+-----------------
+0.01087 s + 62.88
 
 
-      100
----------------
-0.01087 s + 101
+      103.1
+-----------------
+0.01087 s + 104.1
 </pre></div>
 </div>
 </div>
@@ -782,13 +783,13 @@ H_{BF}(p)=\frac{A}{10.875*10^{-3}*p+1+A}= \frac{\frac{A}{A+1}}{\frac{10.875*10^{
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Le gain statique pour A = 1 vaut 0.4995000000001194  et pour A = 100 : 0.9891089108911346
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Le gain statique pour A = 1 vaut 0.5071846153845865  et pour A = 100 : 0.9894057623051423
 =&gt; le gain statique se rapproche de 1.
 
-L&#39;erreur de position pour A = 1 vaut 0.5004999999998806  et pour A = 100 : 0.010891089108865382
+L&#39;erreur de position pour A = 1 vaut 0.4928153846154135  et pour A = 100 : 0.010594237694857678
 =&gt; L&#39;erreur de position diminue.
 
-La constante de temps pour A = 1 vaut 0.0032373237601893436 s et pour A = 100 : 6.41054209938484e-05 s.
+La constante de temps pour A = 1 vaut 0.0031875187792633542 s et pour A = 100 : 6.218148879115186e-05 s.
 =&gt; La constante de temps diminue.
 </pre></div>
 </div>
@@ -801,7 +802,7 @@ La constante de temps pour A = 1 vaut 0.0032373237601893436 s et pour A = 100 : 
 <p>On a <span class="math notranslate nohighlight">\(H_m(p)=\frac{31.25}{1.36*10^{-6}*p^2+10.875*10^{-3}*p+1}\)</span> <strong>si on tient compte de l</strong>, soit:</p>
 <div class="math notranslate nohighlight">
 \[
-H_{BO}(p)=\frac{A}{1.36*10^{-6}*p^2+10.875*10^{-3}*p+1}
+H_{BO}(p)=\frac{A*B}{1.36*10^{-6}*p^2+10.875*10^{-3}*p+1} avec B =1.03125
 \]</div>
 <p>Calculez la fonction de transfert de boucle fermée pour ces différentes valeurs de A:</p>
 <ul class="simple">
@@ -810,7 +811,7 @@ H_{BO}(p)=\frac{A}{1.36*10^{-6}*p^2+10.875*10^{-3}*p+1}
 <div class="toggle docutils container">
 <div class="math notranslate nohighlight">
 \[
-H_{BF}(p)=\frac{A}{1.36*10^{-6}*p^2+10.875*10^{-3}*p+1+A}= \frac{\frac{A}{A+1}}{\frac{1.36*10^{-6}*p^2+10.875*10^{-3}*p}{A+1}+1}
+H_{BF}(p)=\frac{A*B}{1.36*10^{-6}*p^2+10.875*10^{-3}*p+1+A*B}= \frac{\frac{A*B}{A*B+1}}{\frac{1.36*10^{-6}*p^2+10.875*10^{-3}*p}{A*B+1}+1}
 \]</div>
 </div>
 <ul class="simple">
@@ -819,10 +820,11 @@ H_{BF}(p)=\frac{A}{1.36*10^{-6}*p^2+10.875*10^{-3}*p+1+A}= \frac{\frac{A}{A+1}}{
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A_values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">100</span><span class="p">]</span>
+<span class="n">B</span> <span class="o">=</span> <span class="mf">1.03125</span>
 <span class="n">H_BOs</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">H_BFs</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">A</span> <span class="ow">in</span> <span class="n">A_values</span><span class="p">:</span>
-    <span class="n">H_BO</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">tf</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="p">[</span><span class="mf">1.36e-6</span><span class="p">,</span> <span class="mf">10.875e-3</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+    <span class="n">H_BO</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">tf</span><span class="p">(</span><span class="n">A</span><span class="o">*</span><span class="n">B</span><span class="p">,</span> <span class="p">[</span><span class="mf">1.36e-6</span><span class="p">,</span> <span class="mf">10.875e-3</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
     <span class="n">H_BOs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">H_BO</span><span class="p">)</span>
     <span class="n">H_BF</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">feedback</span><span class="p">(</span><span class="n">H_BO</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
     <span class="n">H_BFs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">H_BF</span><span class="p">)</span>
@@ -831,44 +833,44 @@ H_{BF}(p)=\frac{A}{1.36*10^{-6}*p^2+10.875*10^{-3}*p+1+A}= \frac{\frac{A}{A+1}}{
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             1
-----------------------------
-1.36e-06 s^2 + 0.01087 s + 2
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             1.031
+--------------------------------
+1.36e-06 s^2 + 0.01087 s + 2.031
 
 
-             2
-----------------------------
-1.36e-06 s^2 + 0.01087 s + 3
+             2.062
+--------------------------------
+1.36e-06 s^2 + 0.01087 s + 3.062
 
 
-             5
-----------------------------
-1.36e-06 s^2 + 0.01087 s + 6
+             5.156
+--------------------------------
+1.36e-06 s^2 + 0.01087 s + 6.156
 
 
-              9
------------------------------
-1.36e-06 s^2 + 0.01087 s + 10
+             9.281
+--------------------------------
+1.36e-06 s^2 + 0.01087 s + 10.28
 
 
-             20
------------------------------
-1.36e-06 s^2 + 0.01087 s + 21
+             20.62
+--------------------------------
+1.36e-06 s^2 + 0.01087 s + 21.62
 
 
-             40
------------------------------
-1.36e-06 s^2 + 0.01087 s + 41
+             41.25
+--------------------------------
+1.36e-06 s^2 + 0.01087 s + 42.25
 
 
-             60
------------------------------
-1.36e-06 s^2 + 0.01087 s + 61
+             61.88
+--------------------------------
+1.36e-06 s^2 + 0.01087 s + 62.88
 
 
-             100
-------------------------------
-1.36e-06 s^2 + 0.01087 s + 101
+             103.1
+--------------------------------
+1.36e-06 s^2 + 0.01087 s + 104.1
 </pre></div>
 </div>
 </div>
@@ -897,10 +899,10 @@ H_{BF}(p)=\frac{A}{1.36*10^{-6}*p^2+10.875*10^{-3}*p+1+A}= \frac{\frac{A}{A+1}}{
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Le gain statique pour A = 1 vaut 0.49948764085922653  et pour A = 100 : 0.9889924129751736
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Le gain statique pour A = 1 vaut 0.5071718549900822  et pour A = 100 : 0.9893733591268673
 =&gt; le gain statique se rapproche de 1.
 
-L&#39;erreur de position pour A = 1 vaut 0.5005123591407734  et pour A = 100 : 0.011007587024826404
+L&#39;erreur de position pour A = 1 vaut 0.4928281450099178  et pour A = 100 : 0.010626640873132698
 =&gt; L&#39;erreur de position diminue.
 </pre></div>
 </div>
@@ -972,16 +974,16 @@ L&#39;erreur de position pour A = 1 vaut 0.5005123591407734  et pour A = 100 : 0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>La pulsation naturelle pour A = 1 vaut 7807.97924871505 rad/s et pour A = 100 : 8617.697249402125 rad/s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>La pulsation naturelle pour A = 1 vaut 7804.962431970385 rad/s et pour A = 100 : 8750.0 rad/s
 =&gt; wn augmente.
 
-Le coefficient d&#39;amortissement pour A = 1 vaut 1.0 et pour A = 100 : 0.46394780983786194
+Le coefficient d&#39;amortissement pour A = 1 vaut 1.0 et pour A = 100 : 0.45693277310924363
 =&gt; z diminue.
 
-La pseudo pulsation pour A = 1 vaut 0.0 rad/s et 0.0 rad/s et pour A = 100 : 7634.0951255271175 rad/s et -7634.0951255271175 rad/s
+La pseudo pulsation pour A = 1 vaut 0.0 rad/s et 0.0 rad/s et pour A = 100 : 7783.135775716877 rad/s et -7783.135775716877 rad/s
 =&gt; wd diverge de 0 =&gt; Le système oscille plus.
 
-L&#39;amortissement pour A = 1 vaut -7807.97924871505 et -188.3442806967156 et pour A = 100 : -3998.161764705883 et -3998.161764705883
+L&#39;amortissement pour A = 1 vaut -7804.962431970385 et -191.36109744137914 et pour A = 100 : -3998.161764705882 et -3998.161764705882
 =&gt; sigma converge vers une seule valeur =&gt; Le système est plus rapide.
 </pre></div>
 </div>
