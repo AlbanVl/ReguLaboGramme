@@ -380,7 +380,7 @@ Si K = 4.167, la marge de phase vaut 60.00° comme demandé.
 <li><p>Type de correcteur : P, PI, PD ou PID ?</p></li>
 </ul>
 <div class="toggle docutils container">
-<p>Nous avons un système de classe 1, ce qui nous permet de dire que son erreur de vitesse vaut <span class="math notranslate nohighlight">\(\frac{1}{K_{BO}}\)</span> (<em>cf. p. 6-3</em>). Dès lors, un simple correcteur P devrait à priori suffire.</p>
+<p>Nous avons un système de classe 1, on sait donc que son erreur de vitesse vaut <span class="math notranslate nohighlight">\(\frac{1}{K_{BO}}\)</span> (<em>cf. p. 6-3</em>). Dès lors, un simple correcteur P devrait à priori suffire.</p>
 </div>
 <ul class="simple">
 <li><p>Dimensionnement :</p></li>
@@ -398,13 +398,12 @@ Si K = 4.167, la marge de phase vaut 60.00° comme demandé.
 <div class="cell tag_remove-input tag_hide-cell docutils container">
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Si K = 250.000, le dépassement relatif vaut 78.052%, soit bien plus que les 20% tolérés.
+
+L&#39;erreur de vitesse du système vaut 1.00%.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>L&#39;erreur de vitesse du système vaut 1.00%.
-</pre></div>
-</div>
+<img alt="../_images/LaboSeance7_20_1.png" src="../_images/LaboSeance7_20_1.png" />
 <img alt="../_images/LaboSeance7_20_2.png" src="../_images/LaboSeance7_20_2.png" />
-<img alt="../_images/LaboSeance7_20_3.png" src="../_images/LaboSeance7_20_3.png" />
 </div>
 </div>
 <div class="toggle docutils container">
@@ -502,7 +501,9 @@ SettlingTime : 0.2781996718457423
 <div class="cell tag_remove-input tag_hide-cell docutils container">
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Si K = 2.000, la marge de phase vaut 9.04°.
-Si nous cherchons à obtenir une marge de phase de 85.000°, nous relevons un w_c de 143.191 rad/s =&gt; tau_I = 4.889s (facteur multiplicatif d&#39;1/w_c = 700).
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Si nous cherchons à obtenir une marge de phase de 85.000°, nous relevons un w_c de 143.191 rad/s =&gt; tau_I = 4.889s (facteur multiplicatif d&#39;1/w_c = 700).
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Marge de phase du système original corrigé avec K = 72.986°
@@ -513,10 +514,10 @@ Dépassement du système original corrigé par un correcteur PI = 19.664%
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>L&#39;erreur de vitesse du système vaut 0.00%.
 </pre></div>
 </div>
-<img alt="../_images/LaboSeance7_29_3.png" src="../_images/LaboSeance7_29_3.png" />
 <img alt="../_images/LaboSeance7_29_4.png" src="../_images/LaboSeance7_29_4.png" />
 <img alt="../_images/LaboSeance7_29_5.png" src="../_images/LaboSeance7_29_5.png" />
 <img alt="../_images/LaboSeance7_29_6.png" src="../_images/LaboSeance7_29_6.png" />
+<img alt="../_images/LaboSeance7_29_7.png" src="../_images/LaboSeance7_29_7.png" />
 </div>
 </div>
 </div>
