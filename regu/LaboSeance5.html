@@ -319,7 +319,7 @@
 \[
 G(p) = \frac{1}{(1+0,5p)*(1+0,25p)}
 \]</div>
-<p>Déterminez, à l’aide du diagramme de Nichols, le correcteur P qui permette de translater la courbe pour une marge de phase de 45° : KP= …</p>
+<p>Déterminez, à l’aide du diagramme de Nichols, le correcteur P qui permette de translater la courbe pour une marge de phase de 45° : <span class="math notranslate nohighlight">\(K_P\)</span>= …</p>
 <div class="tip admonition">
 <p class="admonition-title">Astuce</p>
 <p>Une fonction fournie dans le package <code class="docutils literal notranslate"><span class="pre">ReguLabFct</span></code> permet d’obtenir le gain et la fréquence d’un système donnée à une phase donnée. Il s’agit de la fonction <code class="docutils literal notranslate"><span class="pre">getValues</span></code> (cf. documentation du package <code class="docutils literal notranslate"><span class="pre">ReguLabFct</span></code>).</p>
@@ -627,17 +627,19 @@ assurant une réponse indicielle dont le dépassement est limité à 10% (tablez
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Valeurs pour G_BO:
-Gain à -120° = -21.547793018711413 dB
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Gain à -120° = -21.547793018711413 dB
 Fréquence à -120° = 11.228067905278133 rad/sec
 </pre></div>
 </div>
-<img alt="../_images/LaboSeance5_30_1.png" src="../_images/LaboSeance5_30_1.png" />
+<img alt="../_images/LaboSeance5_30_2.png" src="../_images/LaboSeance5_30_2.png" />
 </div>
 </div>
 <p>On peut ensuite en déterminer <span class="math notranslate nohighlight">\(K_P\)</span> en faisant bien attention que le gain mesuré est en dB et qu’il faut s’y opposer pour atteindre une valeur de 0 dB.</p>
 <div class="math notranslate nohighlight">
 \[\Rightarrow 20*\log(K_P) = 21.55\]</div>
-<p>Pour trouver <span class="math notranslate nohighlight">\(\tau_I\)</span>, on sait que notre pôle dominant est égale à <span class="math notranslate nohighlight">\(\frac{1}{4}\)</span>. Dès lors, on fixe <span class="math notranslate nohighlight">\(\tau_I=\frac{1}{4}\)</span> secondes.</p>
+<p>Pour trouver <span class="math notranslate nohighlight">\(\tau_I\)</span>, on sait que notre pôle dominant est égale à -4. Dès lors, on fixe <span class="math notranslate nohighlight">\(\tau_I=\frac{1}{4}\)</span> secondes.</p>
 <p>Maintenant que nous connaissons les paramètres <span class="math notranslate nohighlight">\(K_P\)</span> et <span class="math notranslate nohighlight">\(\tau_I\)</span> de notre correcteur <strong>PI</strong>, il ne reste plus qu’à implémenter ce dernier! Ceci se fait ainsi en code python:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
