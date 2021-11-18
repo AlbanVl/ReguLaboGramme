@@ -291,8 +291,8 @@
 <div class="section" id="i">
 <h4>I.<a class="headerlink" href="#i" title="Permalink to this headline">¶</a></h4>
 <p>Donnez les caractéristiques de performances typiques associées à sa réponse en boucle fermée si K=20.</p>
-<p>(Précisez les relations, abaques et/ou calculs pour les obtenir ET vous validerez vos résultats à l’aide de
-l’affichage des réponses ad hoc par Matlab)</p>
+<p>(Précisez les relations, abaques et/ou calculs pour les obtenir <strong>ET</strong> vous validerez vos résultats à l’aide de
+l’affichage des réponses ad hoc via Python)</p>
 <div class="toggle docutils container">
 <p>Mise sous forme canonique de la fonction de transfert du système en boucle ouverte:</p>
 <div class="math notranslate nohighlight">
@@ -398,12 +398,13 @@ Si K = 4.167, la marge de phase vaut 60.00° comme demandé.
 <div class="cell tag_remove-input tag_hide-cell docutils container">
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Si K = 250.000, le dépassement relatif vaut 78.052%, soit bien plus que les 20% tolérés.
-
-L&#39;erreur de vitesse du système vaut 1.00%.
 </pre></div>
 </div>
-<img alt="../_images/LaboSeance7_20_1.png" src="../_images/LaboSeance7_20_1.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>L&#39;erreur de vitesse du système vaut 1.00%.
+</pre></div>
+</div>
 <img alt="../_images/LaboSeance7_20_2.png" src="../_images/LaboSeance7_20_2.png" />
+<img alt="../_images/LaboSeance7_20_3.png" src="../_images/LaboSeance7_20_3.png" />
 </div>
 </div>
 <div class="toggle docutils container">
@@ -437,10 +438,10 @@ L&#39;erreur de vitesse du système vaut 1.00%.
 <div class="cell tag_remove-input tag_hide-cell docutils container">
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Si K = 250.000, la marge de phase vaut 9.04°.
-Si nous cherchons à obtenir une marge de phase de 84.960°, nous relevons un w_c de 149.251 rad/s =&gt; tau_D = 0.067s.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Le système ainsi corrigé présente une marge de phase de 60.95° et une marge de gain de inf dB.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Si nous cherchons à obtenir une marge de phase de 84.960°, nous relevons un w_c de 149.251 rad/s =&gt; tau_D = 0.067s.
+Le système ainsi corrigé présente une marge de phase de 60.95° et une marge de gain de inf dB.
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Si K = 250.000 et tau_D = 0.067s, le dépassement relatif vaut 19.978%, soit juste un peu moins que les 20% tolérés.
@@ -501,9 +502,7 @@ SettlingTime : 0.2781996718457423
 <div class="cell tag_remove-input tag_hide-cell docutils container">
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Si K = 2.000, la marge de phase vaut 9.04°.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Si nous cherchons à obtenir une marge de phase de 85.000°, nous relevons un w_c de 143.191 rad/s =&gt; tau_I = 4.889s (facteur multiplicatif d&#39;1/w_c = 700).
+Si nous cherchons à obtenir une marge de phase de 85.000°, nous relevons un w_c de 143.191 rad/s =&gt; tau_I = 4.889s (facteur multiplicatif d&#39;1/w_c = 700).
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Marge de phase du système original corrigé avec K = 72.986°
@@ -514,10 +513,10 @@ Dépassement du système original corrigé par un correcteur PI = 19.664%
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>L&#39;erreur de vitesse du système vaut 0.00%.
 </pre></div>
 </div>
+<img alt="../_images/LaboSeance7_29_3.png" src="../_images/LaboSeance7_29_3.png" />
 <img alt="../_images/LaboSeance7_29_4.png" src="../_images/LaboSeance7_29_4.png" />
 <img alt="../_images/LaboSeance7_29_5.png" src="../_images/LaboSeance7_29_5.png" />
 <img alt="../_images/LaboSeance7_29_6.png" src="../_images/LaboSeance7_29_6.png" />
-<img alt="../_images/LaboSeance7_29_7.png" src="../_images/LaboSeance7_29_7.png" />
 </div>
 </div>
 </div>
