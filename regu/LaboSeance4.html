@@ -500,26 +500,38 @@ dans les différents diagrammes pour visualiser l’effet d’un pôle : p=-1, <
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">real</span><span class="p">,</span> <span class="n">imag</span><span class="p">,</span> <span class="n">freq</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">nyquist</span><span class="p">(</span><span class="n">H_BO</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/LaboSeance4_17_0.png" src="../_images/LaboSeance4_17_0.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-1.1, 1.1, -0.5499985390608296, 0.5499985390608296)
+</pre></div>
+</div>
+<img alt="../_images/LaboSeance4_17_1.png" src="../_images/LaboSeance4_17_1.png" />
 </div>
 </div>
 <div class="warning admonition">
 <p class="admonition-title">Attention</p>
 <p>Attention, le graphique est tracé aussi pour des <span class="math notranslate nohighlight">\(\omega_n&lt;0\)</span> (en trait discontinu) ce qui n’a aucun sens physiquement! Il ne faut donc tenir compte <strong>que</strong> du tracé en trait plein.</p>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>La commande <code class="docutils literal notranslate"><span class="pre">plt.axis('equal')</span></code> a pour but de modifier les échelles des axes du graphe afin qu’elles soient les mêmes et ainsi faciliter la compréhension en évitant de déformer le tracé (ellipse au lieu d’un cercle).</p>
+</div>
 <p>On peut également demander à python d’afficher les fréquences sur le graphe:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ml</span><span class="o">.</span><span class="n">nyquist</span><span class="p">(</span><span class="n">H_BO</span><span class="p">,</span> <span class="n">label_freq</span><span class="o">=</span><span class="mi">200</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/LaboSeance4_20_0.png" src="../_images/LaboSeance4_20_0.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-1.1, 1.1, -0.5499985390608296, 0.5499985390608296)
+</pre></div>
+</div>
+<img alt="../_images/LaboSeance4_21_1.png" src="../_images/LaboSeance4_21_1.png" />
 </div>
 </div>
 </div>
@@ -533,7 +545,7 @@ dans les différents diagrammes pour visualiser l’effet d’un pôle : p=-1, <
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/LaboSeance4_22_0.png" src="../_images/LaboSeance4_22_0.png" />
+<img alt="../_images/LaboSeance4_23_0.png" src="../_images/LaboSeance4_23_0.png" />
 </div>
 </div>
 <p>soit imposer l’intervalle de variation de la pulsation en faisant ainsi:</p>
@@ -545,7 +557,7 @@ dans les différents diagrammes pour visualiser l’effet d’un pôle : p=-1, <
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/LaboSeance4_24_0.png" src="../_images/LaboSeance4_24_0.png" />
+<img alt="../_images/LaboSeance4_25_0.png" src="../_images/LaboSeance4_25_0.png" />
 </div>
 </div>
 <p>La différence entre les 2 solutions est le nombre de points de calculs (= points d’affichage)</p>
@@ -564,7 +576,7 @@ dans les différents diagrammes pour visualiser l’effet d’un pôle : p=-1, <
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/LaboSeance4_27_0.png" src="../_images/LaboSeance4_27_0.png" />
+<img alt="../_images/LaboSeance4_28_0.png" src="../_images/LaboSeance4_28_0.png" />
 </div>
 </div>
 <p>Ou on utilise la fonction <code class="docutils literal notranslate"><span class="pre">nichols</span></code> revue dans le package <code class="docutils literal notranslate"><span class="pre">ReguLabFct</span></code> pour faciliter sa lecture dans le cadre du laboratoire de régulation:</p>
@@ -575,7 +587,7 @@ dans les différents diagrammes pour visualiser l’effet d’un pôle : p=-1, <
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/LaboSeance4_29_0.png" src="../_images/LaboSeance4_29_0.png" />
+<img alt="../_images/LaboSeance4_30_0.png" src="../_images/LaboSeance4_30_0.png" />
 </div>
 </div>
 </div>
@@ -616,9 +628,9 @@ dans les différents diagrammes pour visualiser l’effet d’un pôle : p=-1, <
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/LaboSeance4_32_0.png" src="../_images/LaboSeance4_32_0.png" />
-<img alt="../_images/LaboSeance4_32_1.png" src="../_images/LaboSeance4_32_1.png" />
-<img alt="../_images/LaboSeance4_32_2.png" src="../_images/LaboSeance4_32_2.png" />
+<img alt="../_images/LaboSeance4_33_0.png" src="../_images/LaboSeance4_33_0.png" />
+<img alt="../_images/LaboSeance4_33_1.png" src="../_images/LaboSeance4_33_1.png" />
+<img alt="../_images/LaboSeance4_33_2.png" src="../_images/LaboSeance4_33_2.png" />
 </div>
 </div>
 <p>Concluez sur l’effet d’une augmentation de constante (cf. augmentation du gain proportionnel en BO) :</p>
