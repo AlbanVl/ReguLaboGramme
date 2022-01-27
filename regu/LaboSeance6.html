@@ -600,19 +600,19 @@ vitesse minimale, tout en assurant une réponse indicielle dont le dépassement 
 <li><p>Nous obtenons donc le correcteur PID suivant:</p>
 <div class="math notranslate nohighlight">
 \[
-     C(p)=K_P*\frac{(\frac{2}{3}p+1)*(\frac{3}{4}p+1)}{\frac{3}{4}p}
+     C(p)=K_P*\frac{(\frac{2}{3}p+1)*(\frac{3}{4}p+1)}{p}
     \]</div>
 <p>Ce qui nous donne comme fonction de transfert pour la boucle ouverte:</p>
 <div class="math notranslate nohighlight">
 \[
-     G_{BO}(p) = \frac{K_P*\frac{1}{3}}{\frac{3}{4}p*(\frac{1}{5}p+1)} = \frac{\frac{4}{9}K_P}{\frac{1}{5}p^2+p}
+     G_{BO}(p) = \frac{K_P*\frac{1}{3}}{p*(\frac{1}{5}p+1)} = \frac{\frac{K_P}{3}}{\frac{1}{5}p^2+p}
     \]</div>
 </li>
 <li><p>La boucle fermée étant à retour unitaire, on obtient:</p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[
- G_{BF}(p) = \frac{\frac{4}{9}K_P}{\frac{1}{5}p^2+p+\frac{4}{9}K_P} = \frac{1}{\frac{9}{20K_P}*p^2+\frac{9}{4K_P}*p+1}
+ G_{BF}(p) = \frac{\frac{K_P}{3}}{\frac{1}{5}p^2+p+\frac{K_P}{3}} = \frac{1}{\frac{3}{5K_P}*p^2+\frac{3}{K_P}*p+1}
 \]</div>
 <ul>
 <li><p>Par identification, on trouve:</p>
@@ -621,8 +621,8 @@ vitesse minimale, tout en assurant une réponse indicielle dont le dépassement 
     \begin{alignat*}{2}
         \left\{ \begin{aligned}
             \begin{array}{ll}
-                \frac{2\zeta}{\omega_n} = \frac{9}{4K_P} \\
-                \frac{1}{\omega_n^2} = \frac{9}{20K_P}
+                \frac{2\zeta}{\omega_n} = \frac{3}{K_P} \\
+                \frac{1}{\omega_n^2} = \frac{3}{5K_P}
             \end{array}
         \end{aligned}\right.
     \end{alignat*}\
@@ -637,7 +637,7 @@ vitesse minimale, tout en assurant une réponse indicielle dont le dépassement 
 \[\begin{split}
     \left\{ \begin{aligned}
         \begin{array}{ll}
-            K_P = 5.906 \\
+            K_P = 7.876 \\
             \omega_n = 3.623 rad/s
         \end{array}
     \end{aligned}\right.
@@ -669,10 +669,10 @@ vitesse minimale, tout en assurant une réponse indicielle dont le dépassement 
 <span class="n">G_BF_init</span> <span class="o">=</span> <span class="n">ml</span><span class="o">.</span><span class="n">feedback</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 
 <span class="c1"># Correcteur</span>
-<span class="n">Kp</span> <span class="o">=</span> <span class="mf">5.906</span>
+<span class="n">Kp</span> <span class="o">=</span> <span class="mf">7.876</span>
 <span class="n">tI</span> <span class="o">=</span> <span class="mi">3</span><span class="o">/</span><span class="mi">4</span>
 <span class="n">tD</span> <span class="o">=</span> <span class="mi">2</span><span class="o">/</span><span class="mi">3</span>
-<span class="n">C</span> <span class="o">=</span> <span class="n">Kp</span><span class="o">*</span><span class="n">ml</span><span class="o">.</span><span class="n">tf</span><span class="p">([</span><span class="n">tI</span><span class="p">,</span> <span class="mi">1</span><span class="p">],[</span><span class="n">tI</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span><span class="o">*</span><span class="n">ml</span><span class="o">.</span><span class="n">tf</span><span class="p">([</span><span class="n">tD</span><span class="p">,</span> <span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">C</span> <span class="o">=</span> <span class="n">Kp</span><span class="o">*</span><span class="n">ml</span><span class="o">.</span><span class="n">tf</span><span class="p">([</span><span class="n">tI</span><span class="p">,</span> <span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span><span class="o">*</span><span class="n">ml</span><span class="o">.</span><span class="n">tf</span><span class="p">([</span><span class="n">tD</span><span class="p">,</span> <span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">])</span>
 
 <span class="c1"># Système corrigé</span>
 <span class="n">G_BO</span> <span class="o">=</span> <span class="n">C</span><span class="o">*</span><span class="n">H</span>
