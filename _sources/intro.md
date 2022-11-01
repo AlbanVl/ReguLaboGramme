@@ -6,7 +6,7 @@ Bienvenue dans la documentation du laboratoire de régulation.
 
 <!-- ## Présentation du langage Python -->
 
-## Installation d'Anaconda
+<!-- ## Installation d'Anaconda
 
 1. Télécharger Anaconda : https://www.anaconda.com/products/individual-d
 
@@ -188,7 +188,7 @@ Spyder est un environnement de développement (IDE) pour Python qui est libre et
     :alt: ConsoleCMD
     :width: 525px
     :align: center
-    :::
+    ::: -->
 
 ## Télécharger le package Python du labo
 Afin de pouvoir utiliser les fonctions utiles pour le laboratoire de régulation, il est nécessaire de télécharger la dernière version du package python `ReguLabFct` [ici](https://studenthelmobe-my.sharepoint.com/:u:/g/personal/a_vanlaethem_helmo_be/ERCKwgbolmtMmXe6-FW0OOkBLWEK8-u5zAFORvJ_39Es4g?e=K58QB8).
